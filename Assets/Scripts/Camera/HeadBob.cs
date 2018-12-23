@@ -9,13 +9,13 @@ public class HeadBob : MonoBehaviour
     [SerializeField] private PlayerMove playerMove;
     [SerializeField] private float strideInterval;
     [Range(0f, 1f)] [SerializeField] private float runningStrideLengthen;
-    private Vector3 m_OriginalCameraPosition;
+    private Vector3 originalCameraPosition;
 
 
     private void Start()
     {
         motionBob.Setup(Camera, strideInterval);
-        m_OriginalCameraPosition = Camera.transform.localPosition;
+        originalCameraPosition = Camera.transform.localPosition;
     }
 
 

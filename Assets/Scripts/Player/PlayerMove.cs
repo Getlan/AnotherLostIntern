@@ -39,12 +39,15 @@ public class PlayerMove : MonoBehaviour
         get { return isRunning; }
     }
 
+    public bool canMove { get; set; }
+
     private void Start()
     {
         playerBody = GetComponent<Rigidbody>();
         mouseLook.Init (transform, cam.transform);
         targetSpeed = forwardSpeed;
         playerBody.drag = drag;
+        canMove = true;
     }
 
     private void Update()
@@ -59,7 +62,7 @@ public class PlayerMove : MonoBehaviour
         Vector2 input = HandleInputs();
 
         //If the player wants to move
-        if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon))
+        if (canMove && (Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon))
         {
             //Compute the desired move based on the inputs and the target speed
             Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x; //Always move along the camera forward as it is the direction that it being aimed at
