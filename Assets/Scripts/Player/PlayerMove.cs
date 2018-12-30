@@ -39,7 +39,15 @@ public class PlayerMove : MonoBehaviour
         get { return isRunning; }
     }
 
-    public bool canMove { get; set; }
+    public bool canMove
+    {
+        get { return GameManager.Gm.canMove; }
+    }
+
+    public bool canRotate
+    {
+        get { return GameManager.Gm.canRotate; }
+    }
 
     private void Start()
     {
@@ -47,13 +55,16 @@ public class PlayerMove : MonoBehaviour
         mouseLook.Init (transform, cam.transform);
         targetSpeed = forwardSpeed;
         playerBody.drag = drag;
-        canMove = true;
     }
 
     private void Update()
     {
-        //Rotate the play depending on the camera's aim
-        RotateView();
+        if (canRotate)
+        {
+            //Rotate the play depending on the camera's aim
+            RotateView();
+        }
+        mouseLook.UpdateLockCursor();
     }
 
     private void FixedUpdate()

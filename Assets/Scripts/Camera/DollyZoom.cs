@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class DollyZoom : MonoBehaviour {
 
-    private Camera camera;
+    private Camera cam;
     [SerializeField] private Transform target;
     [SerializeField] private float dollySpeed;
     [SerializeField] private float maxTime = 1f;
@@ -22,8 +22,8 @@ public class DollyZoom : MonoBehaviour {
 
     private void Initialize()
     {
-        camera = GetComponent<Camera>();
-        Debug.Assert(camera != null);
+        cam = GetComponent<Camera>();
+        Debug.Assert(cam != null);
 
         float distanceFromTarget = Vector3.Distance(transform.position, target.position);
         initialFrustumHeight = ComputeFrustumHeight(distanceFromTarget);
@@ -40,14 +40,14 @@ public class DollyZoom : MonoBehaviour {
         //{
             transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * dollySpeed);
             float currentDistance = Vector3.Distance(transform.position, target.position);
-            camera.fieldOfView = ComputeFieldOfView(initialFrustumHeight, currentDistance);
+            cam.fieldOfView = ComputeFieldOfView(initialFrustumHeight, currentDistance);
             checkDolly();
         //}
     }
 
     private float ComputeFrustumHeight(float distance)
     {
-        return (2.0f * distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad));
+        return (2.0f * distance * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad));
     }
 
     private float ComputeFieldOfView(float height, float distance)

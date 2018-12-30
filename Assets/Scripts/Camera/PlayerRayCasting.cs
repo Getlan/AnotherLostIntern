@@ -5,19 +5,31 @@ using UnityEngine;
 public class PlayerRayCasting : MonoBehaviour {
 
     [SerializeField] private float distanceToSee;
-    private RaycastHit whatIHit;
+    [SerializeField] private float thickness;
+
+    private RaycastHit rayHit;
+    private GameObject objectHit;
+    private bool hitSomething =false;
 
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawRay(this.transform.position, this.transform.forward*distanceToSee,Color.magenta);
-		if(Physics.Raycast(this.transform.position, this.transform.forward,out whatIHit, distanceToSee))
+        if (Physics.SphereCast(this.transform.position, thickness, this.transform.forward, out rayHit, distanceToSee))
         {
-            Debug.Log("I touched " + whatIHit.collider.gameObject.name);
+            if (rayHit.collider.tag == "Interactible")
+            {
+                objectHit = rayHit.collider.gameObject;
+                hitSomething = true;
+                objectHit.GetComponent<Interactible>().IsLooking();
+            }
+        }
+        else if (hitSomething)
+        {
+            hitSomething = false;
+            objectHit.GetComponent<Interactible>().StopLooking();
         }
 	}
 }
