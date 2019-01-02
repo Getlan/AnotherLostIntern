@@ -53,7 +53,6 @@ abstract public class Interactible : MonoBehaviour {
     {
         //Debug.Log("I stopped interacting with " + gameObject.name);
         isInteracting = false;
-        interactCaption.SetActive(true);
         GameManager.Gm.canMove = true;
         GameManager.Gm.canRotate = true;
     }
