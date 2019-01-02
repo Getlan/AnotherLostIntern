@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public bool isInteractingWithComputer { get; set; }
     public bool isInteractingWithManipulableObject { get; set; }
     [SerializeField] Camera playerCamera;
+    [SerializeField] bool fixRotation = true;
+    [SerializeField] Rigidbody player;
 
     public static GameManager Gm = null;
 
@@ -47,5 +49,25 @@ public class GameManager : MonoBehaviour {
     public Vector3 GetCameraForward()
     {
         return playerCamera.transform.forward;
+    }
+
+    public Camera GetCamera()
+    {
+        return playerCamera;
+    }
+
+    public bool GetFixRotation()
+    {
+        return fixRotation;
+    }
+
+    public Rigidbody GetPlayer()
+    {
+        return player;
+    }
+
+    public bool IsPlayerStandingStill()
+    {
+        return player.velocity.magnitude<1.5f;
     }
 }

@@ -43,10 +43,10 @@ abstract public class Interactible : MonoBehaviour {
     protected virtual void Interact()
     {
         //Debug.Log("I interact with " + gameObject.name);
-        isInteracting = true;
-        interactCaption.SetActive(false);
         GameManager.Gm.canMove = false;
         GameManager.Gm.canRotate = false;
+        isInteracting = true;
+        interactCaption.SetActive(false);
     }
 
     protected virtual void StopInteract()

@@ -51,7 +51,7 @@ public class MouseLook
     //Check if the cursor must be locked or not
     public void UpdateLockCursor()
     {
-        if (!GameManager.Gm.isInteractingWithComputer)
+        if (!GameManager.Gm.isInteractingWithComputer && !GameManager.Gm.isInteractingWithManipulableObject)
         {
             //If the player presses escape, unlock
             if (Input.GetKeyUp(KeyCode.Escape))
