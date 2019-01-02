@@ -6,8 +6,9 @@ using UnityEngine.UI;
 abstract public class Interactible : MonoBehaviour {
 
     protected bool isLooking = false;
-    protected bool isInteracting = false;
+    protected bool isInteracting;
     [SerializeField] private GameObject interactCaption;
+    [SerializeField] private string interactCaptionText;
 
     protected virtual void Update()
     {
@@ -22,14 +23,18 @@ abstract public class Interactible : MonoBehaviour {
     }
 
     public void IsLooking() {
-        Debug.Log("I look at " + gameObject.name);
+        //Debug.Log("I look at " + gameObject.name);
         isLooking = true;
-        interactCaption.SetActive(true);
+        if (!isInteracting)
+        {
+            interactCaption.GetComponent<Text>().text = interactCaptionText;
+            interactCaption.SetActive(true);
+        }
     }
 
     public void StopLooking()
     {
-        Debug.Log("I stopped looking at " + gameObject.name);
+        //Debug.Log("I stopped looking at " + gameObject.name);
         isLooking = false;
         interactCaption.SetActive(false);
         StopInteract();
@@ -37,16 +42,18 @@ abstract public class Interactible : MonoBehaviour {
 
     protected virtual void Interact()
     {
-        Debug.Log("I interact with " + gameObject.name);
+        //Debug.Log("I interact with " + gameObject.name);
         isInteracting = true;
+        interactCaption.SetActive(false);
         GameManager.Gm.canMove = false;
         GameManager.Gm.canRotate = false;
     }
 
     protected virtual void StopInteract()
     {
-        Debug.Log("I stopped interacting with " + gameObject.name);
+        //Debug.Log("I stopped interacting with " + gameObject.name);
         isInteracting = false;
+        interactCaption.SetActive(true);
         GameManager.Gm.canMove = true;
         GameManager.Gm.canRotate = true;
     }

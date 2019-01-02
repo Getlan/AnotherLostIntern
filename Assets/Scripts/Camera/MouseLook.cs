@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 [Serializable]
@@ -37,18 +37,15 @@ public class MouseLook
         float xRot = Input.GetAxis("Mouse Y") * ySensitivity;
 
         //Compute camera and character rotation
-        characterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
-        cameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
+        characterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
+        cameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
         //Block vertical rotation
-        cameraTargetRot = ClampRotationAroundXAxis (cameraTargetRot);
+        cameraTargetRot = ClampRotationAroundXAxis(cameraTargetRot);
 
         //Set camera and character rotation
         character.localRotation = characterTargetRot;
         camera.localRotation = cameraTargetRot;
-
-        //Check if the cursor must be locked or not
-
     }
 
     //Check if the cursor must be locked or not
@@ -89,11 +86,11 @@ public class MouseLook
         q.z /= q.w;
         q.w = 1.0f;
 
-        float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan (q.x);
+        float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.x);
 
-        angleX = Mathf.Clamp (angleX, minimumX, maximumX);
+        angleX = Mathf.Clamp(angleX, minimumX, maximumX);
 
-        q.x = Mathf.Tan (0.5f * Mathf.Deg2Rad * angleX);
+        q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
 
         return q;
     }

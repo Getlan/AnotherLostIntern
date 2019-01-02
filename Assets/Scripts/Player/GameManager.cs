@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
     public bool canRotate { get; set; }
     public bool cursorIsLocked { get; set; }
     public bool isInteractingWithComputer { get; set; }
+    public bool isInteractingWithManipulableObject { get; set; }
+    [SerializeField] Camera playerCamera;
 
     public static GameManager Gm = null;
 
@@ -29,10 +31,21 @@ public class GameManager : MonoBehaviour {
         canRotate = true;
         cursorIsLocked = true;
         isInteractingWithComputer = false;
+        isInteractingWithManipulableObject = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public Vector3 GetCameraPosition()
+    {
+        return playerCamera.transform.position;
+    }
+
+    public Vector3 GetCameraForward()
+    {
+        return playerCamera.transform.forward;
+    }
 }
