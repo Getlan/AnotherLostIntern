@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-abstract public class Interactible : MonoBehaviour {
+abstract public class Interactible : MonoBehaviour
+{
 
     protected bool isLooking = false;
     protected bool isInteracting;
@@ -22,7 +23,8 @@ abstract public class Interactible : MonoBehaviour {
         }
     }
 
-    public void IsLooking() {
+    public void IsLooking()
+    {
         //Debug.Log("I look at " + gameObject.name);
         isLooking = true;
         if (!isInteracting)
