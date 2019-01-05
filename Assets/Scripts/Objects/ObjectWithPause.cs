@@ -21,6 +21,7 @@ public class ObjectWithPause : Interactive
         GameManager.Gm.canMove = false;
         GameManager.Gm.canRotate = false;
         GameManager.Gm.cursorIsLocked = false;
+        GameManager.Gm.DeactivateCursorIcon();
     }
 
     protected override void StopInteract()
@@ -29,5 +30,6 @@ public class ObjectWithPause : Interactive
         GameManager.Gm.canMove = true;
         GameManager.Gm.canRotate = true;
         GameManager.Gm.cursorIsLocked = true;
+        GameManager.Gm.ActivateCursorIcon();
     }
 }

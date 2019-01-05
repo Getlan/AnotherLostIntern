@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Camera playerCamera;
     [SerializeField] bool fixRotation = true;
     [SerializeField] Rigidbody player;
+    [SerializeField] private GameObject cursorIcon;
 
     public static GameManager Gm = null;
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour {
         cursorIsLocked = true;
         isInteractingWithComputer = false;
         isInteractingWithManipulableObject = false;
+        cursorIcon.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -69,5 +71,15 @@ public class GameManager : MonoBehaviour {
     public bool IsPlayerStandingStill()
     {
         return player.velocity.magnitude<1.5f;
+    }
+
+    public void ActivateCursorIcon()
+    {
+        cursorIcon.SetActive(true);
+    }
+
+    public void DeactivateCursorIcon()
+    {
+        cursorIcon.SetActive(false);
     }
 }
