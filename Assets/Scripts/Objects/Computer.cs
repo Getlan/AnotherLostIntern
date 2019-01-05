@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Computer : Interactible {
+public class Computer : ObjectWithPause
+{
 
     [SerializeField]
     private GameObject UIComputer;
@@ -16,7 +17,6 @@ public class Computer : Interactible {
     {
         base.Interact();
         UIComputer.SetActive(true);
-        GameManager.Gm.cursorIsLocked = false;
         GameManager.Gm.isInteractingWithComputer = true;
     }
 
@@ -24,7 +24,6 @@ public class Computer : Interactible {
     {
         base.StopInteract();
         UIComputer.SetActive(false);
-        GameManager.Gm.cursorIsLocked = true;
         GameManager.Gm.isInteractingWithComputer = false;
     }
 }

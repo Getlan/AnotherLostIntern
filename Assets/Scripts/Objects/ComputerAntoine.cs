@@ -9,11 +9,6 @@ public class ComputerAntoine : Computer {
     [SerializeField]
     private GameObject newsUI;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
     // Update is called once per frame
     protected override void Update () {
         base.Update();

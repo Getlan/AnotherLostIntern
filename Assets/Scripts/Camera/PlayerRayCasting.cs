@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRayCasting : MonoBehaviour {
 
     [SerializeField] private float distanceToSee;
-    [SerializeField] private float thickness;
+    //[SerializeField] private float thickness;
     private bool isInteractingWithManipulableObject
     {
         get { return GameManager.Gm.isInteractingWithManipulableObject; }
@@ -21,24 +21,24 @@ public class PlayerRayCasting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawRay(transform.position, transform.forward, Color.blue, distanceToSee);
-        if (Physics.SphereCast(this.transform.position, thickness, this.transform.forward, out rayHit, distanceToSee))
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out rayHit, distanceToSee))
         {
-            if (rayHit.collider.tag == "Interactible")
+            Interactive rayHitInteractive = rayHit.collider.gameObject.GetComponent<Interactive>();
+            if(rayHitInteractive != null)
             {
-                if (objectHit != null &&objectHit != rayHit.collider.gameObject)
+                if (objectHit != null && objectHit != rayHit.collider.gameObject)
                 {
-                    objectHit.GetComponent<Interactible>().StopLooking();
+                    objectHit.GetComponent<Interactive>().StopLooking();
                 }
                 objectHit = rayHit.collider.gameObject;
                 hitSomething = true;
-                objectHit.GetComponent<Interactible>().IsLooking();
-            }
+                objectHit.GetComponent<Interactive>().IsLooking();
+            }             
         }
         else if (hitSomething && !isInteractingWithManipulableObject)
         {
             hitSomething = false;
-            objectHit.GetComponent<Interactible>().StopLooking();
+            objectHit.GetComponent<Interactive>().StopLooking();
         }
 	}
 }
