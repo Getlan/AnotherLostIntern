@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
         isInteractingWithComputer = false;
         isInteractingWithManipulableObject = false;
         cursorIcon.SetActive(true);
+        AudioManager.instance.Play("Storm");
     }
 	
 	// Update is called once per frame

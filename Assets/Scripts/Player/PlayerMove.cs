@@ -29,6 +29,9 @@ public class PlayerMove : MonoBehaviour
     private float yRotation;
     private bool isRunning;
 
+    private float stepCycle;
+    private float nextStep;
+
     public Vector3 Velocity
     {
         get { return playerBody.velocity; }
@@ -161,4 +164,34 @@ public class PlayerMove : MonoBehaviour
         Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
         playerBody.velocity = velRotation * playerBody.velocity;
     }
+
+    /*private void ProgressStepCycle(float speed)
+    {
+        if (playerBody.velocity.sqrMagnitude > 0)
+        {
+            stepCycle += (playerBody.velocity.magnitude + (speed(m_IsWalking ? 1f : m_RunstepLenghten)))
+                             Time.fixedDeltaTime;
+        }
+
+        if (!(stepCycle > nextStep))
+        {
+            return;
+        }
+
+        nextStep = stepCycle + m_StepInterval;
+
+        PlayFootStepAudio();
+    }
+
+
+    private void PlayFootStepAudio()
+    {
+        // pick & play a random footstep sound from the array
+        int n = Random.Range(1, m_FootstepSounds.Length);
+        m_AudioSource.clip = m_FootstepSounds[n];
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
+        // move picked sound to index 0 so it's not picked next time
+        m_FootstepSounds[n] = m_FootstepSounds[0];
+        m_FootstepSounds[0] = m_AudioSource.clip;
+    }*/
 }
