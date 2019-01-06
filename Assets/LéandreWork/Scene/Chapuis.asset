@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 114607443460322936}
   - {fileID: 114252012742040382}
   - {fileID: 114344532182397994}
+  - {fileID: 114724091746797452}
 --- !u!114 &114252012742040382
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -72,7 +73,7 @@ MonoBehaviour:
     value: 0
   temperature:
     overrideState: 1
-    value: -10.3
+    value: -11.4
   tint:
     overrideState: 0
     value: 0
@@ -1342,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1420,7 +1421,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.344
+    value: 1.4
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1466,7 +1467,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: -19.2
+    value: -25
   intensityX:
     overrideState: 0
     value: 1
@@ -1474,14 +1475,42 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   centerX:
-    overrideState: 1
-    value: 0.08
+    overrideState: 0
+    value: 0
   centerY:
-    overrideState: 1
-    value: -0.061
+    overrideState: 0
+    value: 0
   scale:
     overrideState: 0
     value: 1.037
+--- !u!114 &114724091746797452
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 10
+  aperture:
+    overrideState: 1
+    value: 15.13
+  focalLength:
+    overrideState: 1
+    value: 21.9
+  kernelSize:
+    overrideState: 1
+    value: 1
 --- !u!114 &114725116162769354
 MonoBehaviour:
   m_ObjectHideFlags: 3
