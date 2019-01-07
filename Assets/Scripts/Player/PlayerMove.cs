@@ -31,6 +31,9 @@ public class PlayerMove : MonoBehaviour
 
     private float stepCycle;
     private float nextStep;
+    [SerializeField] private float stepInterval;
+    [SerializeField] [Range(0f, 1f)] private float runstepLenghten;
+    private bool leftFoot = true;
 
     public Vector3 Velocity
     {
@@ -98,6 +101,8 @@ public class PlayerMove : MonoBehaviour
         {
             playerBody.Sleep();
         }
+
+        ProgressStepCycle(targetSpeed);
     }
 
     //Handle inputs
@@ -165,11 +170,11 @@ public class PlayerMove : MonoBehaviour
         playerBody.velocity = velRotation * playerBody.velocity;
     }
 
-    /*private void ProgressStepCycle(float speed)
+    private void ProgressStepCycle(float speed)
     {
         if (playerBody.velocity.sqrMagnitude > 0)
         {
-            stepCycle += (playerBody.velocity.magnitude + (speed(m_IsWalking ? 1f : m_RunstepLenghten)))
+            stepCycle += (playerBody.velocity.magnitude + (speed * (isRunning ? runstepLenghten : 1f))) *
                              Time.fixedDeltaTime;
         }
 
@@ -178,7 +183,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        nextStep = stepCycle + m_StepInterval;
+        nextStep = stepCycle + stepInterval;
 
         PlayFootStepAudio();
     }
@@ -186,12 +191,14 @@ public class PlayerMove : MonoBehaviour
 
     private void PlayFootStepAudio()
     {
-        // pick & play a random footstep sound from the array
-        int n = Random.Range(1, m_FootstepSounds.Length);
-        m_AudioSource.clip = m_FootstepSounds[n];
-        m_AudioSource.PlayOneShot(m_AudioSource.clip);
-        // move picked sound to index 0 so it's not picked next time
-        m_FootstepSounds[n] = m_FootstepSounds[0];
-        m_FootstepSounds[0] = m_AudioSource.clip;
-    }*/
+        if (leftFoot)
+        {
+            AudioManager.instance.Play("LeftFoot");
+        }
+        else
+        {
+            AudioManager.instance.Play("RightFoot");
+        }
+        leftFoot = !leftFoot;
+    }
 }
