@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] bool fixRotation = true;
     [SerializeField] Rigidbody player;
     [SerializeField] private GameObject cursorIcon;
+    [SerializeField] private Transform holdPosition;
 
     public static GameManager Gm = null;
 
@@ -81,5 +82,10 @@ public class GameManager : MonoBehaviour {
     public void DeactivateCursorIcon()
     {
         cursorIcon.SetActive(false);
+    }
+
+    public Transform GetHoldPosition()
+    {
+        return holdPosition;
     }
 }

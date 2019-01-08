@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectWithPause : Interactive
+public class ObjectWithPause1 : Interactive1
 {
 
     // Update is called once per frame

@@ -47,3 +47,4 @@ MonoBehaviour:
   fixRotation: 1
   player: {fileID: 0}
   cursorIcon: {fileID: 0}
+  holdPosition: {fileID: 0}

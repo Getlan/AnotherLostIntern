@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateObject : Interactive
+public class StateObject1 : Interactive1
 {
 
     [SerializeField]private Vector3 state1, state2;

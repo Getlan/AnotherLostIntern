@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manipulable : ObjectWithPause
+public class Observable : ObjectWithPause
 {
-
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Vector3 originalScale;
@@ -17,11 +16,10 @@ public class Manipulable : ObjectWithPause
     protected void Start()
     {
         this.canRotate = false;
-    }
-
-    protected override void Update()
-    {
-        base.Update();
+        interactCaptionText = "Inspecter";
+        originalPosition = gameObject.transform.position;
+        originalRotation = gameObject.transform.rotation;
+        originalScale = gameObject.transform.localScale;
     }
 
     protected override void Interact()
@@ -30,9 +28,6 @@ public class Manipulable : ObjectWithPause
         if (GameManager.Gm.IsPlayerStandingStill())
         {
             GameManager.Gm.isInteractingWithManipulableObject = true;
-            originalPosition = gameObject.transform.position;
-            originalRotation = gameObject.transform.rotation;
-            originalScale = gameObject.transform.localScale;
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;

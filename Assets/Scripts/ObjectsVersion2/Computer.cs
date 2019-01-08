@@ -8,6 +8,12 @@ public class Computer : ObjectWithPause
     [SerializeField]
     private GameObject UIComputer;
 
+
+    protected void Start()
+    {
+        interactCaptionText = "Inspecter";
+    }
+
     protected override void Update()
     {
         base.Update();

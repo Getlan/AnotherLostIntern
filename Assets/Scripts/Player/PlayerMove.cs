@@ -166,8 +166,8 @@ public class PlayerMove : MonoBehaviour
         mouseLook.LookRotation(transform, cam.transform);
 
         //Rotate the rigidbody velocity to match the new direction that the character is looking
-        Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
-        playerBody.velocity = velRotation * playerBody.velocity;
+        //Quaternion velRotation = Quaternion.AngleAxis(transform.eulerAngles.y - oldYRotation, Vector3.up);
+        //playerBody.velocity = velRotation * playerBody.velocity;
     }
 
     private void ProgressStepCycle(float speed)

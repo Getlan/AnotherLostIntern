@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-abstract public class Interactive : MonoBehaviour
+abstract public class Interactive1 : MonoBehaviour
 {
 
     protected bool isLooking = false;
