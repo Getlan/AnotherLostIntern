@@ -17,16 +17,17 @@ public class Observable : ObjectWithPause
     {
         this.canRotate = false;
         interactCaptionText = "Inspecter";
-        originalPosition = gameObject.transform.position;
-        originalRotation = gameObject.transform.rotation;
-        originalScale = gameObject.transform.localScale;
     }
+
 
     protected override void Interact()
     {
         base.Interact();
         if (GameManager.Gm.IsPlayerStandingStill())
         {
+            originalPosition = gameObject.transform.position;
+            originalRotation = gameObject.transform.rotation;
+            originalScale = gameObject.transform.localScale;
             GameManager.Gm.isInteractingWithManipulableObject = true;
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Collider>().isTrigger = true;
@@ -44,11 +45,11 @@ public class Observable : ObjectWithPause
     {
         base.StopInteract();
         GameManager.Gm.isInteractingWithManipulableObject = false;
-        this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;
         this.gameObject.transform.localScale = originalScale;
+        this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
     }
 

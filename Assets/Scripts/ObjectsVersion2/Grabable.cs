@@ -12,7 +12,7 @@ public class Grabable : NoStateObject
     private Transform originalParent;
     private Vector3 originalScale;
     private float distance = 0.7f;
-    private bool test = false;
+    private bool isInZone = false;
 
 
     protected void Start()
@@ -56,7 +56,7 @@ public class Grabable : NoStateObject
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.gameObject.transform.localScale = originalScale;
         this.transform.parent = originalParent;
-        if (test)
+        if (isInZone)
         {
             this.gameObject.transform.position = originalPosition;
             this.gameObject.transform.rotation = originalRotation;
@@ -67,8 +67,7 @@ public class Grabable : NoStateObject
     { 
         if(obj.gameObject == zone)
         {
-            Debug.Log("coucou");
-            test = true;
+            isInZone = true;
         }
     }
 
@@ -76,8 +75,7 @@ public class Grabable : NoStateObject
     {
         if (obj.gameObject == zone)
         {
-            Debug.Log("au revoir");
-            test = false;
+            isInZone = false;
         }
     }
 }
