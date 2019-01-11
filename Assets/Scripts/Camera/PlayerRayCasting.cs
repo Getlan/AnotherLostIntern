@@ -33,7 +33,12 @@ public class PlayerRayCasting : MonoBehaviour {
                 objectHit = rayHit.collider.gameObject;
                 hitSomething = true;
                 objectHit.GetComponent<Interactive>().IsLooking();
-            }             
+            } 
+            else if (hitSomething && !isInteractingWithManipulableObject)
+            {
+                hitSomething = false;
+                objectHit.GetComponent<Interactive>().StopLooking();
+            }
         }
         else if (hitSomething && !isInteractingWithManipulableObject)
         {
