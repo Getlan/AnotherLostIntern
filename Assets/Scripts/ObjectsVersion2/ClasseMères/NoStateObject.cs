@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NoStateObject : Interactive
+abstract public class NoStateObject : Interactive
 {
 
     protected string interactCaptionText;
@@ -13,7 +13,7 @@ public class NoStateObject : Interactive
         base.IsLooking();
         if (!isInteracting)
         {
-            interactCaption.GetComponent<Text>().text = interactCaptionText;
+            UIManager.instance.ChangeTextInteractCaption(interactCaptionText);
         }
     }
 }

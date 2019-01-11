@@ -36,7 +36,7 @@ public class StateObject : Interactive
         base.IsLooking();
         if (!isInteracting)
         {
-            interactCaption.GetComponent<Text>().text = textToDisplay;
+            UIManager.instance.ChangeTextInteractCaption(textToDisplay);
         }
     }
 

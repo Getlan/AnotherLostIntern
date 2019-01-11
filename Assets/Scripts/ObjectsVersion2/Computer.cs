@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Computer : ObjectWithPause
 {
-
-    [SerializeField]
-    private GameObject UIComputer;
-
-
     protected void Start()
     {
         interactCaptionText = "Inspecter";
@@ -22,14 +17,14 @@ public class Computer : ObjectWithPause
     protected override void Interact()
     {
         base.Interact();
-        UIComputer.SetActive(true);
+        UIManager.instance.ShowUIAntoine();
         GameManager.Gm.isInteractingWithComputer = true;
     }
 
     protected override void StopInteract()
     {
         base.StopInteract();
-        UIComputer.SetActive(false);
+        UIManager.instance.HideUIAntoine();
         GameManager.Gm.isInteractingWithComputer = false;
     }
 }
