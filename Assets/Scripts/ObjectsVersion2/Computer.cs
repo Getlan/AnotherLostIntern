@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class Computer : ObjectWithPause
 {
-
-    [SerializeField]
-    private GameObject UIComputer;
-
-
     protected void Start()
     {
         interactCaptionText = "Inspecter";
     }
 
-    protected override void Update()
-    {
-        base.Update();
-    }
-
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
-        UIComputer.SetActive(true);
+        UIManager.instance.ShowUIAntoine();
         GameManager.Gm.isInteractingWithComputer = true;
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
-        UIComputer.SetActive(false);
+        UIManager.instance.HideUIAntoine();
         GameManager.Gm.isInteractingWithComputer = false;
+    }
+
+    public override void ClickWhileInteracting()
+    {
+        StopInteract();
     }
 }

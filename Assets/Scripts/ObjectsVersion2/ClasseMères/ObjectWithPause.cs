@@ -2,23 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectWithPause : NoStateObject
+abstract public class ObjectWithPause : NoStateObject
 {
-
-    // Update is called once per frame
-    protected override void Update()
-    {
-        if (isLooking && !isInteracting && Input.GetKeyDown("space"))
-        {
-            Interact();
-        }
-        else if (isInteracting && Input.GetKeyDown("space"))
-        {
-            StopInteract();
-        }
-    }
-
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         GameManager.Gm.canMove = false;
@@ -27,7 +13,7 @@ public class ObjectWithPause : NoStateObject
         GameManager.Gm.DeactivateCursorIcon();
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
         GameManager.Gm.canMove = true;

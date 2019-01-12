@@ -20,7 +20,7 @@ public class Observable : ObjectWithPause
     }
 
 
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         if (GameManager.Gm.IsPlayerStandingStill())
@@ -41,7 +41,7 @@ public class Observable : ObjectWithPause
         }
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
         GameManager.Gm.isInteractingWithManipulableObject = false;
@@ -53,6 +53,19 @@ public class Observable : ObjectWithPause
         this.canRotate = false;
     }
 
+    public override void ClickWhileInteracting()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 10f))
+        {
+            if (hit.transform == null || hit.transform.gameObject != this.gameObject)
+            {
+                StopInteract();
+            }
+        }
+    }
 
     void OnMouseDrag()
     {

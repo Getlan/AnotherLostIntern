@@ -24,20 +24,7 @@ public class Grabable : NoStateObject
         originalScale = gameObject.transform.localScale;
     }
 
-    // Update is called once per frame
-    protected override void Update()
-    {
-        if (isLooking && !isInteracting && Input.GetKeyDown("space"))
-        {
-            Interact();
-        }
-        else if (isInteracting && Input.GetKeyDown("space"))
-        {
-            StopInteract();
-        }
-    }
-
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -49,7 +36,7 @@ public class Grabable : NoStateObject
         this.transform.LookAt(GameManager.Gm.GetCamera().transform);
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -61,6 +48,11 @@ public class Grabable : NoStateObject
             this.gameObject.transform.position = originalPosition;
             this.gameObject.transform.rotation = originalRotation;
         }
+    }
+
+    public override void ClickWhileInteracting()
+    {
+        StopInteract();
     }
 
     void OnTriggerEnter(Collider obj)
@@ -79,3 +71,4 @@ public class Grabable : NoStateObject
         }
     }
 }
+

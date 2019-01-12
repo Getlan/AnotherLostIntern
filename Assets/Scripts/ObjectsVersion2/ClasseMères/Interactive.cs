@@ -8,21 +8,12 @@ abstract public class Interactive : MonoBehaviour
 
     protected bool isLooking = false;
     protected bool isInteracting =false;
-    [SerializeField] protected GameObject interactCaption;
-
-    protected virtual void Update()
-    {
-        if (isLooking && !isInteracting && Input.GetKeyDown("space"))
-        {
-            Interact();
-        }
-    }
 
     public virtual void IsLooking()
     {
         if (!isInteracting)
         {
-            interactCaption.SetActive(true);
+            UIManager.instance.ShowInteractCaption();
         }
         isLooking = true;
     }
@@ -30,17 +21,22 @@ abstract public class Interactive : MonoBehaviour
     public void StopLooking()
     {
         isLooking = false;
-        interactCaption.SetActive(false);
+        UIManager.instance.HideInteractCaption();
     }
 
-    protected virtual void Interact()
+    public virtual void Interact()
     {
         isInteracting = true;
-        interactCaption.SetActive(false);
+        UIManager.instance.HideInteractCaption();
     }
 
-    protected virtual void StopInteract()
-    {
+    public virtual void StopInteract()
+    {   
         isInteracting = false;
+    }
+
+    public bool GetIsInteracting()
+    {
+        return isInteracting;
     }
 }
