@@ -43,6 +43,7 @@ public class Observable : ObjectWithPause
 
     public override void StopInteract()
     {
+        base.StopInteract();
         GameManager.Gm.isInteractingWithManipulableObject = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;
@@ -50,7 +51,6 @@ public class Observable : ObjectWithPause
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
-        base.StopInteract();
     }
 
     public override void ClickWhileInteracting()
