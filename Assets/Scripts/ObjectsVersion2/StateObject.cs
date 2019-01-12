@@ -25,12 +25,6 @@ public class StateObject : Interactive
         iTweenArgs.Add("isLocal", true);
     }
 
-    protected override void Update()
-    {
-        base.Update();
-
-    }
-
     public override void IsLooking()
     {
         base.IsLooking();
@@ -40,7 +34,7 @@ public class StateObject : Interactive
         }
     }
 
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
 
@@ -71,7 +65,7 @@ public class StateObject : Interactive
         StopInteract();
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
     }

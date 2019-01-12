@@ -9,22 +9,22 @@ public class Computer : ObjectWithPause
         interactCaptionText = "Inspecter";
     }
 
-    protected override void Update()
-    {
-        base.Update();
-    }
-
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         UIManager.instance.ShowUIAntoine();
         GameManager.Gm.isInteractingWithComputer = true;
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
         base.StopInteract();
         UIManager.instance.HideUIAntoine();
         GameManager.Gm.isInteractingWithComputer = false;
+    }
+
+    public override void ClickWhileInteracting()
+    {
+        StopInteract();
     }
 }

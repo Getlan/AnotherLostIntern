@@ -12,7 +12,7 @@ public class PlayerRayCasting : MonoBehaviour {
     }
 
     private RaycastHit rayHit;
-    private GameObject objectHit =null;
+    private Interactive objectHit =null;
     private bool hitSomething =false;
 
     // Use this for initialization
@@ -28,22 +28,53 @@ public class PlayerRayCasting : MonoBehaviour {
             {
                 if (objectHit != null && objectHit != rayHit.collider.gameObject)
                 {
-                    objectHit.GetComponent<Interactive>().StopLooking();
+                    objectHit.StopLooking();
                 }
-                objectHit = rayHit.collider.gameObject;
+                objectHit = rayHitInteractive;
                 hitSomething = true;
-                objectHit.GetComponent<Interactive>().IsLooking();
+                objectHit.IsLooking();
+                if (Input.GetMouseButtonDown(0)) {
+                    if (!objectHit.GetIsInteracting())
+                    {
+                        objectHit.Interact();
+                    }
+                    else
+                    {
+                        if (objectHit.GetComponent<NoStateObject>() != null)
+                        {
+                            objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
+                        }
+                        /*switch (objectHit.GetType().Name)
+                        {
+                            case "Observable":
+                                RaycastHit hit;
+                                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                                if (Physics.Raycast(ray, out hit, 10f))
+                                {
+                                    if (hit.transform == null || hit.transform.gameObject != objectHit)
+                                    {
+                                        objectHit.StopInteract();
+                                        objectHit = null;
+                                    }
+                                }
+                                break;
+                        }*/
+                    }
+                }
             } 
             else if (hitSomething && !isInteractingWithManipulableObject)
             {
                 hitSomething = false;
-                objectHit.GetComponent<Interactive>().StopLooking();
+                objectHit.StopLooking();
+                objectHit = null;
             }
         }
         else if (hitSomething && !isInteractingWithManipulableObject)
         {
             hitSomething = false;
-            objectHit.GetComponent<Interactive>().StopLooking();
+            objectHit.StopLooking();
+            objectHit = null;
         }
-	}
+    }
 }

@@ -20,7 +20,7 @@ public class Observable : ObjectWithPause
     }
 
 
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         if (GameManager.Gm.IsPlayerStandingStill())
@@ -41,9 +41,8 @@ public class Observable : ObjectWithPause
         }
     }
 
-    protected override void StopInteract()
+    public override void StopInteract()
     {
-        base.StopInteract();
         GameManager.Gm.isInteractingWithManipulableObject = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;
@@ -51,8 +50,22 @@ public class Observable : ObjectWithPause
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
+        base.StopInteract();
     }
 
+    public override void ClickWhileInteracting()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 10f))
+        {
+            if (hit.transform == null || hit.transform.gameObject != this.gameObject)
+            {
+                StopInteract();
+            }
+        }
+    }
 
     void OnMouseDrag()
     {

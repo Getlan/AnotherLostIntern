@@ -16,4 +16,6 @@ abstract public class NoStateObject : Interactive
             UIManager.instance.ChangeTextInteractCaption(interactCaptionText);
         }
     }
+
+    abstract public void ClickWhileInteracting();
 }

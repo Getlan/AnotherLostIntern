@@ -9,14 +9,6 @@ abstract public class Interactive : MonoBehaviour
     protected bool isLooking = false;
     protected bool isInteracting =false;
 
-    protected virtual void Update()
-    {
-        if (isLooking && !isInteracting && Input.GetKeyDown("space"))
-        {
-            Interact();
-        }
-    }
-
     public virtual void IsLooking()
     {
         if (!isInteracting)
@@ -32,14 +24,19 @@ abstract public class Interactive : MonoBehaviour
         UIManager.instance.HideInteractCaption();
     }
 
-    protected virtual void Interact()
+    public virtual void Interact()
     {
         isInteracting = true;
         UIManager.instance.HideInteractCaption();
     }
 
-    protected virtual void StopInteract()
-    {
+    public virtual void StopInteract()
+    {   
         isInteracting = false;
+    }
+
+    public bool GetIsInteracting()
+    {
+        return isInteracting;
     }
 }
