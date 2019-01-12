@@ -5,12 +5,11 @@ using UnityEngine;
 public class Grabable : NoStateObject
 {
 
-    [SerializeField] Vector3 scale;
+    [SerializeField] float scaleMultiplier;
     [SerializeField] GameObject zone;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Transform originalParent;
-    private Vector3 originalScale;
     private float distance = 0.7f;
     private bool isInZone = false;
 
@@ -21,7 +20,6 @@ public class Grabable : NoStateObject
         originalParent = this.transform.parent.gameObject.transform;
         originalPosition = gameObject.transform.position;
         originalRotation = gameObject.transform.rotation;
-        originalScale = gameObject.transform.localScale;
     }
 
     public override void Interact()
@@ -30,7 +28,7 @@ public class Grabable : NoStateObject
         this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         this.gameObject.GetComponent<Collider>().isTrigger = true;
         this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
-        this.gameObject.transform.localScale = scale;
+        this.gameObject.transform.localScale = this.gameObject.transform.localScale * scaleMultiplier;
         this.transform.position = GameManager.Gm.GetHoldPosition().position;
         this.transform.parent = GameManager.Gm.GetCamera().transform;
         this.transform.LookAt(GameManager.Gm.GetCamera().transform);
@@ -41,7 +39,7 @@ public class Grabable : NoStateObject
         base.StopInteract();
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
-        this.gameObject.transform.localScale = originalScale;
+        this.gameObject.transform.localScale = this.gameObject.transform.localScale / scaleMultiplier;
         this.transform.parent = originalParent;
         if (isInZone)
         {

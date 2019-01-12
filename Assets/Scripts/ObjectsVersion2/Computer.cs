@@ -6,7 +6,7 @@ public class Computer : ObjectWithPause
 {
     protected void Start()
     {
-        interactCaptionText = "Inspecter";
+        interactCaptionText = "Utiliser";
     }
 
     public override void Interact()
@@ -23,8 +23,17 @@ public class Computer : ObjectWithPause
         GameManager.Gm.isInteractingWithComputer = false;
     }
 
+    public void ShowNewsAntoine()
+    {
+        UIManager.instance.ShowNewsAntoine();
+    }
+
+    public void ShowMailsAntoine()
+    {
+        UIManager.instance.ShowMailsAntoine();
+    }
+
     public override void ClickWhileInteracting()
     {
-        StopInteract();
     }
 }

@@ -6,9 +6,8 @@ public class Observable : ObjectWithPause
 {
     private Vector3 originalPosition;
     private Quaternion originalRotation;
-    private Vector3 originalScale;
     private float distance = 0.7f;
-    [SerializeField] Vector3 scale;
+    [SerializeField] float scaleMultiplier;
     private bool canRotate;
     float rotationSpeed = 10f;
 
@@ -27,12 +26,11 @@ public class Observable : ObjectWithPause
         {
             originalPosition = gameObject.transform.position;
             originalRotation = gameObject.transform.rotation;
-            originalScale = gameObject.transform.localScale;
             GameManager.Gm.isInteractingWithManipulableObject = true;
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
-            this.gameObject.transform.localScale = scale;
+            this.gameObject.transform.localScale = this.gameObject.transform.localScale* scaleMultiplier;
             if (GameManager.Gm.GetFixRotation())
             {
                 transform.LookAt(GameManager.Gm.GetCamera().transform);
@@ -47,7 +45,7 @@ public class Observable : ObjectWithPause
         GameManager.Gm.isInteractingWithManipulableObject = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;
-        this.gameObject.transform.localScale = originalScale;
+        this.gameObject.transform.localScale = this.gameObject.transform.localScale/scaleMultiplier;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
@@ -64,6 +62,10 @@ public class Observable : ObjectWithPause
             {
                 StopInteract();
             }
+        }
+        else
+        {
+            StopInteract();
         }
     }
 

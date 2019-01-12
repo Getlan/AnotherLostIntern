@@ -44,22 +44,6 @@ public class PlayerRayCasting : MonoBehaviour {
                         {
                             objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
                         }
-                        /*switch (objectHit.GetType().Name)
-                        {
-                            case "Observable":
-                                RaycastHit hit;
-                                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                                if (Physics.Raycast(ray, out hit, 10f))
-                                {
-                                    if (hit.transform == null || hit.transform.gameObject != objectHit)
-                                    {
-                                        objectHit.StopInteract();
-                                        objectHit = null;
-                                    }
-                                }
-                                break;
-                        }*/
                     }
                 }
             } 

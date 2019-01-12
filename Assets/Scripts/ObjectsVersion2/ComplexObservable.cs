@@ -27,5 +27,9 @@ public class ComplexObservable : Observable
                 StopInteract();
             }
         }
+        else
+        {
+            StopInteract();
+        }
     }
 }
