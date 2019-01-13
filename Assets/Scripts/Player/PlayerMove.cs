@@ -47,12 +47,12 @@ public class PlayerMove : MonoBehaviour
 
     public bool canMove
     {
-        get { return GameManager.Gm.canMove; }
+        get { return GameManager.Gm.CanMove; }
     }
 
     public bool canRotate
     {
-        get { return GameManager.Gm.canRotate; }
+        get { return GameManager.Gm.CanRotate; }
     }
 
     private void Start()

@@ -26,14 +26,14 @@ public class Observable : ObjectWithPause
         {
             originalPosition = gameObject.transform.position;
             originalRotation = gameObject.transform.rotation;
-            GameManager.Gm.isInteractingWithManipulableObject = true;
+            GameManager.Gm.IsInteractingWithManipulableObject = true;
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
             this.gameObject.transform.localScale = this.gameObject.transform.localScale* scaleMultiplier;
-            if (GameManager.Gm.GetFixRotation())
+            if (GameManager.Gm.FixRotation)
             {
-                transform.LookAt(GameManager.Gm.GetCamera().transform);
+                transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             }
             this.canRotate = true;
         }
@@ -42,7 +42,7 @@ public class Observable : ObjectWithPause
     public override void StopInteract()
     {
         base.StopInteract();
-        GameManager.Gm.isInteractingWithManipulableObject = false;
+        GameManager.Gm.IsInteractingWithManipulableObject = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;
         this.gameObject.transform.localScale = this.gameObject.transform.localScale/scaleMultiplier;

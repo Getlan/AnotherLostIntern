@@ -29,9 +29,9 @@ public class Grabable : NoStateObject
         this.gameObject.GetComponent<Collider>().isTrigger = true;
         this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
         this.gameObject.transform.localScale = this.gameObject.transform.localScale * scaleMultiplier;
-        this.transform.position = GameManager.Gm.GetHoldPosition().position;
-        this.transform.parent = GameManager.Gm.GetCamera().transform;
-        this.transform.LookAt(GameManager.Gm.GetCamera().transform);
+        this.transform.position = GameManager.Gm.HoldPosition.position;
+        this.transform.parent = GameManager.Gm.PlayerCamera.transform;
+        this.transform.LookAt(GameManager.Gm.PlayerCamera.transform);
     }
 
     public override void StopInteract()

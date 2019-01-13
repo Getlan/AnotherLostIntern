@@ -7,14 +7,23 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     protected GameObject interactCaption;
+    Dictionary<string, GameObject> computerDictionnary = new Dictionary<string, GameObject>();
     [SerializeField]
     private GameObject UIAntoineComputer;
+    [SerializeField]
+    private GameObject UINathalieComputer;
     [SerializeField]
     private GameObject mailsAntoineUI;
     [SerializeField]
     private GameObject newsAntoineUI;
 
     public static UIManager instance = null;
+
+    private void Start()
+    {
+        computerDictionnary.Add("AntoineG", UIAntoineComputer);
+        computerDictionnary.Add("Nathalie", UINathalieComputer);
+    }
 
     void Awake()
     {
@@ -43,14 +52,20 @@ public class UIManager : MonoBehaviour
         interactCaption.GetComponent<Text>().text = newText;
     }
 
-    public void ShowUIAntoine()
+    public void ShowUIComputer(string ownerName)
     {
-        UIAntoineComputer.SetActive(true);
+        computerDictionnary[ownerName].SetActive(true);
     }
 
-    public void HideUIAntoine()
+    public void HideUIComputer(string ownerName)
     {
-        UIAntoineComputer.SetActive(false);
+        computerDictionnary[ownerName].SetActive(false);
+    }
+
+    public void UnlockComputer(string ownerName)
+    {
+      computerDictionnary[ownerName].transform.Find("LoginPanel").gameObject.SetActive(false);
+      computerDictionnary[ownerName].transform.Find("DesktopPanel").gameObject.SetActive(true);
     }
 
     public void ShowNewsAntoine()

@@ -26,12 +26,14 @@ abstract public class Interactive : MonoBehaviour
 
     public virtual void Interact()
     {
+        GameManager.Gm.IsInteracting=true;
         isInteracting = true;
         UIManager.instance.HideInteractCaption();
     }
 
     public virtual void StopInteract()
-    {   
+    {
+        GameManager.Gm.IsInteracting=false;
         isInteracting = false;
     }
 

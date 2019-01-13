@@ -16,7 +16,7 @@ public class MouseLook
     [SerializeField] private bool lockCursor = true;
     private bool cursorIsLocked
     {
-        get { return GameManager.Gm.cursorIsLocked; }
+        get { return GameManager.Gm.CursorIsLocked; }
     }
 
     //Rotation values
@@ -51,18 +51,18 @@ public class MouseLook
     //Check if the cursor must be locked or not
     public void UpdateLockCursor()
     {
-        if (!GameManager.Gm.isInteractingWithComputer && !GameManager.Gm.isInteractingWithManipulableObject)
+        if (!GameManager.Gm.IsInteractingWithComputer && !GameManager.Gm.IsInteractingWithManipulableObject)
         {
             //If the player presses escape, unlock
             if (Input.GetKeyUp(KeyCode.Escape))
             {
-                GameManager.Gm.cursorIsLocked = false;
+                GameManager.Gm.CursorIsLocked = false;
             }
 
             //If the player clicks on the game, lock
             else if (Input.GetMouseButtonUp(0))
             {
-                GameManager.Gm.cursorIsLocked = true;
+                GameManager.Gm.CursorIsLocked = true;
             }
         }
 
