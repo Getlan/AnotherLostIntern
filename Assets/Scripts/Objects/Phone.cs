@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phone : Interactive
+public class Phone : NoStateObject
 {
     public void Start()
     {
-        interactCaptionText = "Réécouter";
+        interactCaptionText = "Ecouter le message";
     }
 
 
@@ -15,5 +15,9 @@ public class Phone : Interactive
         base.Interact();
         AudioManager.instance.Play("Phone");
         StopInteract();
+    }
+
+    public override void ClickWhileInteracting()
+    {
     }
 }
