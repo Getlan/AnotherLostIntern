@@ -6,12 +6,10 @@ using UnityEngine.UI;
 abstract public class NoStateObject : Interactive
 {
 
-    protected string interactCaptionText;
-
     public override void IsLooking()
     {
         base.IsLooking();
-        if (!isInteracting)
+        if (!IsInteracting)
         {
             UIManager.instance.ChangeTextInteractCaption(interactCaptionText);
         }

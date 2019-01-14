@@ -21,7 +21,7 @@ public class PlayerRayCasting : MonoBehaviour {
         }
         else
         {
-            if (Physics.Raycast(this.transform.position, this.transform.forward, out rayHit, distanceToSee) && rayHit.collider.gameObject.GetComponent<Interactive>()!=null)
+            if (GameManager.Gm.CanInteract && Physics.Raycast(this.transform.position, this.transform.forward, out rayHit, distanceToSee) && rayHit.collider.gameObject.GetComponent<Interactive>()!=null)
             {
                 GameObject rayHitObject = rayHit.collider.gameObject;
                 if (objectHit != null && objectHit != rayHitObject)

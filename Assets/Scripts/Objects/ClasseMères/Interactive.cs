@@ -5,13 +5,26 @@ using UnityEngine.UI;
 
 abstract public class Interactive : MonoBehaviour
 {
-
+    protected string interactCaptionText;
     protected bool isLooking = false;
-    protected bool isInteracting =false;
+    private bool isInteracting = false;
+
+    public bool IsInteracting
+    {
+        get
+        {
+            return isInteracting;
+        }
+
+        set
+        {
+            isInteracting = value;
+        }
+    }
 
     public virtual void IsLooking()
     {
-        if (!isInteracting)
+        if (!IsInteracting)
         {
             UIManager.instance.ShowInteractCaption();
         }
@@ -27,18 +40,13 @@ abstract public class Interactive : MonoBehaviour
     public virtual void Interact()
     {
         GameManager.Gm.IsInteracting=true;
-        isInteracting = true;
+        IsInteracting = true;
         UIManager.instance.HideInteractCaption();
     }
 
     public virtual void StopInteract()
     {
         GameManager.Gm.IsInteracting=false;
-        isInteracting = false;
-    }
-
-    public bool GetIsInteracting()
-    {
-        return isInteracting;
+        IsInteracting = false;
     }
 }

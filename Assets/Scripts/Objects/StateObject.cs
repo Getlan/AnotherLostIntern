@@ -28,7 +28,7 @@ public class StateObject : Interactive
     public override void IsLooking()
     {
         base.IsLooking();
-        if (!isInteracting)
+        if (!IsInteracting)
         {
             UIManager.instance.ChangeTextInteractCaption(textToDisplay);
         }
