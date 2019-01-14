@@ -38,6 +38,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /*
+    * Game
+    */
+
     public void ShowGameTitle()
     {
         transform.Find("GameTitle").gameObject.SetActive(true);
@@ -63,6 +67,9 @@ public class UIManager : MonoBehaviour
         interactCaption.GetComponent<Text>().text = newText;
     }
 
+    /*
+    * Computer
+    */
     public void ShowUIComputer(string ownerName)
     {
         computerDictionnary[ownerName].SetActive(true);
@@ -75,42 +82,85 @@ public class UIManager : MonoBehaviour
 
     public void UnlockComputer(string ownerName)
     {
-      computerDictionnary[ownerName].transform.Find("LoginPanel").gameObject.SetActive(false);
-      computerDictionnary[ownerName].transform.Find("DesktopPanel").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("LoginPanel").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel").gameObject.SetActive(true);
     }
 
-    public void ShowNews(string ownerName)
+    public void ShowNewsApp(string ownerName)
     {
         HideAllApps(ownerName);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/News").gameObject.SetActive(true);
     }
 
-    public void ShowMails(string ownerName)
+    public void ShowMailsApp(string ownerName)
     {
         HideAllApps(ownerName);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails").gameObject.SetActive(true);
     }
 
-    public void ShowInBoxMail(string ownerName)
+    private void HideAllApps(string ownerName)
     {
-        char childNumber = ownerName[ownerName.Length - 1];
-        int childNumberInt = (int)Char.GetNumericValue(childNumber);
-        ownerName = ownerName.Substring(0, ownerName.Length - 1);
-        HideAllInBoxMails(ownerName);
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail/InBox").transform.GetChild(childNumberInt).gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/News").gameObject.SetActive(false);
     }
 
-    public void HideAllInBoxMails(string ownerName)
+    /*
+     * Mails
+     */
+
+    public void ShowInBox(string ownerName)
     {
-        foreach (Transform child in computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail/InBox").transform)
+        HideAllMailsInList(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollInBox").gameObject.SetActive(true);
+    }
+
+    public void ShowSent(string ownerName)
+    {
+        HideAllMailsInList(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollSent").gameObject.SetActive(true);
+    }
+
+    public void ShowDraft(string ownerName)
+    {
+        HideAllMailsInList(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollDraft").gameObject.SetActive(true);
+    }
+
+    private void HideAllMailsInList(string ownerName)
+    {
+        foreach (Transform child in computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList").transform)
         {
             child.gameObject.SetActive(false);
         }
     }
 
-    public void HideAllApps(string ownerName)
+    public void ShowInBoxMail(string ownerName, int nbMail)
     {
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails").gameObject.SetActive(false);
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/News").gameObject.SetActive(false);
+        HideAllMailDetails(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail/InBox").transform.GetChild(nbMail).gameObject.SetActive(true);
+    }
+
+    public void ShowSentMail(string ownerName, int nbMail)
+    {
+        HideAllMailDetails(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail/Sent").transform.GetChild(nbMail).gameObject.SetActive(true);
+    }
+
+
+    public void ShowDraftMail(string ownerName, int nbMail)
+    {
+        HideAllMailDetails(ownerName);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail/Draft").transform.GetChild(nbMail).gameObject.SetActive(true);
+    }
+
+    private void HideAllMailDetails(string ownerName)
+    {
+        foreach (Transform child1 in computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailDetail").transform)
+        {
+            foreach (Transform child2 in child1.transform)
+            {
+                child2.gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -55,6 +55,47 @@ public class Computer : ObjectWithPause
         }
     }
 
+    public void ShowNewsApp()
+    {
+        UIManager.instance.ShowNewsApp(ownerName.ToString());
+    }
+
+    public void ShowMailsApp()
+    {
+        UIManager.instance.ShowMailsApp(ownerName.ToString());
+    }
+
+    public void ShowInBox()
+    {
+        UIManager.instance.ShowInBox(ownerName.ToString());
+    }
+
+    public void ShowSent()
+    {
+        UIManager.instance.ShowSent(ownerName.ToString());
+    }
+
+    public void ShowDraft()
+    {
+        UIManager.instance.ShowDraft(ownerName.ToString());
+    }
+
+    public void ShowInBoxMail(int nbMail)
+    {
+        UIManager.instance.ShowInBoxMail(ownerName.ToString(), nbMail);
+    }
+
+    public void ShowSentMail(int nbMail)
+    {
+        UIManager.instance.ShowSentMail(ownerName.ToString(), nbMail);
+    }
+
+
+    public void ShowDraftMail(int nbMail)
+    {
+        UIManager.instance.ShowDraftMail(ownerName.ToString(), nbMail);
+    }
+
     public override void ClickWhileInteracting()
     {
     }

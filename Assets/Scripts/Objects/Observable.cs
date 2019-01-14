@@ -76,8 +76,8 @@ public class Observable : ObjectWithPause
             float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
             float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
             // select the axis by which you want to rotate the GameObject
-            this.transform.Rotate(Vector3.down, XaxisRotation);
             this.transform.Rotate(Vector3.right, -YaxisRotation);
+            this.transform.Rotate(Vector3.down, XaxisRotation);     
         }
     }
 }
