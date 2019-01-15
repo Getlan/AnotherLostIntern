@@ -12,7 +12,7 @@ public class Observable : ObjectWithPause
     float rotationSpeed = 10f;
 
 
-    protected void Start()
+    protected virtual void Start()
     {
         this.canRotate = false;
         interactCaptionText = "Inspecter";
