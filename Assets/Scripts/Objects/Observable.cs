@@ -9,7 +9,7 @@ public class Observable : ObjectWithPause
     private float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
     private bool canRotate;
-    float rotationSpeed = 10f;
+    float rotationSpeed = 200f;
 
 
     protected virtual void Start()
@@ -73,11 +73,12 @@ public class Observable : ObjectWithPause
     {
         if (canRotate)
         {
-            float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
+            /*float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
             float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
-            // select the axis by which you want to rotate the GameObject
-            this.transform.Rotate(Vector3.right, -YaxisRotation);
-            this.transform.Rotate(Vector3.down, XaxisRotation);     
+            //this.transform.Rotate(Vector3.right, -YaxisRotation);
+            //this.transform.Rotate(Vector3.down, XaxisRotation);
+            transform.rotation *= Quaternion.Euler(-YaxisRotation,-XaxisRotation, 0.0f);*/
+            transform.Rotate((-Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime), (Input.GetAxis("Mouse X") * -rotationSpeed * Time.deltaTime), 0, Space.World);
         }
     }
 }
