@@ -7,6 +7,7 @@ public class Planetaire : ComplexObservable
 
     private Animator animator;
     private int currentStep = 1;
+    bool rotate = true;
 
     protected override void Start()
     {
@@ -16,11 +17,24 @@ public class Planetaire : ComplexObservable
 
     protected override void ActivateComplexZone()
     {
-        animator.Play("Step0"+currentStep.ToString());
-        currentStep++;
-        if (currentStep > 6)
+        if (rotate)
         {
-            currentStep = 1;
+            rotate = false;
+            animator.Play("Step0" + currentStep.ToString());
+            currentStep++;
+            if (currentStep > 6)
+            {
+                currentStep = 1;
+            }
+            StartCoroutine(WaitAnimationEnd());
         }
     }
+
+    IEnumerator WaitAnimationEnd()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        rotate = true;
+    }
+
+ 
 }
