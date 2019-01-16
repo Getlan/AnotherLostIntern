@@ -5,8 +5,11 @@ using UnityEngine;
 public class StepManager : MonoBehaviour
 {
     private int currentStep = 0;
+
     private bool step1MailChecked = false;
     private bool step1PasswordSeen = false;
+
+    public bool tutoSkip = false; 
 
     [SerializeField] bool skipIntro = false;
 
@@ -22,6 +25,7 @@ public class StepManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     // Start is called before the first frame update
@@ -45,6 +49,14 @@ public class StepManager : MonoBehaviour
 
     void Update()
     {
+
+        if(tutoSkip == true)
+        {
+            step1MailChecked = true;
+            step1PasswordSeen = true;
+            CheckStep1();
+        }
+
         if (currentStep == 0)
         {
             GameManager.Gm.CanMove = false;
@@ -98,4 +110,5 @@ public class StepManager : MonoBehaviour
     {
         GameManager.Gm.CanMove = true;
     }
+
 }
