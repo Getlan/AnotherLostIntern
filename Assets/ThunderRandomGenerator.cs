@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class ThunderRandomGenerator : MonoBehaviour
 {
-
     private Animator anim;
-
-    [SerializeField]
     private int random;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -27,7 +22,5 @@ public class ThunderRandomGenerator : MonoBehaviour
             anim.SetTrigger("isThunder");
 
         }
-
-
     }
 }
