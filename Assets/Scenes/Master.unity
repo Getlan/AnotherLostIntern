@@ -7149,6 +7149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554809500}
   - component: {fileID: 554809499}
+  - component: {fileID: 554809501}
   m_Layer: 0
   m_Name: Thunder
   m_TagString: Untagged
@@ -7191,6 +7192,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554809501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554809498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde53cfddd5d14559a2a88404766a46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random: 0
+  timer: 0
 --- !u!1001 &557467107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18872,6 +18887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393011512}
   - component: {fileID: 1393011511}
+  - component: {fileID: 1393011510}
   m_Layer: 0
   m_Name: Thunder Light
   m_TagString: Untagged
@@ -18879,6 +18895,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1393011510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393011509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde53cfddd5d14559a2a88404766a46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random: 0
+  timer: 0
 --- !u!108 &1393011511
 Light:
   m_ObjectHideFlags: 0
