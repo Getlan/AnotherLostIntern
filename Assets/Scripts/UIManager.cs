@@ -112,6 +112,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllMailsInList(ownerName);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollInBox").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/InBox/IconOff").gameObject.SetActive(false);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/InBox/IconOn").gameObject.SetActive(true);
     }
 
@@ -119,6 +120,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllMailsInList(ownerName);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollSent").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Sent/IconOff").gameObject.SetActive(false);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Sent/IconOn").gameObject.SetActive(true);
     }
 
@@ -126,6 +128,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllMailsInList(ownerName);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/MailList/ScrollDraft").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Draft/IconOff").gameObject.SetActive(false);
         computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Draft/IconOn").gameObject.SetActive(true);
     }
 
@@ -135,9 +138,12 @@ public class UIManager : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/InBox/IconOff").gameObject.SetActive(false);
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Sent/IconOff").gameObject.SetActive(false);
-        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Draft/IconOff").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/InBox/IconOn").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Sent/IconOn").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Draft/IconOn").gameObject.SetActive(false);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/InBox/IconOff").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Sent/IconOff").gameObject.SetActive(true);
+        computerDictionnary[ownerName].transform.Find("DesktopPanel/Mails/MailingBox/Select/Draft/IconOff").gameObject.SetActive(true);
     }
 
     public void ShowInBoxMail(string ownerName, int nbMail)
