@@ -18,12 +18,23 @@ public class ThunderRandomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        random = Random.Range(0, 100); 
-
-        if(random <= 99)
+        if(canTrigger)
         {
-            anim.SetTrigger("isThunder");
-
+            random = Random.Range(0, 100);
+            if(random <= 5)
+            {
+                anim.SetTrigger("isThunder");
+                canTrigger = false;
+            }
+        }
+        else
+        {
+            timer += Time.deltaTime;
+            if (timer > waitTime)
+            {
+                timer = 0;
+                canTrigger = true;
+            }
         }
     }
 }
