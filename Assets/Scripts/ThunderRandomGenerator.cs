@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ThunderRandomGenerator : MonoBehaviour
 {
-    private Animator anim;
+    public Animator thunderAnim;
+    public Animator windowAnim; 
     private int random;
-    private float waitTime=3f;
-    private float timer =0;
+    private float waitTime=10f;
+    private float timer= 0f;
     private bool canTrigger = true;
+
+    private float sfxTimer = 0f; 
+    public AudioSource thunderSfx; 
 
     void Start()
     {
-        anim = this.gameObject.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -23,8 +27,11 @@ public class ThunderRandomGenerator : MonoBehaviour
             random = Random.Range(0, 100);
             if(random <= 5)
             {
-                anim.SetTrigger("isThunder");
+                thunderAnim.SetTrigger("Thunder");
+                windowAnim.SetTrigger("Thunder");
                 canTrigger = false;
+                sfxTimer += Time.deltaTime; 
+                thunderSfx.Play();
             }
         }
         else
@@ -35,6 +42,12 @@ public class ThunderRandomGenerator : MonoBehaviour
                 timer = 0;
                 canTrigger = true;
             }
+        }
+
+        if (sfxTimer >= 2f)
+        {
+            thunderSfx.Play();
+            sfxTimer = 0f; 
         }
     }
 }
