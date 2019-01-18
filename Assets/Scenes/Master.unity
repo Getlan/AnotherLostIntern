@@ -11720,7 +11720,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba87ce4dc47d742118e4317e8042178c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11827,13 +11827,13 @@ AudioLowPassFilter:
   m_GameObject: {fileID: 880050924}
   m_Enabled: 1
   serializedVersion: 3
-  m_LowpassResonanceQ: 1
+  m_LowpassResonanceQ: 2
   lowpassLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.006818182
+      value: 0.011363637
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13226,6 +13226,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3389471903830385751, guid: 23f73a0b1665d49daac1ea9ede725ea0,
+        type: 3}
+      propertyPath: heartbeatSound
+      value: 
+      objectReference: {fileID: 978070555}
     - target: {fileID: 3389471904317590713, guid: 23f73a0b1665d49daac1ea9ede725ea0,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -13278,6 +13283,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23f73a0b1665d49daac1ea9ede725ea0, type: 3}
+--- !u!82 &978070555 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3389471904345124211, guid: 23f73a0b1665d49daac1ea9ede725ea0,
+    type: 3}
+  m_PrefabInstance: {fileID: 978070554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &978178554
 GameObject:
   m_ObjectHideFlags: 0
