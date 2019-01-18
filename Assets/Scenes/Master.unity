@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000017033939, g: 0.000000025772884, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017033906, g: 0.000000025772884, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8707,7 +8707,7 @@ Transform:
   - {fileID: 1458615326}
   - {fileID: 1450939321}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &677056239
 GameObject:
@@ -12074,25 +12074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a617bd4741f073e448f363b236fbfd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - clip: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-    name: LeftFoot
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 2058912908}
-  - clip: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-    name: RightFoot
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 2058912908}
-  - clip: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
-    name: Phone
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 202509660}
 --- !u!4 &891516639
 Transform:
   m_ObjectHideFlags: 0
@@ -13209,7 +13190,7 @@ PrefabInstance:
     - target: {fileID: 3389471903830385748, guid: 23f73a0b1665d49daac1ea9ede725ea0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3389471903830385748, guid: 23f73a0b1665d49daac1ea9ede725ea0,
         type: 3}
@@ -17401,7 +17382,7 @@ Transform:
   - {fileID: 1303888916}
   - {fileID: 880050926}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1301132713
 MonoBehaviour:
@@ -18991,7 +18972,7 @@ PrefabInstance:
     - target: {fileID: 44085472766561581, guid: 98a2cf1c246c50349ab68954632b6974,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 44085472766561581, guid: 98a2cf1c246c50349ab68954632b6974,
         type: 3}
@@ -20218,6 +20199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meuble
       objectReference: {fileID: 0}
+    - target: {fileID: 8208934230117688350, guid: b094d1539bfb62845a45a5815d5027ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Tiroir3
+      objectReference: {fileID: 0}
     - target: {fileID: 4618162030543189040, guid: b094d1539bfb62845a45a5815d5027ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20283,20 +20269,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tiroir1
       objectReference: {fileID: 0}
-    - target: {fileID: 5630513344285060469, guid: b094d1539bfb62845a45a5815d5027ac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8208934230117688350, guid: b094d1539bfb62845a45a5815d5027ac,
-        type: 3}
-      propertyPath: m_Name
-      value: Tiroir3
-      objectReference: {fileID: 0}
     - target: {fileID: 119219574255721498, guid: b094d1539bfb62845a45a5815d5027ac,
         type: 3}
       propertyPath: m_Name
       value: Tiroir2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630513344285060469, guid: b094d1539bfb62845a45a5815d5027ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b094d1539bfb62845a45a5815d5027ac, type: 3}
