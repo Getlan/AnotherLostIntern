@@ -14,7 +14,7 @@ public class PlayerRayCasting : MonoBehaviour {
 	void Update () {
         if (GameManager.Gm.IsInteracting)
         {
-            if (Input.GetMouseButtonDown(0) && objectHit.GetComponent<NoStateObject>() != null)
+            if (Input.GetButtonDown("MainAction") && objectHit.GetComponent<NoStateObject>() != null)
             {
                 objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
             }
@@ -30,7 +30,7 @@ public class PlayerRayCasting : MonoBehaviour {
                     }
                     objectHit = rayHitObject.GetComponent<Interactive>();
                     objectHit.IsLooking();
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetButtonDown("MainAction"))
                     {
                         objectHit.Interact();
                     }

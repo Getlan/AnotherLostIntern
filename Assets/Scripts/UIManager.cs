@@ -14,9 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject UINathalieComputer;
     [SerializeField]
-    private GameObject mailsAntoineUI;
-    [SerializeField]
-    private GameObject newsAntoineUI;
+    private ObjectTextUI textObjectUI;
 
     public static UIManager instance = null;
 
@@ -42,16 +40,6 @@ public class UIManager : MonoBehaviour
     * Game
     */
 
-    public void ShowGameTitle()
-    {
-        transform.Find("GameTitle").gameObject.SetActive(true);
-    }
-
-    public void HideGameTitle()
-    {
-        transform.Find("GameTitle").gameObject.SetActive(false);
-    }
-
     public void ShowInteractCaption()
     {
         interactCaption.SetActive(true);
@@ -65,6 +53,16 @@ public class UIManager : MonoBehaviour
     public void ChangeTextInteractCaption(string newText)
     {
         interactCaption.GetComponent<Text>().text = newText;
+    }
+
+    public void DisplayObjectText(string objectName)
+    {
+        textObjectUI.DisplayText(objectName);
+    }
+
+    public void HideObjectText()
+    {
+        textObjectUI.HideText();
     }
 
     /*

@@ -65,14 +65,12 @@ public class StepManager : MonoBehaviour
 
     private void Intro()
     {
-        AudioManager.instance.Play("Phone");
-        UIManager.instance.ShowGameTitle();
+         //TO DO
         Invoke("EndIntro", 10);
     }
 
     private void EndIntro()
     {
-        UIManager.instance.HideGameTitle();
         GameManager.Gm.CanRotate = true;
         GameManager.Gm.CanInteract = true;
 
