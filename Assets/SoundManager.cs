@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        drone_1.Play();
+
     }
 
     // Update is called once per frame
@@ -29,7 +29,6 @@ public class SoundManager : MonoBehaviour
         if(drone2 == true)
         {
             StartCoroutine(FadeIn(drone_2, 0.3f, 5f));
-          
         }
 
         if(heartbeat == true)
