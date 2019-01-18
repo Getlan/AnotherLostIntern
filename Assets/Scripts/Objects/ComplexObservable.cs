@@ -4,7 +4,7 @@ using UnityEngine;
 
 abstract public class ComplexObservable : Observable
 {
-    [SerializeField] private GameObject zoneToClick;
+    [SerializeField] protected GameObject zoneToClick;
 
     public override void ClickWhileInteracting()
     {

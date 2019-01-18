@@ -33,11 +33,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Play("Storm");
-    }
-
     // Update is called once per frame
     public void Play(string name)
     {

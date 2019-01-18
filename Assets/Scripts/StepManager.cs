@@ -38,7 +38,6 @@ public class StepManager : MonoBehaviour
         iTweenArgs.Add("time", 0f);
         iTweenArgs.Add("isLocal", true);
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
-        AudioManager.instance.Play("Thunder");
         if (!skipIntro)
         {
             Invoke("Intro", 2);

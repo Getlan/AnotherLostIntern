@@ -18,7 +18,6 @@ public class Observable : ObjectWithPause
         interactCaptionText = "Inspecter";
     }
 
-
     public override void Interact()
     {
         base.Interact();
@@ -73,12 +72,8 @@ public class Observable : ObjectWithPause
     {
         if (canRotate)
         {
-            /*float XaxisRotation = Input.GetAxis("Mouse X") * rotationSpeed;
-            float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
-            //this.transform.Rotate(Vector3.right, -YaxisRotation);
-            //this.transform.Rotate(Vector3.down, XaxisRotation);
-            transform.rotation *= Quaternion.Euler(-YaxisRotation,-XaxisRotation, 0.0f);*/
-            transform.Rotate((-Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime), (Input.GetAxis("Mouse X") * -rotationSpeed * Time.deltaTime), 0, Space.World);
+            transform.RotateAround(transform.position, GameManager.Gm.PlayerCamera.transform.right, 10 * Input.GetAxisRaw("Mouse Y"));
+            transform.RotateAround(transform.position, GameManager.Gm.PlayerCamera.transform.up, -10 * Input.GetAxisRaw("Mouse X"));
         }
     }
 }
