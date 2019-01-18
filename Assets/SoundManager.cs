@@ -8,12 +8,12 @@ public class SoundManager : MonoBehaviour
     public AudioSource drone_1;
     public AudioSource drone_2;
     public AudioSource drone_3;
-    public AudioSource drone_4;
+    public AudioSource heartbeatSound;
 
     [SerializeField]
     private bool drone2 = false;
     [SerializeField]
-    private bool drone4 = false;
+    private bool heartbeat = false;
     [SerializeField]
     private bool drone3 = false; 
 
@@ -21,9 +21,6 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         drone_1.Play();
-        drone_2.Play();
-        drone_3.Play();
-        drone_4.Play();
     }
 
     // Update is called once per frame
@@ -35,9 +32,9 @@ public class SoundManager : MonoBehaviour
           
         }
 
-        if(drone4 == true)
+        if(heartbeat == true)
         {
-            StartCoroutine(FadeIn(drone_4, 1f, 2f));
+            StartCoroutine(FadeIn(heartbeatSound, 1f, 2f));
     
         }
 

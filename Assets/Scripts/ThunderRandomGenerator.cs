@@ -7,7 +7,7 @@ public class ThunderRandomGenerator : MonoBehaviour
     public Animator thunderAnim;
     public Animator windowAnim; 
     private int random;
-    private float waitTime=10f;
+    private float waitTime=30f;
     private float timer= 0f;
     private bool canTrigger = true;
 
@@ -30,8 +30,9 @@ public class ThunderRandomGenerator : MonoBehaviour
                 thunderAnim.SetTrigger("Thunder");
                 windowAnim.SetTrigger("Thunder");
                 canTrigger = false;
-                sfxTimer += Time.deltaTime; 
+                //sfxTimer += Time.deltaTime; 
                 thunderSfx.Play();
+
             }
         }
         else
@@ -44,10 +45,10 @@ public class ThunderRandomGenerator : MonoBehaviour
             }
         }
 
-        if (sfxTimer >= 2f)
+        /*if (sfxTimer >= 2f)
         {
             thunderSfx.Play();
             sfxTimer = 0f; 
-        }
+        }*/
     }
 }
