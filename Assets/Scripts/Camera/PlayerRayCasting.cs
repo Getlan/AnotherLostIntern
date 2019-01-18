@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerRayCasting : MonoBehaviour {
 
     [SerializeField] private float distanceToSee;
-    //[SerializeField] private float thickness;
+    private int distanceLookingDown = 6;
+    private int distanceLookingUp = 3;
 
     private RaycastHit rayHit;
     private Interactive objectHit =null;
@@ -21,6 +22,14 @@ public class PlayerRayCasting : MonoBehaviour {
         }
         else
         {
+            if (GameManager.Gm.PlayerCamera.transform.localRotation.x > 0.5)
+            {
+                distanceToSee = distanceLookingDown;
+            }
+            else
+            {
+                distanceToSee = distanceLookingUp;
+            }
             if (GameManager.Gm.CanInteract && Physics.Raycast(this.transform.position, this.transform.forward, out rayHit, distanceToSee) && rayHit.collider.gameObject.GetComponent<Interactive>()!=null)
             {
                 GameObject rayHitObject = rayHit.collider.gameObject;
