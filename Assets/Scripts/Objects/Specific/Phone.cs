@@ -9,7 +9,7 @@ public class Phone : Observable
     protected override void Start()
     {
         base.Start();
-        interactCaptionText = "Décrocher";
+        interactCaptionText = "Decrocher";
     }
 
 
