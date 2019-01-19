@@ -5,11 +5,12 @@ using UnityEngine;
 public class TextObject : MonoBehaviour
 {
     bool isDisplayed = false;
+    [SerializeField] NoStateObject interactiveObject;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("ReadText") && this.GetComponent<NoStateObject>().IsInteracting)
+        if (Input.GetButtonDown("ReadText") && interactiveObject.IsInteracting)
         {
             if (!isDisplayed)
             {
@@ -22,7 +23,7 @@ public class TextObject : MonoBehaviour
                 isDisplayed = false;
             }
         }
-        else if(isDisplayed && (Input.GetButtonDown("MainAction") || !this.GetComponent<NoStateObject>().IsInteracting)){
+        else if(isDisplayed && (Input.GetButtonDown("MainAction") || !interactiveObject.IsInteracting)){
             UIManager.instance.HideObjectText();
             isDisplayed = false;
         }
