@@ -6,14 +6,14 @@ public class Phone : NoStateObject
 {
     public void Start()
     {
-        interactCaptionText = "Ecouter le message";
+        interactCaptionText = "Décrocher";
     }
 
 
     public override void Interact()
     {
         base.Interact();
-        AudioManager.instance.Play("Phone");
+        this.GetComponent<AudioSource>().Play();
         StopInteract();
     }
 
