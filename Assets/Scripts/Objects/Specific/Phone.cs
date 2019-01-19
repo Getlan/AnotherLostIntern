@@ -5,6 +5,7 @@ using UnityEngine;
 public class Phone : Observable
 {
     private bool activated = false;
+    public AudioSource phoneRingtone; 
 
     protected override void Start()
     {
@@ -18,6 +19,7 @@ public class Phone : Observable
         base.Interact();
         if (!activated)
         {
+            phoneRingtone.Stop();
             this.GetComponent<AudioSource>().Play();
             activated = true;
             StartCoroutine(WaitForSoundToFinish());
