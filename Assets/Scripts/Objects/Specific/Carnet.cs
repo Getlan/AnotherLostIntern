@@ -84,13 +84,14 @@ public class Carnet : ComplexObservable
     {
         if (!open)
         {
+            animator.SetTrigger("open");
             open = true;
             page1 = true;
             zoneToOpen.SetActive(false);
             zoneToClick.SetActive(true);
             otherZoneToClick.SetActive(true);
             objectCollider.enabled = false;
-            animator.SetTrigger("open");
+
             if (droneSound)
             {
                 //AudioManager.instance.Play("Drone2");
