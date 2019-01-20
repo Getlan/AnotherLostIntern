@@ -15,6 +15,7 @@ ModelImporter:
     100018: Touche_7
     100020: Touche_8
     100022: Touche_9
+    100024: Digicode_2
     400000: //RootNode
     400002: Digicode
     400004: Touche_0
@@ -27,6 +28,7 @@ ModelImporter:
     400018: Touche_7
     400020: Touche_8
     400022: Touche_9
+    400024: Digicode_2
     2100000: No Name
     2300000: Digicode
     2300002: Touche_0
@@ -39,6 +41,7 @@ ModelImporter:
     2300016: Touche_7
     2300018: Touche_8
     2300020: Touche_9
+    2300022: Digicode_2
     3300000: Digicode
     3300002: Touche_0
     3300004: Touche_1
@@ -50,6 +53,7 @@ ModelImporter:
     3300016: Touche_7
     3300018: Touche_8
     3300020: Touche_9
+    3300022: Digicode_2
     4300000: Digicode
     4300002: Touche_0
     4300004: Touche_1
@@ -61,6 +65,7 @@ ModelImporter:
     4300016: Touche_7
     4300018: Touche_8
     4300020: Touche_9
+    4300022: Digicode_2
   externalObjects: {}
   materials:
     importMaterials: 0
