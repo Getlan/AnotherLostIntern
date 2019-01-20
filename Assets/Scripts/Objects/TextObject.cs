@@ -26,6 +26,7 @@ public class TextObject : MonoBehaviour
     {
         if (Input.GetButtonDown("ReadText") && this.GetComponent<NoStateObject>().IsInteracting && canDisplay)
         {
+
             if (!isDisplayed)
             {
                 UIManager.instance.DisplayObjectText(textName);
