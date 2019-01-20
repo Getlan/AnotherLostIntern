@@ -26,7 +26,7 @@ public class CarteScout : ComplexObservable
     {
         if(!activated && seen && !this.IsInteracting)
         {
-            StepManager.instance.DoStep1ScoutCardSeen();
+            StepManager.instance.DoTutoScoutCardSeen();
             activated = true;
         }
     }

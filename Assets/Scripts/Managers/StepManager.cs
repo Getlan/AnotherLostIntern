@@ -6,10 +6,12 @@ public class StepManager : MonoBehaviour
 {
     private int currentStep = 0;
 
-    private bool step1MailChecked = false;
-    private bool step1ScoutCardSeen = false;
+    private bool tutoMailChecked = false;
+    private bool tutoScoutCardSeen = false;
 
-    public bool tutoSkip = false; 
+    public bool tutoSkip = false;
+
+    [SerializeField] BossDoor bossDoor;
 
     public static StepManager instance = null;
 
@@ -23,7 +25,6 @@ public class StepManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     // Start is called before the first frame update
@@ -36,13 +37,15 @@ public class StepManager : MonoBehaviour
         iTweenArgs.Add("time", 0f);
         iTweenArgs.Add("isLocal", true);
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
+
         AudioManager.instance.Play("Drone_1");
+
         if (tutoSkip)
         {
-            step1MailChecked = true;
-            step1ScoutCardSeen = true;
-            CheckStep1();
-        }   
+            tutoMailChecked = true;
+            tutoScoutCardSeen = true;
+            CheckTuto();
+        }
     }
 
     void Update()
@@ -53,21 +56,21 @@ public class StepManager : MonoBehaviour
         }
     }
 
-    public void DoStep1MailChecked()
+    public void DoTutoMailChecked()
     {
-        step1MailChecked = true;
-        CheckStep1(); 
+        tutoMailChecked = true;
+        CheckTuto(); 
     }
 
-    public void DoStep1ScoutCardSeen()
+    public void DoTutoScoutCardSeen()
     {
-        step1ScoutCardSeen = true;
-        CheckStep1();
+        tutoScoutCardSeen = true;
+        CheckTuto();
     }
 
-    private void CheckStep1()
+    private void CheckTuto()
     {
-        if (currentStep == 0 && step1MailChecked && step1ScoutCardSeen)
+        if (currentStep == 0 && tutoMailChecked && tutoScoutCardSeen)
         {
             AudioManager.instance.Play("PhoneRingtone");
             currentStep++;
@@ -80,5 +83,18 @@ public class StepManager : MonoBehaviour
             iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
             GameManager.Gm.CanMove = true;
         }
+    }
+
+    public void EnterBossDesk()
+    {
+        AudioManager.instance.Play("Heartbeat");
+        AudioManager.instance.FadeIn("Heartbeat", 0.5f, 5);
+        bossDoor.SlamDoor();
+    }
+
+    public void EnterSecretRoom()
+    {
+        AudioManager.instance.Play("Drone_3");
+        AudioManager.instance.FadeIn("Drone_3", 0.02f, 15);
     }
 }

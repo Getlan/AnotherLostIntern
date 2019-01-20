@@ -11,7 +11,7 @@ public class ClueToClick : MonoBehaviour
     {
         if(!isActivated && clicked && !this.transform.parent.GetComponent<Interactive>().IsInteracting)
         {
-            StepManager.instance.DoStep1MailChecked();
+            StepManager.instance.DoTutoMailChecked();
             isActivated = true;
 
         }
