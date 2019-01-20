@@ -29,6 +29,10 @@ public class Computer : ObjectWithPause
 
     private void Update()
     {
+        if(this.IsInteracting && Input.GetButton("MainAction"))
+        {
+            AudioManager.instance.Play("Mouse_click");
+        }
         
     }
 
