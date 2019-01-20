@@ -9,6 +9,11 @@ public class StateObject : Interactive
     [SerializeField]private Vector3 state1, state2;
     [SerializeField] private float animationTime;
     [SerializeField] private MovementType movementType;
+    [SerializeField] private AudioClip state1Clip;
+    [SerializeField] private AudioClip state2Clip;
+    private AudioSource audioSource;
+    bool hasAudioSource = false;
+
     private bool isState2 = false;
     private string textToDisplay;
 
@@ -23,6 +28,11 @@ public class StateObject : Interactive
         iTweenArgs.Add("rotation", state2);
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("isLocal", true);
+        if (GetComponent<AudioSource>() != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            hasAudioSource = true;
+        }
     }
 
     public override void IsLooking()
@@ -40,12 +50,20 @@ public class StateObject : Interactive
 
         if (!isState2)
         {
+            if (hasAudioSource)
+            {
+                audioSource.PlayOneShot(state2Clip);
+            }
             iTweenArgs["position"] = state2;
             iTweenArgs["rotation"] = state2;
             textToDisplay = interactCaptionTextState2;
         }
         else
         {
+            if (hasAudioSource)
+            {
+                audioSource.PlayOneShot(state1Clip);
+            }
             iTweenArgs["position"] = state1;
             iTweenArgs["rotation"] = state1;
             textToDisplay = interactCaptionTextState1;
