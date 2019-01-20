@@ -29,7 +29,7 @@ public class Observable : ObjectWithPause
             this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
-            this.gameObject.transform.localScale = this.gameObject.transform.localScale* scaleMultiplier;
+            this.gameObject.transform.localScale = this.gameObject.transform.localScale * scaleMultiplier;
             if (GameManager.Gm.FixRotation)
             {
                 transform.LookAt(GameManager.Gm.PlayerCamera.transform);

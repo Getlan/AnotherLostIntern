@@ -12,7 +12,6 @@ public class Carnet : ComplexObservable
     [SerializeField] private GameObject zoneToOpen;
     [SerializeField] private GameObject otherZoneToClick;
     private Collider objectCollider;
-    private bool droneSound = false;
 
 
     protected override void Start()
@@ -91,12 +90,6 @@ public class Carnet : ComplexObservable
             zoneToClick.SetActive(true);
             otherZoneToClick.SetActive(true);
             objectCollider.enabled = false;
-
-            if (droneSound)
-            {
-                //AudioManager.instance.Play("Drone2");
-                droneSound = true;
-            }
         }
     }
 
