@@ -9,7 +9,6 @@ public class Observable : ObjectWithPause
     private float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
     private bool canRotate;
-    float rotationSpeed = 200f;
 
 
     protected virtual void Start()

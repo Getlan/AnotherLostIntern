@@ -193,11 +193,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (leftFoot)
         {
-            AudioManager.instance.Play("LeftFoot");
+            //AudioManager.instance.Play("LeftFoot");
         }
         else
         {
-            AudioManager.instance.Play("RightFoot");
+            //AudioManager.instance.Play("RightFoot");
         }
         leftFoot = !leftFoot;
     }

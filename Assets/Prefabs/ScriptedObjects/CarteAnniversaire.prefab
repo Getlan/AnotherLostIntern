@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440eb42cc8dffe24cb8b103dec71c99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 1
+  scaleMultiplier: 0.8
   zoneToClick: {fileID: 125762869}
   zoneToOpen: {fileID: 179937389}
 --- !u!1001 &5857058818001959349
@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 7034826187065781045, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_Name
-      value: CarteSanniversaire
+      value: CarteAnniversaire
       objectReference: {fileID: 0}
     - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
@@ -236,22 +236,17 @@ PrefabInstance:
     - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.5
+      value: 4.5000043
       objectReference: {fileID: 0}
     - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.5
+      value: 4.500003
       objectReference: {fileID: 0}
     - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034826187058354429, guid: eca1468cfb617b34db172f2531e44910,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: 4.500002
       objectReference: {fileID: 0}
     - target: {fileID: 7034826187062601277, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}

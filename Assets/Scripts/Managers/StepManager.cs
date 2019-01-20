@@ -7,11 +7,9 @@ public class StepManager : MonoBehaviour
     private int currentStep = 0;
 
     private bool step1MailChecked = false;
-    private bool step1PasswordSeen = false;
+    private bool step1ScoutCardSeen = false;
 
     public bool tutoSkip = false; 
-
-    [SerializeField] bool skipIntro = false;
 
     public static StepManager instance = null;
 
@@ -38,59 +36,40 @@ public class StepManager : MonoBehaviour
         iTweenArgs.Add("time", 0f);
         iTweenArgs.Add("isLocal", true);
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
-        if (!skipIntro)
+        AudioManager.instance.Play("Drone_1");
+        if (tutoSkip)
         {
-            Invoke("Intro", 2);
-            GameManager.Gm.CanRotate = false;
-            GameManager.Gm.CanInteract = false;
-        }
+            step1MailChecked = true;
+            step1ScoutCardSeen = true;
+            CheckStep1();
+        }   
     }
 
     void Update()
     {
-
-        if(tutoSkip == true)
-        {
-            step1MailChecked = true;
-            step1PasswordSeen = true;
-            CheckStep1();
-        }
-
         if (currentStep == 0)
         {
             GameManager.Gm.CanMove = false;
         }
     }
 
-    private void Intro()
-    {
-         //TO DO
-        Invoke("EndIntro", 10);
-    }
-
-    private void EndIntro()
-    {
-        GameManager.Gm.CanRotate = true;
-        GameManager.Gm.CanInteract = true;
-
-    }
-
     public void DoStep1MailChecked()
     {
         step1MailChecked = true;
-        CheckStep1();
+        CheckStep1(); 
     }
 
-    public void DoStep1PasswordSeen()
+    public void DoStep1ScoutCardSeen()
     {
-        step1PasswordSeen = true;
+        step1ScoutCardSeen = true;
         CheckStep1();
     }
 
     private void CheckStep1()
     {
-        if (currentStep == 0 && step1MailChecked && step1PasswordSeen)
+        if (currentStep == 0 && step1MailChecked && step1ScoutCardSeen)
         {
+            AudioManager.instance.Play("PhoneRingtone");
             currentStep++;
             Hashtable iTweenArgs;
             iTweenArgs = iTween.Hash();
@@ -102,10 +81,4 @@ public class StepManager : MonoBehaviour
             GameManager.Gm.CanMove = true;
         }
     }
-
-    private void Step1()
-    {
-        GameManager.Gm.CanMove = true;
-    }
-
 }

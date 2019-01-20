@@ -23,7 +23,7 @@ public class ClueToSee : MonoBehaviour
         }
         else if (!isActivated && seen && !this.transform.parent.GetComponent<Interactive>().IsInteracting)
         {
-            StepManager.instance.DoStep1PasswordSeen();
+            StepManager.instance.DoStep1ScoutCardSeen();
             isActivated = true;
         }
     }

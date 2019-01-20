@@ -8,6 +8,8 @@ public class Planetaire : ComplexObservable
     private Animator animator;
     private int currentStep = 1;
     bool rotate = true;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip cogClip;
 
     private AudioSource cogSfx; 
 
@@ -15,7 +17,7 @@ public class Planetaire : ComplexObservable
     {
         base.Start();
         animator = this.GetComponent<Animator>();
-        cogSfx = this.gameObject.GetComponent<AudioSource>();
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     protected override void ActivateComplexZone()
@@ -24,7 +26,7 @@ public class Planetaire : ComplexObservable
         {
             rotate = false;
             animator.Play("Step0" + currentStep.ToString());
-            cogSfx.Play();
+            audioSource.PlayOneShot(cogClip);
             currentStep++;
             if (currentStep > 6)
             {

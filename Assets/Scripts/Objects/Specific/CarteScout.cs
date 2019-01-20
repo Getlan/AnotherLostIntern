@@ -6,7 +6,9 @@ public class CarteScout : ComplexObservable
 {
 
     private Animator animator;
-    bool open = false;
+    private bool open = false;
+    private bool activated = false;
+    private bool seen = false;
     [SerializeField] private GameObject zoneToOpen;
     private Collider objectCollider;
 
@@ -15,6 +17,15 @@ public class CarteScout : ComplexObservable
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
+    }
+
+    private void Update()
+    {
+        if(!activated && seen && !this.IsInteracting)
+        {
+            StepManager.instance.DoStep1ScoutCardSeen();
+            activated = true;
+        }
     }
 
     public override void ClickWhileInteracting()
@@ -57,6 +68,10 @@ public class CarteScout : ComplexObservable
             zoneToOpen.SetActive(false);
             zoneToClick.SetActive(true);
             objectCollider.enabled = false;
+            if (!seen)
+            {
+                seen = true;
+            }
         }
     }
 

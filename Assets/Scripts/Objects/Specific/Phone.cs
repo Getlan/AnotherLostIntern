@@ -5,12 +5,14 @@ using UnityEngine;
 public class Phone : Observable
 {
     private bool activated = false;
-    public AudioSource phoneRingtone; 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip MumDialogClip;
 
     protected override void Start()
     {
         base.Start();
         interactCaptionText = "Decrocher";
+        audioSource=this.GetComponent<AudioSource>();
     }
 
 
@@ -19,15 +21,18 @@ public class Phone : Observable
         base.Interact();
         if (!activated)
         {
-            phoneRingtone.Stop();
-            this.GetComponent<AudioSource>().Play();
-            activated = true;
+            AudioManager.instance.Stop("PhoneRingtone");
+            audioSource.PlayOneShot(MumDialogClip);
             StartCoroutine(WaitForSoundToFinish());
         }
     }
 
     public override void ClickWhileInteracting()
     {
+        if (activated)
+        {
+            base.ClickWhileInteracting();
+        }
     }
 
     IEnumerator WaitForSoundToFinish()
@@ -38,5 +43,6 @@ public class Phone : Observable
             yield return null;
         }
         StopInteract();
+        activated = true;
     }
 }

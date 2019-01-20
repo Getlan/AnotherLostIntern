@@ -13,6 +13,7 @@ public class ClueToClick : MonoBehaviour
         {
             StepManager.instance.DoStep1MailChecked();
             isActivated = true;
+
         }
     }
 

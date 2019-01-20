@@ -12,6 +12,8 @@ public class Carnet : ComplexObservable
     [SerializeField] private GameObject zoneToOpen;
     [SerializeField] private GameObject otherZoneToClick;
     private Collider objectCollider;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip pageTurnClip;
 
 
     protected override void Start()
@@ -19,6 +21,7 @@ public class Carnet : ComplexObservable
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     public override void ClickWhileInteracting()
@@ -58,6 +61,7 @@ public class Carnet : ComplexObservable
             animator.SetTrigger("changePage");
             page1 = false;
             page2 = true;
+            audioSource.PlayOneShot(pageTurnClip);
         }
         else if (page2)
         {
@@ -76,6 +80,7 @@ public class Carnet : ComplexObservable
             animator.SetTrigger("backPage");
             page1 = true;
             page2 = false;
+            audioSource.PlayOneShot(pageTurnClip);
         }
     }
 

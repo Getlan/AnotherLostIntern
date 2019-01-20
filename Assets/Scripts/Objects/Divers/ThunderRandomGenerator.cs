@@ -30,7 +30,6 @@ public class ThunderRandomGenerator : MonoBehaviour
                 thunderAnim.SetTrigger("Thunder");
                 windowAnim.SetTrigger("Thunder");
                 canTrigger = false;
-                //sfxTimer += Time.deltaTime; 
                 thunderSfx.Play();
 
             }
@@ -44,11 +43,5 @@ public class ThunderRandomGenerator : MonoBehaviour
                 canTrigger = true;
             }
         }
-
-        /*if (sfxTimer >= 2f)
-        {
-            thunderSfx.Play();
-            sfxTimer = 0f; 
-        }*/
     }
 }
