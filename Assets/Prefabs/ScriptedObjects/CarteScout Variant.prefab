@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 7034826187065781045, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_Name
-      value: CarteScout
+      value: CarteScout Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
@@ -233,10 +233,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 7034826187058354429, guid: eca1468cfb617b34db172f2531e44910,
+    - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034826187065816853, guid: eca1468cfb617b34db172f2531e44910,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca1468cfb617b34db172f2531e44910, type: 3}
