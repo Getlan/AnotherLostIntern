@@ -25,6 +25,7 @@ public class BibleProphetie : ComplexObservable
         {
             animator.SetTrigger("open");
             open = true;
+            AudioManager.instance.Play("Drone_2");
         }
 
     }
@@ -46,7 +47,6 @@ public class BibleProphetie : ComplexObservable
     private void FinishStopInteract()
     {
         base.StopInteract();
-
     }
 
     IEnumerator WaitAnimationEnd()
