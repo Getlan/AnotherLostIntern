@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class TextFromObject
 {
-    public enum ObjectName { Carnet, CarteScout};
+    public enum ObjectName { Carnet};
     [SerializeField] public ObjectName objectName;
     public string title;
     [TextArea(3, 10)]
