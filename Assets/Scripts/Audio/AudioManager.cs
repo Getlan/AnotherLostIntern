@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void FadeIn(string name, int maxVolume, float FadeTime)
+    public void FadeIn(string name, float maxVolume, float FadeTime)
     {
         foreach (AudioSource s in sources)
         {
@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private IEnumerator StartFadeIn(AudioSource source, int maxVolume, float FadeTime)
+    private IEnumerator StartFadeIn(AudioSource source, float maxVolume, float FadeTime)
     {
         float startVolume = source.volume;
 
