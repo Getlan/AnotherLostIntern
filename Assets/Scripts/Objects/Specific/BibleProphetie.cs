@@ -57,7 +57,7 @@ public class BibleProphetie : ComplexObservable
 
     IEnumerator WaitAnimationEnd()
     {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length +0.6f);
         FinishStopInteract();
     }
 }
