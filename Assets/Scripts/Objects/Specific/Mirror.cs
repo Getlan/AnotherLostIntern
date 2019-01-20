@@ -50,7 +50,7 @@ public class Mirror : ComplexObservable
 
     IEnumerator WaitAnimationEnd()
     {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length +0.4f);
         FinishStopInteract();
     }
 }

@@ -132,7 +132,8 @@ public class Carnet : ComplexObservable
             open = false;
             page1 = false;
             page2 = false;
-            Invoke("FinishStopInteract", 1);
+            textObject.ChangeTextToRead("");
+            StartCoroutine(WaitAnimationEnd());
         }
         else
         {
@@ -144,5 +145,11 @@ public class Carnet : ComplexObservable
     {
         zoneToClick.SetActive(false);
         base.StopInteract();
+    }
+
+    IEnumerator WaitAnimationEnd()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.4f);
+        FinishStopInteract();
     }
 }
