@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextObject : MonoBehaviour
 {
     bool isDisplayed = false;
+    string textName = "";
 
     // Update is called once per frame
     void Update()
@@ -13,7 +14,7 @@ public class TextObject : MonoBehaviour
         {
             if (!isDisplayed)
             {
-                UIManager.instance.DisplayObjectText(this.gameObject.name);
+                UIManager.instance.DisplayObjectText(textName);
                 isDisplayed = true;
             }
             else
@@ -26,5 +27,10 @@ public class TextObject : MonoBehaviour
             UIManager.instance.HideObjectText();
             isDisplayed = false;
         }
+    }
+
+    public void ChangeTextToRead(string textName)
+    {
+        this.textName = textName;
     }
 }

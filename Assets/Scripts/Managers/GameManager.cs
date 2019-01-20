@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     private bool canMove;
     private bool canRotate;
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Rigidbody player;
     [SerializeField] private GameObject cursorIcon;
     [SerializeField] private Transform holdPosition;
+
+    [SerializeField] private PostProcessProfile normalProfile;
+    [SerializeField] private PostProcessProfile readingProfile;
 
     public static GameManager Gm = null;
 
@@ -33,7 +38,8 @@ public class GameManager : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         canInteract = true;
         canRotate = true;
         canMove = true;
@@ -43,11 +49,16 @@ public class GameManager : MonoBehaviour {
         IsInteracting = false;
         cursorIcon.SetActive(true);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void PutReadingProfile()
+    {
+        playerCamera.GetComponent<PostProcessVolume>().profile = readingProfile;
+    }
+
+    public void PutNormalProfile()
+    {
+        playerCamera.GetComponent<PostProcessVolume>().profile = normalProfile;
+    }
 
     public Vector3 GetCameraPosition()
     {
@@ -61,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
     public bool IsPlayerStandingStill()
     {
-        return Player.velocity.magnitude<1.5f;
+        return Player.velocity.magnitude < 1.5f;
     }
 
     public void ActivateCursorIcon()

@@ -35,6 +35,7 @@ public class Observable : ObjectWithPause
             }
             this.canRotate = true;
         }
+        GameManager.Gm.PutReadingProfile();
     }
 
     public override void StopInteract()
@@ -47,6 +48,7 @@ public class Observable : ObjectWithPause
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
+        GameManager.Gm.PutNormalProfile();
     }
 
     public override void ClickWhileInteracting()
