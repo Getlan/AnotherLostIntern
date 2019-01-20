@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,18 +13,15 @@ public class Carnet : ComplexObservable
     [SerializeField] private GameObject zoneToOpen;
     [SerializeField] private GameObject otherZoneToClick;
     private Collider objectCollider;
-    //private AudioSource audioSource;
-    //[SerializeField] AudioClip pageTurnClip;
-    private AudioSource pageSound; 
-
+    private AudioSource audioSource;
+    [SerializeField] AudioClip pageTurnClip;
 
     protected override void Start()
     {
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
-        //audioSource = this.GetComponent<AudioSource>();
-        pageSound = GetComponent<AudioSource>();
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     public override void ClickWhileInteracting()
@@ -63,8 +61,8 @@ public class Carnet : ComplexObservable
             animator.SetTrigger("changePage");
             page1 = false;
             page2 = true;
-            //audioSource.PlayOneShot(pageTurnClip);
-            pageSound.Play();
+            audioSource.PlayOneShot(pageTurnClip);
+            this.GetComponent<TextObject>().ChangeTextToRead("Carnet2");
         }
         else if (page2)
         {
@@ -83,8 +81,8 @@ public class Carnet : ComplexObservable
             animator.SetTrigger("backPage");
             page1 = true;
             page2 = false;
-            //audioSource.PlayOneShot(pageTurnClip);
-            pageSound.Play();
+            audioSource.PlayOneShot(pageTurnClip);
+            this.GetComponent<TextObject>().ChangeTextToRead("Carnet1");
         }
     }
 
@@ -106,10 +104,12 @@ public class Carnet : ComplexObservable
     {
         base.Interact();
         zoneToOpen.SetActive(true);
+        this.GetComponent<TextObject>().ChangeTextToRead("");
     }
 
     private void CloseBook()
     {
+        this.GetComponent<TextObject>().ChangeTextToRead("");
         animator.SetTrigger("close");
         objectCollider.enabled = true;
         otherZoneToClick.SetActive(false);
