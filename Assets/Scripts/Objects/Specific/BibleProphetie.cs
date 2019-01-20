@@ -26,6 +26,7 @@ public class BibleProphetie : ComplexObservable
             animator.SetTrigger("open");
             open = true;
             AudioManager.instance.Play("Drone_2");
+            AudioManager.instance.FadeIn("Drone_2", 1, 10);
         }
 
     }
