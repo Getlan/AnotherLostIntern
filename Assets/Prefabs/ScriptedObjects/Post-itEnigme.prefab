@@ -29,7 +29,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07691971, y: 0.075899884, z: 0.0073081492}
   m_Center: {x: -0.00003926455, y: 0.00005403161, z: 0.0015863428}
---- !u!114 &2067741592
+--- !u!114 &1488984604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,10 +38,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4535744750463729774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
+  m_Script: {fileID: 11500000, guid: b22909b9a0ada4847ab51777f052af5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 2
+--- !u!114 &1488984609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535744750463729774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06920c915d29ab147bd42cb353dc85a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2985838400085253513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,7 +64,12 @@ PrefabInstance:
     - target: {fileID: 1701771205938683367, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
       propertyPath: m_Name
-      value: Post-it
+      value: Post-itEnigme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701771205938683367, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
@@ -72,22 +89,22 @@ PrefabInstance:
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6588025
+      value: 0.6588011
       objectReference: {fileID: 0}
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.752316
+      value: 0.7523172
       objectReference: {fileID: 0}
     - target: {fileID: 1701771205938315719, guid: 6831a1b364cc9cc48be1c7daabc6ebed,
         type: 3}

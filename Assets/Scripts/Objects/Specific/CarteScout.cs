@@ -11,12 +11,14 @@ public class CarteScout : ComplexObservable
     private bool seen = false;
     [SerializeField] private GameObject zoneToOpen;
     private Collider objectCollider;
+    private TextObject textObject;
 
     protected override void Start()
     {
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
+        textObject = this.GetComponent<TextObject>();
     }
 
     private void Update()
@@ -72,6 +74,7 @@ public class CarteScout : ComplexObservable
             {
                 seen = true;
             }
+            textObject.ChangeTextToRead("CarteScout2");
         }
     }
 
@@ -79,6 +82,7 @@ public class CarteScout : ComplexObservable
     {
         base.Interact();
         zoneToOpen.SetActive(true);
+        textObject.ChangeTextToRead("CarteScout1");
     }
 
     private void CloseBook()
@@ -88,6 +92,7 @@ public class CarteScout : ComplexObservable
         zoneToOpen.SetActive(true);
         zoneToClick.SetActive(false);
         open = false;
+        textObject.ChangeTextToRead("CarteScout1");
     }
 
     public override void StopInteract()
@@ -98,6 +103,7 @@ public class CarteScout : ComplexObservable
             objectCollider.enabled = true;
             open = false;
             Invoke("FinishStopInteract", 1);
+            textObject.ChangeTextToRead("");
         }
         else
         {
