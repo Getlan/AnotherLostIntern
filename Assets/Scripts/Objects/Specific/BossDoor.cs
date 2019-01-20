@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossDoor : StateObject
 {
-    bool locked = true;
+    [SerializeField]bool locked = true;
 
     public override void Interact()
     {
@@ -23,7 +23,6 @@ public class BossDoor : StateObject
     public void SlamDoor()
     {
         this.Interact();
-        //[AUDIO]Play slam door sound
         locked = true;
     }
 }
