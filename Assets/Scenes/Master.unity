@@ -5464,36 +5464,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2578648097108342687, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2578648097108342687, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2578648097108342687, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131001999826230336, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 5131001999826230351, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: scaleMultiplier
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137842651440240228, guid: bd5702b684d9e14478e04fdd18adba75,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5702b684d9e14478e04fdd18adba75, type: 3}
 --- !u!1 &290897462
@@ -20897,26 +20867,23 @@ MonoBehaviour:
     fontSize: 45
   - objectName: 4
     title: Passeport Scouts - M. Antoine Moreau
-    text: 
+    text: "Loi Scoute\n\n1) Le scout met son honneur \xE0 m\xE9riter confiance\n2)
+      Le scout est loyal \xE0 son pays, \xE0 ses parents, \xE0 ses chefs et \xE0 ses
+      subordonn\xE9s\n3) Le scout est fait pour servir et sauver son prochain\n4)
+      Le scout est l'ami de tous et le fr\xE8re de tout autre scout\n5) Le scout est
+      courtois et chevaleresque\n6) Le scout voit dans la nature l'oeuvre de Dieu
+      : il aime les plantes et les animaux\n7) Le scout ob\xE9it sans r\xE9plique
+      et ne fait rien \xE0 moiti\xE9\n8) Le scout est ma\xEEtre de soi. Il sourit
+      et chante dans les difficult\xE9s\n9) Le scout est \xE9conome et prend soin
+      du bien d'autrui\n10) Le scout est pur dans ses paroles, ses pens\xE9es et ses
+      actes"
     fontSize: 50
   - objectName: 5
     title: 
     text: "Nom : Moreau\nPr\xE9nom : Antoine\nN\xE9 le : 12 novembre 1986\n\nEntr\xE9e
       \xE0 la Meute : 1992\nEntr\xE9e \xE0 la Troupe : 1996\nPromesse : 1997\n2\xE8me
       Classe : 1999\n1\xE8re classe : 2002\nRaider Scout :"
-    fontSize: 50
-  - objectName: 6
-    title: Loi Scoute
-    text: "1) Le scout met son honneur \xE0 m\xE9riter confiance\n2) Le scout est
-      loyal \xE0 son pays, \xE0 ses parents, \xE0 ses chefs et \xE0 ses subordonn\xE9s\n3)
-      Le scout est fait pour servir et sauver son prochain\n4) Le scout est l'ami
-      de tous et le fr\xE8re de tout autre scout\n5) Le scout est courtois et chevaleresque\n6)
-      Le scout voit dans la nature l'oeuvre de Dieu : il aime les plantes et les animaux\n7)
-      Le scout ob\xE9it sans r\xE9plique et ne fait rien \xE0 moiti\xE9\n8) Le scout
-      est ma\xEEtre de soi. Il sourit et chante dans les difficult\xE9s\n9) Le scout
-      est \xE9conome et prend soin du bien d'autrui\n10) Le scout est pur dans ses
-      paroles, ses pens\xE9es et ses actes"
-    fontSize: 50
+    fontSize: 40
   - objectName: 10
     title: Chapuis Crayons - Depuis 1945
     text: "Herv\xE9 Chapuis\r - Directeur\r\nColette Lamare - Assistance direction\nNathalie
@@ -20943,6 +20910,19 @@ MonoBehaviour:
     text: "Nombre de vertus\nJour de conjonction de Neptune et Jupiter\nSomme de la
       date de notre cr\xE9ation\n\n\n______    ______    ______    ______    ______ "
     fontSize: 50
+  - objectName: 2
+    title: 
+    text: "S\u2019uniront les plan\xE8tes, alors il sera l\xE0\r\nL\u2019\xE9toile,
+      le berger, l\u2019union des sept vertus\r\nLa r\xE9ponse \xE0 nos maux, signe
+      tant attendu\r\nL\u2019inestimable enfant, la cl\xE9 de l\u2019au-del\xE0 \r\n\r\nSi\xE8cle
+      mille sept-cent, patients depuis longtemps \r\nGrande providence, l\u2019ann\xE9e
+      soixante seize \r\nSi longue l\u2019attente, depuis notre gen\xE8se \r\nS\u2019uniront
+      les plan\xE8tes, alors il sera temps\r\n\r\nTerrible destin\xE9e, que ne devons-nous
+      faire\r\nUn jour d\u2019alignement, commettre l\u2019indicible\r\nPour que nous
+      accepte, le triangle invisible \r\n\r\nD\u2019une lame pointue, infliger le
+      calvaire\r\nDe notre saint martyr, offert le sang vers\xE9, \r\nLa porte s\u2019ouvrira,
+      pour nous la traverser. \r\n"
+    fontSize: 32
   - objectName: 2
     title: 
     text: "S\u2019uniront les plan\xE8tes, alors il sera l\xE0\r\nL\u2019\xE9toile,
@@ -39315,24 +39295,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8491c7b225045aa45a45606aca0d6bec, type: 3}
---- !u!1 &2107339850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1882544730, guid: 541fa505b22d9954599be81cb7c342a1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1893199740850743745}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2107339856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107339850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06920c915d29ab147bd42cb353dc85a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2107965947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40608,10 +40570,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BibleProphetie
       objectReference: {fileID: 0}
-    - target: {fileID: 1882544730, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
     - target: {fileID: 1882544739, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.153
@@ -40655,42 +40613,6 @@ PrefabInstance:
     - target: {fileID: 1882544739, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 160.574
-      objectReference: {fileID: 0}
-    - target: {fileID: 81345884, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 148758351, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882544734, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890365408, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521701920, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943134878, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 434453666, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1110821925, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115622727, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541fa505b22d9954599be81cb7c342a1, type: 3}

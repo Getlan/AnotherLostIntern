@@ -10,6 +10,7 @@ public class CarteScout : ComplexObservable
     private bool activated = false;
     private bool seen = false;
     [SerializeField] private GameObject zoneToOpen;
+    [SerializeField] private GameObject BackCollider;
     private Collider objectCollider;
     private TextObject textObject;
 
