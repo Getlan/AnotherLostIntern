@@ -20749,7 +20749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1094855379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20790,22 +20790,23 @@ MonoBehaviour:
   - objectName: 0
     title: 
     text: "06/11\r\n\r\n9:19 - Antoine arrive au boulot\r\n11:37 - Fait une pause
-      toilette\r\n13:24 - Prend un caf\xE9\r\n16:11 - Pause toilette\r\n18:13 - fin
-      de journ\xE9e pour Antoine\r\n\r\n07/11\r\n\r\n9:15 - Antoine arrive au travail\r\n11:12
-      - Pause toilette\r\n13:43 - Antoine fait une pause caf\xE9 avec Nathalie, plus
-      souriante que d\u2019habitude en revenant\r\n16:23 - Pause toilette\r\n17:51
-      - D\xE9part du boulot\r\n"
-    fontSize: 38
+      toilette\r\n13:24 - Antoine prend un caf\xE9\r\n16:11 - Pause toilette\r\n18:13
+      - fin de journ\xE9e pour Antoine\r\n\r\n07/11\r\n\r\n9:15 - Antoine arrive au
+      travail\r\n11:12 - Pause toilette\r\n13:43 - Antoine fait une pause caf\xE9
+      avec Nathalie, plus souriante que d\u2019habitude en revenant\r\n16:23 - Pause
+      toilette\r\n17:51 - D\xE9part du boulot\r\n"
+    fontSize: 37
   - objectName: 1
     title: 
     text: "08/11\r\n\r\n9:02 - Arriv\xE9e au boulot\r\n11:43 - Pause toilette\r\n13:19
-      - Prend un caf\xE9 avec Nathalie \r\n16:12 - A fait rire tout le monde avec
-      une blague \r\n16:14 - Pause toilette\r\n17:38 - D\xE9part du boulot\r\n\r\n09/11\r\n\r\n9:04
+      - Antoine prend un caf\xE9 avec Nathalie \r\n16:12 - A fait rire tout le monde
+      avec une blague \r\n16:14 - Pause toilette\r\n17:38 - D\xE9part du boulot\r\n\r\n09/11\r\n\r\n9:04
       - Arriv\xE9e au boulot\r\n11:50 - Sortie r\xE9union avec tout le monde, a calm\xE9
       une dispute entre Gilles et Thomas - a couru aux toilettes \r\nD\xE9jeuner -
-      Toute la boite en ville, Antoine a eu du mal \xE0 choisir un restaurant\r\n13:37
-      - Pause caf\xE9, a demand\xE9 qui en voulait un, Nathalie et Thomas l\u2019ont
-      rejoint\r\n16:15 - Pause toilette\r\n17:33 - D\xE9part du boulot\r\n"
+      Toute la boite en ville, Antoine a pris du temps \xE0 choisir un menu. Il n\u2019a
+      pas pris de dessert ni d\u2019alcool\r\n13:37 - Pause caf\xE9, a demand\xE9
+      qui en voulait un, Nathalie et Thomas l\u2019ont rejoint\r\n16:15 - Pause toilette\r\n17:33
+      - D\xE9part du boulot\r\n\n16:15 - Pause toilette\r\n17:33 - D\xE9part du boulot\r\n"
     fontSize: 33
   - objectName: 0
     title: 
@@ -33956,11 +33957,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarteAnniversaire
       objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717056, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
     - target: {fileID: 3524289718743142048, guid: 0ba907bf948c4d04fa032684a1506522,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34015,43 +34011,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 150.774
-      objectReference: {fileID: 0}
-    - target: {fileID: 1087441783, guid: 0ba907bf948c4d04fa032684a1506522, type: 3}
-      propertyPath: scaleMultiplier
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717058, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717070, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 125762869, guid: 0ba907bf948c4d04fa032684a1506522, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 179937389, guid: 0ba907bf948c4d04fa032684a1506522, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717064, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717066, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 3524289718742717068, guid: 0ba907bf948c4d04fa032684a1506522,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba907bf948c4d04fa032684a1506522, type: 3}
@@ -34354,6 +34313,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 41.326
       objectReference: {fileID: 0}
+    - target: {fileID: 7459068424327482480, guid: 2295207d331dec944a22a178dc3e0e55,
+        type: 3}
+      propertyPath: pageTurnClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8fdf67ca6ede4ddcb45384fb582d349, type: 3}
     - target: {fileID: 7459068424240495159, guid: 2295207d331dec944a22a178dc3e0e55,
         type: 3}
       propertyPath: m_StaticEditorFlags

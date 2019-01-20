@@ -15,6 +15,7 @@ public class Carnet : ComplexObservable
     private Collider objectCollider;
     private AudioSource audioSource;
     [SerializeField] AudioClip pageTurnClip;
+    private TextObject textObject;
 
     protected override void Start()
     {
@@ -22,6 +23,7 @@ public class Carnet : ComplexObservable
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
         audioSource = this.GetComponent<AudioSource>();
+        textObject = this.GetComponent<TextObject>();
     }
 
     public override void ClickWhileInteracting()
@@ -62,7 +64,7 @@ public class Carnet : ComplexObservable
             page1 = false;
             page2 = true;
             audioSource.PlayOneShot(pageTurnClip);
-            this.GetComponent<TextObject>().ChangeTextToRead("Carnet2");
+            textObject.ChangeTextToRead("Carnet2");
         }
         else if (page2)
         {
@@ -82,7 +84,7 @@ public class Carnet : ComplexObservable
             page1 = true;
             page2 = false;
             audioSource.PlayOneShot(pageTurnClip);
-            this.GetComponent<TextObject>().ChangeTextToRead("Carnet1");
+            textObject.ChangeTextToRead("Carnet1");
         }
     }
 
@@ -97,6 +99,7 @@ public class Carnet : ComplexObservable
             zoneToClick.SetActive(true);
             otherZoneToClick.SetActive(true);
             objectCollider.enabled = false;
+            textObject.ChangeTextToRead("Carnet1");
         }
     }
 
@@ -104,12 +107,12 @@ public class Carnet : ComplexObservable
     {
         base.Interact();
         zoneToOpen.SetActive(true);
-        this.GetComponent<TextObject>().ChangeTextToRead("");
+        textObject.ChangeTextToRead("");
     }
 
     private void CloseBook()
     {
-        this.GetComponent<TextObject>().ChangeTextToRead("");
+        textObject.ChangeTextToRead("");
         animator.SetTrigger("close");
         objectCollider.enabled = true;
         otherZoneToClick.SetActive(false);

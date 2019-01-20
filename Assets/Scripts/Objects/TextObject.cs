@@ -5,12 +5,26 @@ using UnityEngine;
 public class TextObject : MonoBehaviour
 {
     bool isDisplayed = false;
+    private bool canDisplay = false;
     string textName = "";
+
+    public bool CanDisplay
+    {
+        get
+        {
+            return canDisplay;
+        }
+
+        set
+        {
+            canDisplay = value;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("ReadText") && this.GetComponent<NoStateObject>().IsInteracting)
+        if (Input.GetButtonDown("ReadText") && this.GetComponent<NoStateObject>().IsInteracting && canDisplay)
         {
             if (!isDisplayed)
             {
@@ -31,6 +45,13 @@ public class TextObject : MonoBehaviour
 
     public void ChangeTextToRead(string textName)
     {
+        if (textName != "")
+        {
+            canDisplay = true;
+        }
+        else {
+            canDisplay = false;
+        }
         this.textName = textName;
     }
 }

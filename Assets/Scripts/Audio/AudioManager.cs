@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
             if (s.name == name)
             {
                 s.Play();
+                break;
             }
         }
     }
@@ -46,6 +47,7 @@ public class AudioManager : MonoBehaviour
             if (s.name == name)
             {
                 StartCoroutine(StartFadeIn(s, maxVolume, FadeTime));
+                break;
             }
         }
     }
@@ -60,9 +62,6 @@ public class AudioManager : MonoBehaviour
 
             yield return null;
         }
-
-        //source.Stop();
-        //source.volume = startVolume;
     }
 
     // Update is called once per frame

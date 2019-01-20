@@ -18,6 +18,7 @@ public class ObjectTextUI : MonoBehaviour
             {
                 titleHolder.text = obj.title;
                 textHolder.text = obj.text;
+                textHolder.fontSize = obj.fontSize;
                 break;
             }
         }
