@@ -8,6 +8,9 @@ public class Computer : ObjectWithPause
     private enum OwnerName { AntoineG, Nathalie };
     [SerializeField] private string password;
     [SerializeField] private bool unlocked;
+    private float clickTimer = 0;
+    private float maxTime = 0.2f;
+
 
     public bool Unlocked
     {
@@ -29,10 +32,12 @@ public class Computer : ObjectWithPause
 
     private void Update()
     {
-        if(this.IsInteracting && Input.GetButton("MainAction"))
+        if(clickTimer > maxTime &&  this.IsInteracting && Input.GetButton("MainAction"))
         {
             AudioManager.instance.Play("Mouse_click");
+            clickTimer = 0;
         }
+        clickTimer += Time.deltaTime;
         
     }
 
