@@ -101,4 +101,13 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public bool CheckEndGame()
+    {
+        if(sources[0].volume <= 0 && sources[1].volume <= 0 && sources[2].volume <= 0 && sources[3].volume <= 0)
+        {
+            return true; 
+        }
+        return false; 
+    }
 }
