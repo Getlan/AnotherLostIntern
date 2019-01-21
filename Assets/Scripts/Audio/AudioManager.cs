@@ -64,6 +64,32 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void FadeOut(string name, float FadeTime)
+    {
+        foreach (AudioSource s in sources)
+        {
+            if (s.name == name)
+            {
+                StartCoroutine(StartFadeOut(s, FadeTime));
+            }
+        }
+    }
+
+    private IEnumerator StartFadeOut(AudioSource source, float FadeTime)
+    {
+        float startVolume = source.volume;
+
+        while (source.volume > 0)
+        {
+            source.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        //source.Stop();
+        //source.volume = startVolume;
+    }
+
     // Update is called once per frame
     public void Stop(string name)
     {

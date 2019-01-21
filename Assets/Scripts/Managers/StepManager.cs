@@ -101,6 +101,6 @@ public class StepManager : MonoBehaviour
     public void EnterSecretRoom()
     {
         AudioManager.instance.Play("Drone_3");
-        AudioManager.instance.FadeIn("Drone_3", 0.02f, 15);
+        AudioManager.instance.FadeIn("Drone_3", 0.1f, 15);
     }
 }
