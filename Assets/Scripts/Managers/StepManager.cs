@@ -22,6 +22,19 @@ public class StepManager : MonoBehaviour
 
     public static StepManager instance = null;
 
+    public int CurrentStep
+    {
+        get
+        {
+            return currentStep;
+        }
+
+        set
+        {
+            currentStep = value;
+        }
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -46,6 +59,7 @@ public class StepManager : MonoBehaviour
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
 
         AudioManager.instance.Play("Drone_1");
+        AudioManager.instance.Play("Theme_début");
 
         if (tutoSkip)
         {
@@ -57,7 +71,7 @@ public class StepManager : MonoBehaviour
 
     void Update()
     {
-        if (currentStep == 0)
+        if (currentStep == 0 || currentStep == 1)
         {
             GameManager.Gm.CanMove = false;
         }
@@ -77,7 +91,7 @@ public class StepManager : MonoBehaviour
 
     private void CheckTuto()
     {
-        if (currentStep == 0 && tutoMailChecked && tutoScoutCardSeen)
+        if (currentStep == 1 && tutoMailChecked && tutoScoutCardSeen)
         {
             AudioManager.instance.Play("PhoneRingtone");
             currentStep++;
@@ -164,7 +178,9 @@ public class StepManager : MonoBehaviour
         endManagerUI.SetActive(true);
         textAnim.SetTrigger("End");
 
+        yield return new WaitForSeconds(4f);
 
+        AudioManager.instance.Play("Radio");
     }
 
     public void End()
@@ -174,5 +190,11 @@ public class StepManager : MonoBehaviour
             StartCoroutine(EndGame());
             endActivated = true;
         }
+    }
+
+    public void StartGame()
+    {
+        currentStep += 1;
+        AudioManager.instance.FadeOut("Theme_début", 10f);
     }
 }
