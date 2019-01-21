@@ -125,7 +125,7 @@ public class StepManager : MonoBehaviour
     public void EnterSecretRoom()
     {
         AudioManager.instance.Play("Drone_3");
-        AudioManager.instance.FadeIn("Drone_3", 0.2f, 15);
+        AudioManager.instance.FadeIn("Drone_3", 0.2f, 30);
     }
 
     public void Drawer1Open()
@@ -183,7 +183,19 @@ public class StepManager : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
+        while (AudioManager.instance.sources[7].isPlaying)
+        {
+            yield return null;
+        }
+
         AudioManager.instance.Play("Radio");
+
+        while (AudioManager.instance.sources[9].isPlaying)
+        {
+            yield return null; 
+        }
+
+        AudioManager.instance.Play("Theme_fin");
     }
 
     public void End()
