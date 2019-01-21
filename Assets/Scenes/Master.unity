@@ -18974,7 +18974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1830601597
 Transform:
   m_ObjectHideFlags: 0
@@ -23396,6 +23396,11 @@ PrefabInstance:
       propertyPath: MumDialogClips.Array.data[7]
       value: 
       objectReference: {fileID: 8300000, guid: 0a5ad2fd5aa1f403db43f9a9ef79715d, type: 3}
+    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
+        type: 3}
+      propertyPath: subtitles_canvas
+      value: 
+      objectReference: {fileID: 1830601596}
     - target: {fileID: 5433217993227536982, guid: 3557144d9f8ae7f4b861df736a391f7e,
         type: 3}
       propertyPath: m_IsActive
