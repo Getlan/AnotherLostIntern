@@ -11,5 +11,15 @@ public class PasswordHandler : MonoBehaviour
     public void HandlePassword()
     {
         computer.CheckPassword(passwordField.text);
+
+        Debug.Log(StepManager.instance.CurrentStep);
+
+        if(StepManager.instance.CurrentStep == 0 && computer.CheckPassword(passwordField.text))
+        {
+            StepManager.instance.StartGame();
+
+            Debug.Log("start");
+
+        }
     }
 }

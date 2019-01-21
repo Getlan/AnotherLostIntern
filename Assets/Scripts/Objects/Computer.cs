@@ -55,13 +55,17 @@ public class Computer : ObjectWithPause
         GameManager.Gm.IsInteractingWithComputer = false;
     }
 
-    public void CheckPassword(string passwordToTest)
+    public bool CheckPassword(string passwordToTest)
     {
         if (passwordToTest == password)
         {
             Unlocked = true;
             UIManager.instance.UnlockComputer(ownerName.ToString());
+
+            return true; 
         }
+
+        return false; 
     }
 
     public void ShowNewsApp()
