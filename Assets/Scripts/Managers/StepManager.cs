@@ -96,14 +96,14 @@ public class StepManager : MonoBehaviour
     public void EnterBossDesk()
     {
         AudioManager.instance.Play("Heartbeat");
-        AudioManager.instance.FadeIn("Heartbeat", 0.5f, 5);
+        AudioManager.instance.FadeIn("Heartbeat", 0.6f, 5);
         bossDoor.SlamDoor();
     }
 
     public void EnterSecretRoom()
     {
         AudioManager.instance.Play("Drone_3");
-        AudioManager.instance.FadeIn("Drone_3", 0.1f, 15);
+        AudioManager.instance.FadeIn("Drone_3", 0.2f, 15);
     }
 
     public void Drawer1Open()
