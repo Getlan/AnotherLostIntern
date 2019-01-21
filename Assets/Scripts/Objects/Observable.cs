@@ -10,12 +10,6 @@ public class Observable : ObjectWithPause
     [SerializeField] float scaleMultiplier;
     private bool canRotate;
 
-    protected void Update()
-    {
-
-    }
-
-
     protected virtual void Start()
     {
         this.canRotate = false;
