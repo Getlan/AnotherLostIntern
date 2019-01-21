@@ -31,7 +31,7 @@ public class Carnet : ComplexObservable
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 10f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             if (hit.transform != null && hit.transform.gameObject == zoneToClick)
             {
@@ -92,10 +92,10 @@ public class Carnet : ComplexObservable
     {
         if (!open)
         {
+            transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
             page1 = true;
-            zoneToOpen.SetActive(false);
             zoneToClick.SetActive(true);
             otherZoneToClick.SetActive(true);
             objectCollider.enabled = false;
@@ -106,7 +106,6 @@ public class Carnet : ComplexObservable
     public override void Interact()
     {
         base.Interact();
-        zoneToOpen.SetActive(true);
         textObject.ChangeTextToRead("");
     }
 
@@ -116,7 +115,6 @@ public class Carnet : ComplexObservable
         animator.SetTrigger("close");
         objectCollider.enabled = true;
         otherZoneToClick.SetActive(false);
-        zoneToOpen.SetActive(true);
         zoneToClick.SetActive(false);
         open = false;
         page1 = false;

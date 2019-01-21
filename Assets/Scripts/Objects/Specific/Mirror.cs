@@ -22,6 +22,7 @@ public class Mirror : ComplexObservable
         }
         else
         {
+            transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
         }

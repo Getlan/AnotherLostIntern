@@ -56,7 +56,7 @@ public class Observable : ObjectWithPause
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 10f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             if (hit.transform == null || hit.transform.gameObject != this.gameObject && hit.transform.gameObject.GetComponent<ClueToSee>()==null)
             {

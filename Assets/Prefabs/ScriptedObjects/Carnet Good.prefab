@@ -232,7 +232,6 @@ Transform:
   m_Children:
   - {fileID: 2863937163316547735}
   - {fileID: 7459068424240495176}
-  - {fileID: 7459068423594673778}
   m_Father: {fileID: 4209496054535574806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -468,67 +467,6 @@ Transform:
   m_Father: {fileID: 4209496054535574806}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7459068423594673779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7459068423594673778}
-  - component: {fileID: 7459068423594673781}
-  - component: {fileID: 7459068423594673780}
-  m_Layer: 12
-  m_Name: ZoneToOpen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
-  m_IsActive: 1
---- !u!4 &7459068423594673778
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7459068423594673779}
-  m_LocalRotation: {x: -3.9252314e-17, y: 0.7071068, z: -0.7071068, w: 6.090122e-17}
-  m_LocalPosition: {x: 0, y: 0.0024157264, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7459068424097872024}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7459068423594673781
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7459068423594673779}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &7459068423594673780
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7459068423594673779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.057011012, y: 0.21638225, z: 0.038853604}
-  m_Center: {x: 0.13611431, y: -0.0019300357, z: -0.0033053502}
 --- !u!1 &7459068424240495159
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.8
   zoneToClick: {fileID: 7459068424240495159}
-  zoneToOpen: {fileID: 7459068423594673779}
+  zoneToOpen: {fileID: 0}
   otherZoneToClick: {fileID: 7459068424574159135}
   pageTurnClip: {fileID: 8300000, guid: e8fdf67ca6ede4ddcb45384fb582d349, type: 3}
 --- !u!114 &7459068424327482487

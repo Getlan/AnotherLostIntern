@@ -6,7 +6,7 @@ public class PlayerRayCasting : MonoBehaviour {
 
     [SerializeField] private float distanceToSee;
     private int distanceLookingDown = 6;
-    private float distanceLookingUp = 4.5f;
+    private float distanceLookingUp = 5.5f;
 
     private float maxClickTime = 0.1f;
     private float startClickTime = 0;

@@ -6,6 +6,7 @@ public class BibleProphetie : ComplexObservable
 {
     private Animator animator;
     bool open = false;
+    bool activated = false;
     private Collider objectCollider;
     private TextObject textObject;
 
@@ -14,35 +15,66 @@ public class BibleProphetie : ComplexObservable
         base.Start();
         animator = this.GetComponent<Animator>();
         textObject = this.GetComponent<TextObject>();
+        objectCollider = this.GetComponent<Collider>();
+    }
+
+    public override void ClickWhileInteracting()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 2f))
+        {
+            if (hit.transform != null && hit.transform.gameObject == gameObject)
+            {
+                ActivateComplexZone();
+            }
+            else if (hit.transform != null && hit.transform.gameObject == zoneToClick)
+            {
+                CloseBook();
+            }
+            else if (hit.transform == null || hit.transform.gameObject != this.gameObject)
+            {
+                StopInteract();
+            }
+        }
+        else
+        {
+            StopInteract();
+        }
     }
 
     protected override void ActivateComplexZone()
     {
-        if (open)
+        transform.LookAt(GameManager.Gm.PlayerCamera.transform);
+        animator.SetTrigger("open");
+        open = true;
+        zoneToClick.SetActive(true);
+        objectCollider.enabled = false;
+        if (!activated)
         {
-            animator.SetTrigger("close");
-            open = false;
-            textObject.ChangeTextToRead("");
-        }
-        else
-        {
-            animator.SetTrigger("open");
-            open = true;
+            activated = true;
             AudioManager.instance.Play("Drone_2");
             AudioManager.instance.FadeIn("Drone_2", 1, 10);
-            textObject.ChangeTextToRead("Bible");
         }
+        textObject.ChangeTextToRead("Bible");
+    }
 
+    private void CloseBook()
+    {
+        animator.SetTrigger("close");
+        objectCollider.enabled = true;
+        zoneToClick.SetActive(false);
+        open = false;
+        textObject.ChangeTextToRead("");
     }
 
     public override void StopInteract()
     {
         if (open)
         {
-            animator.SetTrigger("close");
-            open = false;
+            CloseBook();
             StartCoroutine(WaitAnimationEnd());
-            textObject.ChangeTextToRead("");
         }
         else
         {
