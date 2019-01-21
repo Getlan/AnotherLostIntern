@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.7
-  zoneToClick: {fileID: 0}
+  zoneToClick: {fileID: 2578648097108700095}
 --- !u!1 &9137842651440240228
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9137842651440240228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.004218658, z: 0}
+  m_LocalPosition: {x: -0.0006, y: 0.807, z: 0.0009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2578648097108342687}
@@ -455,8 +455,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 512
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_BoxSize: {x: 8.138755, y: 5.683552, z: 11.760517}
+  m_BoxOffset: {x: 2.161427, y: -0.04259789, z: 0.88025856}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100

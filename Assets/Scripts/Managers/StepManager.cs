@@ -12,7 +12,8 @@ public class StepManager : MonoBehaviour
 
     [SerializeField] private Computer computerAntoine;
 
-    public bool tutoSkip = false;
+    [SerializeField] private bool tutoSkip = false;
+    [SerializeField] private bool menuSkip = false;
 
     public Animator textAnim;
     public GameObject endManagerUI; 
@@ -61,9 +62,15 @@ public class StepManager : MonoBehaviour
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
 
         AudioManager.instance.Play("Drone_1");
-        AudioManager.instance.Play("Theme_début");
-        computerAntoine.Interact();
-
+        if (menuSkip)
+        {
+            currentStep++;
+        }
+        else
+        {
+            AudioManager.instance.Play("Theme_début");
+            computerAntoine.Interact();
+        }
         if (tutoSkip)
         {
             tutoMailChecked = true;
@@ -175,8 +182,6 @@ public class StepManager : MonoBehaviour
         {
             yield return null;
         }
-
-        Debug.Log("check end game true ");
         AudioManager.instance.Play("Boom");
         endManagerUI.SetActive(true);
         textAnim.SetTrigger("End");
@@ -209,7 +214,7 @@ public class StepManager : MonoBehaviour
 
     public void StartGame()
     {
-        currentStep += 1;
+        currentStep ++;
         AudioManager.instance.FadeOut("Theme_début", 10f);
     }
 }

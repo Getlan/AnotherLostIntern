@@ -8,7 +8,7 @@ public class PlayerRayCasting : MonoBehaviour {
     private int distanceLookingDown = 6;
     private float distanceLookingUp = 5.5f;
 
-    private float maxClickTime = 0.1f;
+    private float maxClickTime = 0.15f;
     private float startClickTime = 0;
 
     private RaycastHit rayHit;
@@ -26,6 +26,7 @@ public class PlayerRayCasting : MonoBehaviour {
             {
                 if (Time.time - startClickTime < maxClickTime)
                 {
+                    Debug.Log("click");
                     objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
                 }
             }

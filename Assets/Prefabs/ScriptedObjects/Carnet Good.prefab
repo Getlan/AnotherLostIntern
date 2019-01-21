@@ -631,7 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.8
   zoneToClick: {fileID: 7459068424240495159}
-  zoneToOpen: {fileID: 0}
+  zoneToOpen: {fileID: 7459068424327482481}
   otherZoneToClick: {fileID: 7459068424574159135}
   pageTurnClip: {fileID: 8300000, guid: e8fdf67ca6ede4ddcb45384fb582d349, type: 3}
 --- !u!114 &7459068424327482487
