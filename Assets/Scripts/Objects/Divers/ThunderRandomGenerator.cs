@@ -7,7 +7,7 @@ public class ThunderRandomGenerator : MonoBehaviour
     public Animator thunderAnim;
     public Animator windowAnim; 
     private int random;
-    private float waitTime=30f;
+    private float waitTime=15f;
     private float timer= 0f;
     private bool canTrigger = true;
 
