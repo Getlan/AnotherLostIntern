@@ -9,9 +9,13 @@ public class Globe : Interactive
     private Animator animator;
     bool rotate = true;
 
+    private AudioSource audioSource;
+    [SerializeField]private AudioClip globeSound;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Interact()
@@ -22,6 +26,7 @@ public class Globe : Interactive
             rotate = false;
             animator.SetTrigger("rotate");
             StartCoroutine(WaitAnimationEnd());
+            audioSource.PlayOneShot(globeSound);
         }
 
     }

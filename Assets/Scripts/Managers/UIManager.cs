@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject UINathalieComputer;
     [SerializeField]
+    private GameObject UIGillesComputer;
+    [SerializeField]
     private ObjectTextUI textObjectUI;
 
     public static UIManager instance = null;
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
     {
         computerDictionnary.Add("AntoineG", UIAntoineComputer);
         computerDictionnary.Add("Nathalie", UINathalieComputer);
+        computerDictionnary.Add("Gilles", UIGillesComputer);
     }
 
     void Awake()

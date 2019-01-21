@@ -5,7 +5,7 @@ using UnityEngine;
 public class Computer : ObjectWithPause
 {
     [SerializeField] private OwnerName ownerName;
-    private enum OwnerName { AntoineG, Nathalie };
+    private enum OwnerName { AntoineG, Nathalie,Gilles };
     [SerializeField] private string password;
     [SerializeField] private bool unlocked;
     private float clickTimer = 0;
