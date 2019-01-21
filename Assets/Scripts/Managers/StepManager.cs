@@ -13,11 +13,12 @@ public class StepManager : MonoBehaviour
     public bool tutoSkip = false;
 
     public Animator textAnim;
-    public GameObject endManager; 
+    public GameObject endManagerUI; 
 
     [SerializeField] BossDoor bossDoor;
     private bool drawer1=false;
     private bool drawer2=false;
+    [SerializeField] BossLibrary library;
 
     public static StepManager instance = null;
 
@@ -113,28 +114,36 @@ public class StepManager : MonoBehaviour
     public void Drawer1Open()
     {
         this.drawer1 = true;
+        CheckSecretLibrary();
     }
 
     public void Drawer1Close()
     {
         this.drawer1 = false;
+        CheckSecretLibrary();
     }
 
     public void Drawer2Open()
     {
         this.drawer2 = true;
+        CheckSecretLibrary();
     }
 
     public void Drawer2Close()
     {
         this.drawer2 = false;
+        CheckSecretLibrary();
     }
 
     private void CheckSecretLibrary()
     {
-        if(drawer1 && drawer2)
+        if(!library.Open && drawer1 && drawer2)
         {
-            Debug.Log("Library open");
+            library.OpenSecretPassage();
+        }
+        else if(library.Open && !drawer1 && !drawer2)
+        {
+            library.CloseSecretPassage();
         }
     }
 
@@ -152,7 +161,7 @@ public class StepManager : MonoBehaviour
 
         Debug.Log("check end game true ");
         AudioManager.instance.Play("Boom");
-        endManager.SetActive(true);
+        endManagerUI.SetActive(true);
         textAnim.SetTrigger("End");
 
 

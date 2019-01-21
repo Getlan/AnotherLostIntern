@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 916232399002721557}
   - component: {fileID: 8523137566160629844}
   - component: {fileID: 3590562230205134049}
+  - component: {fileID: 2122697334}
   m_Layer: 0
   m_Name: Tiroir_petit D
   m_TagString: Untagged
@@ -487,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8553780898306045861}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.73511356, y: 0.6669857, z: -0.38779047}
+  m_LocalPosition: {x: -0.73511356, y: 0.6669857, z: -0.3877905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 650813607588175581}
@@ -604,6 +605,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59931517, y: 0.12659666, z: 0.081014}
   m_Center: {x: 0, y: 0, z: 0.83341014}
+--- !u!114 &2122697334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553780898306045861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6611f906e9380b841b5f06c4f6c5ddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCaptionTextState1: Ouvrir le tiroir
+  interactCaptionTextState2: Fermer le tiroir
+  state1: {x: -0.7351136, y: 0.6669857, z: -0.3877905}
+  state2: {x: -0.7351136, y: 0.6669857, z: -0.284}
+  animationTime: 2.5
+  movementType: 0
+  state1Clip: {fileID: 0}
+  state2Clip: {fileID: 0}
+  nbDrawer: 1
 --- !u!1 &8553780898306045863
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +878,7 @@ GameObject:
   - component: {fileID: 8553780898309237675}
   - component: {fileID: 8553780898308237675}
   - component: {fileID: 1372599516644187206}
+  - component: {fileID: 2122697335}
   m_Layer: 0
   m_Name: PorteD
   m_TagString: Untagged
@@ -870,7 +893,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8553780898306045867}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0347712, y: 0.35811064, z: 0.40519464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -936,6 +959,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59931517, y: 0.3943039, z: 0.040993296}
   m_Center: {x: 0.29965758, y: 0, z: 0.020496648}
+--- !u!114 &2122697335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553780898306045867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6611f906e9380b841b5f06c4f6c5ddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCaptionTextState1: Ouvrir le placard
+  interactCaptionTextState2: Fermer le placard
+  state1: {x: 0, y: 0, z: 0}
+  state2: {x: 0, y: -117.605, z: 0}
+  animationTime: 2.5
+  movementType: 1
+  state1Clip: {fileID: 0}
+  state2Clip: {fileID: 0}
+  nbDrawer: 2
 --- !u!1 &8553780898306045869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1083,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8553780898306045871}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:

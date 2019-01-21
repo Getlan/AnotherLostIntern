@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/L\xE9andre.unity"
     guid: b3a7c4ab43551994c99406a201fa0fa0
+  - enabled: 1
+    path: Assets/Scenes/Master.unity
+    guid: 2e7f406ba7ef9d5499d839c3a9a5ddc4
   m_configObjects: {}

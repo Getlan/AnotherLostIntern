@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossDoor : StateObject
 {
     [SerializeField]bool locked = true;
+    [SerializeField] AudioClip slamDoorClip;
 
     public override void Interact()
     {
@@ -22,6 +23,7 @@ public class BossDoor : StateObject
     public void SlamDoor()
     {
         this.Interact();
-        locked = true;
+        this.GetComponent<AudioSource>().Stop();
+        this.GetComponent<AudioSource>().PlayOneShot(slamDoorClip);
     }
 }
