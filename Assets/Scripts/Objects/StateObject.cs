@@ -14,7 +14,7 @@ public class StateObject : Interactive
     private AudioSource audioSource;
     bool hasAudioSource = false;
 
-    private bool isState2 = false;
+    protected bool isState2 = false;
     private string textToDisplay;
 
     private Hashtable iTweenArgs;

@@ -12,6 +12,8 @@ public class StepManager : MonoBehaviour
     public bool tutoSkip = false;
 
     [SerializeField] BossDoor bossDoor;
+    private bool drawer1=false;
+    private bool drawer2=false;
 
     public static StepManager instance = null;
 
@@ -102,5 +104,33 @@ public class StepManager : MonoBehaviour
     {
         AudioManager.instance.Play("Drone_3");
         AudioManager.instance.FadeIn("Drone_3", 0.1f, 15);
+    }
+
+    public void Drawer1Open()
+    {
+        this.drawer1 = true;
+    }
+
+    public void Drawer1Close()
+    {
+        this.drawer1 = false;
+    }
+
+    public void Drawer2Open()
+    {
+        this.drawer2 = true;
+    }
+
+    public void Drawer2Close()
+    {
+        this.drawer2 = false;
+    }
+
+    private void CheckSecretLibrary()
+    {
+        if(drawer1 && drawer2)
+        {
+            Debug.Log("Library open");
+        }
     }
 }
