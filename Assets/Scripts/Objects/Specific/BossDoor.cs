@@ -12,7 +12,6 @@ public class BossDoor : StateObject
         {
             base.Interact();
         }
-        base.Interact();
     }
 
     public void UnlockDoor()

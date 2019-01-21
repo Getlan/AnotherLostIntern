@@ -85,6 +85,12 @@ public class StepManager : MonoBehaviour
         }
     }
 
+    public void UnlockBossDoor()
+    {
+        bossDoor.UnlockDoor();
+        //[AUDIO] unlock door
+    }
+
     public void EnterBossDesk()
     {
         AudioManager.instance.Play("Heartbeat");
