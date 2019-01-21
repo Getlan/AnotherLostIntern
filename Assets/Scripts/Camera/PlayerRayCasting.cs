@@ -26,7 +26,6 @@ public class PlayerRayCasting : MonoBehaviour {
             {
                 if (Time.time - startClickTime < maxClickTime)
                 {
-                    Debug.Log("click");
                     objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
                 }
             }
