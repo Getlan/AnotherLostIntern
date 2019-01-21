@@ -8,7 +8,9 @@ public class StepManager : MonoBehaviour
 
     private bool tutoMailChecked = false;
     private bool tutoScoutCardSeen = false;
-    private bool endActivated = false; 
+    private bool endActivated = false;
+
+    [SerializeField] private Computer computerAntoine;
 
     public bool tutoSkip = false;
 
@@ -60,6 +62,7 @@ public class StepManager : MonoBehaviour
 
         AudioManager.instance.Play("Drone_1");
         AudioManager.instance.Play("Theme_début");
+        computerAntoine.Interact();
 
         if (tutoSkip)
         {
