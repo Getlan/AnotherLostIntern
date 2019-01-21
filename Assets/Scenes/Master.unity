@@ -24101,37 +24101,37 @@ PrefabInstance:
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.377199
+      value: 0.248
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.068811
+      value: -1.424
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.6319017
+      value: -3.637
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7904187
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.612567
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
@@ -24146,7 +24146,7 @@ PrefabInstance:
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -194.44899
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 569129795995235156, guid: 24b747b979427e247a0ebb68e37c64d3,
         type: 3}
@@ -24564,6 +24564,64 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[5].objectName
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[6].objectName
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[7].objectName
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[8].objectName
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[9].text
+      value: "S\u2019uniront les plan\xE8tes, alors il sera l\xE0\r\nL\u2019\xE9toile,
+        le berger, l\u2019union de nos vertus\r\nLa r\xE9ponse \xE0 nos maux, signe
+        tant attendu\r\nL\u2019inestimable enfant, la cl\xE9 de l\u2019au-del\xE0
+        \r\n\r\nAttendant calmement, patients depuis longtemps\r\nSi longue l\u2019attente,
+        depuis notre gen\xE8se\r\nL\u2019an de gr\xE2ce, mille sept-cent soixante
+        seize\r\nEnfin l\u2019\xE9lu trouv\xE9, alors il sera temps\r\n\r\nTerrible
+        destin\xE9e, que ne devons-nous faire\r\nUn jour d\u2019alignement, commettre
+        l\u2019indicible\r\nPour que nous accepte, le triangle invisible \r\n\r\nD\u2019une
+        lame pointue, infliger le calvaire\r\nDe notre saint martyr, offert le sang
+        vers\xE9, \r\nLa porte s\u2019ouvrira, pour nous la traverser. \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[2].text
+      value: "Antoine est un pr\xE9nom qui tire son origine du latin \xAB Antonius
+        \xBB qui signifie \xAB inestimable \xBB.\r\n\r\nCourageux et d\xE9termin\xE9,
+        Antoine d\xE9teste l\u2019injustice. Face aux d\xE9fis, il ne baisse jamais
+        les bras, il aborde chaque jour comme une opportunit\xE9 de r\xE9aliser ses
+        r\xEAves.\r\n\r\nAntoine est une personne intelligente capable de distinguer
+        le bien du mal. \r\n\r\nDe nature curieuse, il cherche toujours \xE0 apprendre
+        de nouvelles choses. \r\n\n________________________________________________________________________\n\n\nBon
+        anniversaire mon ch\xE9ri ! \n\n21 ans c\u2019est important, je souhaite que
+        tes voeux soient exauc\xE9s. \r\n\r\nBisous, Maman\r\n\r\nP.S : cette carte
+        te d\xE9crit parfaitement \r\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[2].fontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
