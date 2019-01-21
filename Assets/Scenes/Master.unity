@@ -8529,6 +8529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutoSkip: 1
+  textAnim: {fileID: 909196526}
+  endManager: {fileID: 403133509}
   bossDoor: {fileID: 543991741}
 --- !u!4 &449033544
 Transform:

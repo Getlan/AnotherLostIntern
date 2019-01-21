@@ -12,6 +12,9 @@ public class StepManager : MonoBehaviour
 
     public bool tutoSkip = false;
 
+    public Animator textAnim;
+    public GameObject endManager; 
+
     [SerializeField] BossDoor bossDoor;
     private bool drawer1=false;
     private bool drawer2=false;
@@ -149,6 +152,9 @@ public class StepManager : MonoBehaviour
 
         Debug.Log("check end game true ");
         AudioManager.instance.Play("Boom");
+        endManager.SetActive(true);
+        textAnim.SetTrigger("End");
+
 
     }
 
