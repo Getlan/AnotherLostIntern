@@ -8,6 +8,7 @@ public class StepManager : MonoBehaviour
 
     private bool tutoMailChecked = false;
     private bool tutoScoutCardSeen = false;
+    private bool endActivated = false; 
 
     public bool tutoSkip = false;
 
@@ -131,6 +132,32 @@ public class StepManager : MonoBehaviour
         if(drawer1 && drawer2)
         {
             Debug.Log("Library open");
+        }
+    }
+
+    private IEnumerator EndGame()
+    {
+        AudioManager.instance.FadeOut("Drone_1", 5f);
+        AudioManager.instance.FadeOut("Drone_2", 5f);
+        AudioManager.instance.FadeOut("Drone_3", 5f);
+        AudioManager.instance.FadeOut("Heartbeat", 5f);
+
+        while (AudioManager.instance.CheckEndGame() != true)
+        {
+            yield return null;
+        }
+
+        Debug.Log("check end game true ");
+        AudioManager.instance.Play("Boom");
+
+    }
+
+    public void End()
+    {
+        if (!endActivated)
+        {
+            StartCoroutine(EndGame());
+            endActivated = true;
         }
     }
 }
