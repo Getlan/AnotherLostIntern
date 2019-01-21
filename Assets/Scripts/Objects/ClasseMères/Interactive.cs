@@ -27,8 +27,9 @@ abstract public class Interactive : MonoBehaviour
         if (!IsInteracting)
         {
             UIManager.instance.ShowInteractCaption();
+            isLooking = true;
         }
-        isLooking = true;
+
     }
 
     public void StopLooking()

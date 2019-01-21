@@ -468,8 +468,8 @@ MonoBehaviour:
   state2: {x: 0, y: 0.635, z: 0.449}
   animationTime: 2.5
   movementType: 0
-  state1Clip: {fileID: 8300000, guid: f83359d03fa22430dac938effbbd5858, type: 3}
-  state2Clip: {fileID: 8300000, guid: bbe2a3484d7714e1dada96146d8bdcb1, type: 3}
+  state1Clip: {fileID: 8300000, guid: bbe2a3484d7714e1dada96146d8bdcb1, type: 3}
+  state2Clip: {fileID: 8300000, guid: f83359d03fa22430dac938effbbd5858, type: 3}
 --- !u!1 &7882503471997060392
 GameObject:
   m_ObjectHideFlags: 0

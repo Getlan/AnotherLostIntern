@@ -44,23 +44,37 @@ public class PlayerRayCasting : MonoBehaviour {
             if (GameManager.Gm.CanInteract && Physics.Raycast(this.transform.position, this.transform.forward, out rayHit, distanceToSee) && rayHit.collider.gameObject.GetComponent<Interactive>()!=null)
             {
                 GameObject rayHitObject = rayHit.collider.gameObject;
-                if (objectHit != null && objectHit != rayHitObject)
-                    {
-                        objectHit.StopLooking();
-                        UIManager.instance.HideInteractCaption();
-                    }
+                if (objectHit != null && objectHit.gameObject != rayHitObject)
+                {
+                    objectHit.StopLooking();
+                    StartCoroutine(Test(rayHitObject));
+                }
+                else
+                {
                     objectHit = rayHitObject.GetComponent<Interactive>();
                     objectHit.IsLooking();
-                    if (Input.GetButtonDown("MainAction"))
-                    {
-                        objectHit.Interact();
-                    }
                 }
+
+                if (Input.GetButtonDown("MainAction"))
+                {
+                    objectHit.Interact();
+                }
+            }
             else if (objectHit != null)
             {
                 objectHit.StopLooking();
                 objectHit = null;
             }
+        }
+    }
+
+    IEnumerator Test(GameObject rayHitObject)
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (objectHit != null)
+        {
+            objectHit = rayHitObject.GetComponent<Interactive>();
+            objectHit.IsLooking();
         }
     }
 }
