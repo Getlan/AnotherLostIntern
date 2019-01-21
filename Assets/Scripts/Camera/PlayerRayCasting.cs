@@ -47,6 +47,7 @@ public class PlayerRayCasting : MonoBehaviour {
                 if (objectHit != null && objectHit != rayHitObject)
                     {
                         objectHit.StopLooking();
+                        UIManager.instance.HideInteractCaption();
                     }
                     objectHit = rayHitObject.GetComponent<Interactive>();
                     objectHit.IsLooking();
