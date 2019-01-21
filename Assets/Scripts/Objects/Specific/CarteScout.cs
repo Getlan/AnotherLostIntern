@@ -9,8 +9,6 @@ public class CarteScout : ComplexObservable
     private bool open = false;
     private bool activated = false;
     private bool seen = false;
-    [SerializeField] private GameObject zoneToOpen;
-    [SerializeField] private GameObject BackCollider;
     private Collider objectCollider;
     private TextObject textObject;
 
@@ -38,13 +36,13 @@ public class CarteScout : ComplexObservable
 
         if (Physics.Raycast(ray, out hit, 10f))
         {
-            if (hit.transform != null && hit.transform.gameObject == zoneToClick)
+            if (hit.transform != null && hit.transform.gameObject == gameObject)
             {
                 ActivateComplexZone();
             }
-            else if (hit.transform != null && hit.transform.gameObject == zoneToOpen)
+            else if (hit.transform != null && hit.transform.gameObject == zoneToClick)
             {
-                OpenBook();
+                CloseBook();
             }
             else if (hit.transform == null || hit.transform.gameObject != this.gameObject)
             {
@@ -59,21 +57,17 @@ public class CarteScout : ComplexObservable
 
     protected override void ActivateComplexZone()
     {
-        CloseBook();
-    }
-
-    protected void OpenBook()
-    {
         if (!open)
         {
+            transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
-            zoneToOpen.SetActive(false);
             zoneToClick.SetActive(true);
             objectCollider.enabled = false;
             if (!seen)
             {
                 seen = true;
+                StepManager.instance.DoTutoScoutCardSeen();
             }
             textObject.ChangeTextToRead("CarteScout2");
         }
@@ -82,7 +76,6 @@ public class CarteScout : ComplexObservable
     public override void Interact()
     {
         base.Interact();
-        zoneToOpen.SetActive(true);
         textObject.ChangeTextToRead("CarteScout1");
     }
 
@@ -90,20 +83,16 @@ public class CarteScout : ComplexObservable
     {
         animator.SetTrigger("close");
         objectCollider.enabled = true;
-        zoneToOpen.SetActive(true);
         zoneToClick.SetActive(false);
         open = false;
-        textObject.ChangeTextToRead("CarteScout1");
+        textObject.ChangeTextToRead("");
     }
 
     public override void StopInteract()
     {
         if (open)
         {
-            animator.SetTrigger("close");
-            objectCollider.enabled = true;
-            open = false;
-            textObject.ChangeTextToRead("");
+            CloseBook();
             StartCoroutine(WaitAnimationEnd());
         }
         else

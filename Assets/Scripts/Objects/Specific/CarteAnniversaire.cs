@@ -6,7 +6,6 @@ public class CarteAnniversaire : ComplexObservable
 {
     private Animator animator;
     private bool open = false;
-    [SerializeField] private GameObject zoneToOpen;
     private Collider objectCollider;
     private TextObject textObject;
 
@@ -26,13 +25,13 @@ public class CarteAnniversaire : ComplexObservable
 
         if (Physics.Raycast(ray, out hit, 10f))
         {
-            if (hit.transform != null && hit.transform.gameObject == zoneToClick)
+            if (hit.transform != null && hit.transform.gameObject == gameObject)
             {
                 ActivateComplexZone();
             }
-            else if (hit.transform != null && hit.transform.gameObject == zoneToOpen)
+            else if (hit.transform != null && hit.transform.gameObject == zoneToClick)
             {
-                OpenBook();
+                CloseBook();
             }
             else if (hit.transform == null || hit.transform.gameObject != this.gameObject)
             {
@@ -47,16 +46,11 @@ public class CarteAnniversaire : ComplexObservable
 
     protected override void ActivateComplexZone()
     {
-        CloseBook();
-    }
-
-    protected void OpenBook()
-    {
         if (!open)
         {
+            transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
-            zoneToOpen.SetActive(false);
             zoneToClick.SetActive(true);
             objectCollider.enabled = false;
             textObject.ChangeTextToRead("CarteAnniversaire");
@@ -66,7 +60,6 @@ public class CarteAnniversaire : ComplexObservable
     public override void Interact()
     {
         base.Interact();
-        zoneToOpen.SetActive(true);
         textObject.ChangeTextToRead("");
     }
 
@@ -74,7 +67,6 @@ public class CarteAnniversaire : ComplexObservable
     {
         animator.SetTrigger("close");
         objectCollider.enabled = true;
-        zoneToOpen.SetActive(true);
         zoneToClick.SetActive(false);
         open = false;
         textObject.ChangeTextToRead("");
@@ -84,10 +76,7 @@ public class CarteAnniversaire : ComplexObservable
     {
         if (open)
         {
-            animator.SetTrigger("close");
-            objectCollider.enabled = true;
-            open = false;
-            textObject.ChangeTextToRead("");
+            CloseBook();
             StartCoroutine(WaitAnimationEnd());
         }
         else

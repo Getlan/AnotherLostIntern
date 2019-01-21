@@ -8,6 +8,9 @@ public class PlayerRayCasting : MonoBehaviour {
     private int distanceLookingDown = 6;
     private float distanceLookingUp = 4.5f;
 
+    private float maxClickTime = 0.1f;
+    private float startClickTime = 0;
+
     private RaycastHit rayHit;
     private Interactive objectHit =null;
 	
@@ -17,7 +20,14 @@ public class PlayerRayCasting : MonoBehaviour {
         {
             if (Input.GetButtonDown("MainAction") && objectHit.GetComponent<NoStateObject>() != null)
             {
-                objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
+                startClickTime = Time.time;
+            }
+            else if (Input.GetButtonUp("MainAction") && objectHit.GetComponent<NoStateObject>() != null)
+            {
+                if (Time.time - startClickTime < maxClickTime)
+                {
+                    objectHit.GetComponent<NoStateObject>().ClickWhileInteracting();
+                }
             }
         }
         else
