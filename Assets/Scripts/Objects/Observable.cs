@@ -8,7 +8,7 @@ public class Observable : ObjectWithPause
     private Quaternion originalRotation;
     private float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
-    private bool canRotate;
+    protected bool canRotate;
 
     protected virtual void Start()
     {

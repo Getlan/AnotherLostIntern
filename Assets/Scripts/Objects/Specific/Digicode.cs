@@ -33,6 +33,7 @@ public class Digicode : ComplexObservable
         for (int i = 0; i < this.transform.childCount - 2; i++)
         {
             buttons[i] = this.transform.GetChild(i).gameObject;
+            buttons[i].GetComponent<Collider>().enabled = false;
         }
         wrongLight = this.transform.GetChild(this.transform.childCount - 2).gameObject;
         rightLight = this.transform.GetChild(this.transform.childCount - 1).gameObject;
@@ -135,6 +136,10 @@ public class Digicode : ComplexObservable
         if (!activated)
         {
             base.Interact();
+            foreach (GameObject button in buttons)
+            {
+                button.GetComponent<Collider>().enabled = true;
+            }
         }
     }
 
