@@ -20,15 +20,6 @@ public class CarteScout : ComplexObservable
         textObject = this.GetComponent<TextObject>();
     }
 
-    private void Update()
-    {
-        if(!activated && seen && !this.IsInteracting)
-        {
-            StepManager.instance.DoTutoScoutCardSeen();
-            activated = true;
-        }
-    }
-
     public override void ClickWhileInteracting()
     {
         RaycastHit hit;
@@ -67,7 +58,6 @@ public class CarteScout : ComplexObservable
             if (!seen)
             {
                 seen = true;
-                StepManager.instance.DoTutoScoutCardSeen();
             }
             textObject.ChangeTextToRead("CarteScout2");
         }
@@ -98,6 +88,11 @@ public class CarteScout : ComplexObservable
         else
         {
             FinishStopInteract();
+        }
+        if (seen && !activated)
+        {
+            StepManager.instance.DoTutoScoutCardSeen();
+            activated = true;   
         }
     }
 

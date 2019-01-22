@@ -5430,8 +5430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computerAntoine: {fileID: 2022560359}
-  tutoSkip: 1
-  menuSkip: 1
+  tutoSkip: 0
+  menuSkip: 0
   bossDoor: {fileID: 543991741}
   library: {fileID: 708724710}
   bloodStain: {fileID: 2100000, guid: e695302d1c1347544b25cc6b66db9688, type: 2}
@@ -13620,7 +13620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1301132712
 Transform:
   m_ObjectHideFlags: 0
@@ -17425,6 +17425,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661946020}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1681023383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8372097487026987702, guid: e697c3fa156d44f3ba1254908f83e911,
+    type: 3}
+  m_PrefabInstance: {fileID: 8372097486760246572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1684421136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23920,7 +23926,7 @@ PrefabInstance:
     - target: {fileID: 5433217993227536982, guid: 3557144d9f8ae7f4b861df736a391f7e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
@@ -24518,7 +24524,7 @@ PrefabInstance:
     - target: {fileID: 8211949792832697527, guid: 930d6787216d3462787c95c73d332b80,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8211949792832697527, guid: 930d6787216d3462787c95c73d332b80,
         type: 3}
@@ -24540,6 +24546,41 @@ PrefabInstance:
       propertyPath: sources.Array.data[4]
       value: 
       objectReference: {fileID: 5919984647158946246}
+    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 94ddef44e869348ebb757c0be2169467, type: 3}
+    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672623140650688372, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211949792591247619, guid: 930d6787216d3462787c95c73d332b80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8211949792591247640, guid: 930d6787216d3462787c95c73d332b80,
         type: 3}
       propertyPath: Priority
@@ -24575,45 +24616,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4672623140650688372, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211949792591247619, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8211949791688744624, guid: 930d6787216d3462787c95c73d332b80,
         type: 3}
       propertyPath: lowpassLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.13636364
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 94ddef44e869348ebb757c0be2169467, type: 3}
-    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: Priority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211949791745266680, guid: 930d6787216d3462787c95c73d332b80,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d6787216d3462787c95c73d332b80, type: 3}
@@ -24630,11 +24636,6 @@ PrefabInstance:
       value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 8372097487363481607, guid: e697c3fa156d44f3ba1254908f83e911,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372097488336684502, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -24677,7 +24678,7 @@ PrefabInstance:
     - target: {fileID: 8372097487363481628, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8372097487363481628, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
@@ -24743,6 +24744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488336684502, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8372097486786558695, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
@@ -24854,6 +24860,11 @@ PrefabInstance:
       propertyPath: subtitlesUI
       value: 
       objectReference: {fileID: 302833178}
+    - target: {fileID: 8372097487363481600, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: UINathalieComputer
+      value: 
+      objectReference: {fileID: 1681023383}
     - target: {fileID: 8372097487996512382, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_IsActive
