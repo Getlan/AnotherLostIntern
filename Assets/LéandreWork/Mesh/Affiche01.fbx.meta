@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e5e6dcc8fe27ea429f2af7ac6a83f8e
+guid: 3f853f702e0e42e43b90e92822250195
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cellphone
+    4300000: Affiche
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -46,8 +46,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

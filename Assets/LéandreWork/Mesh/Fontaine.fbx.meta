@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-guid: 8e5e6dcc8fe27ea429f2af7ac6a83f8e
+guid: a006f6a2c9368734bbb8212bf6ee2ee0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Bottle
     400000: //RootNode
+    400002: Bottle
     2100000: No Name
     2300000: //RootNode
+    2300002: Bottle
     3300000: //RootNode
-    4300000: Cellphone
+    3300002: Bottle
+    4300000: Fontaine
+    4300002: Bottle
   externalObjects: {}
   materials:
     importMaterials: 0
