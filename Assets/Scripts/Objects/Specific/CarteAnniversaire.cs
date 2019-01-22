@@ -9,12 +9,17 @@ public class CarteAnniversaire : ComplexObservable
     private Collider objectCollider;
     private TextObject textObject;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip cardOpen; 
+
     protected override void Start()
     {
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
         textObject = this.GetComponent<TextObject>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -28,6 +33,7 @@ public class CarteAnniversaire : ComplexObservable
             if (hit.transform != null && hit.transform.gameObject == gameObject)
             {
                 ActivateComplexZone();
+                audioSource.PlayOneShot(cardOpen);
             }
             else if (hit.transform != null && hit.transform.gameObject == zoneToClick)
             {
