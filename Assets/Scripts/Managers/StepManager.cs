@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class StepManager : MonoBehaviour
 {
@@ -27,6 +28,15 @@ public class StepManager : MonoBehaviour
     [SerializeField] private Material vertus1;
     [SerializeField] private Material vertus2;
     [SerializeField] private Material planetaire;
+
+    [SerializeField] private GameObject subtitleCanvas;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] radio_voice;
+    [SerializeField] private Text subtitles; 
+    [SerializeField] private GameObject title;
+    [SerializeField] private GameObject credits; 
+
+ 
 
     public static StepManager instance = null;
 
@@ -82,6 +92,8 @@ public class StepManager : MonoBehaviour
             tutoScoutCardSeen = true;
             CheckTuto();
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -187,26 +199,57 @@ public class StepManager : MonoBehaviour
         {
             yield return null;
         }
-        AudioManager.instance.Play("Boom");
-        endManagerUI.SetActive(true);
-        textAnim.SetTrigger("End");
 
-        yield return new WaitForSeconds(4f);
+        Debug.Log("check end game true ");
+        AudioManager.instance.Play("Boom");
+        //textAnim.SetTrigger("End");
+        endManagerUI.SetActive(true);
+
 
         while (AudioManager.instance.sources[7].isPlaying)
         {
             yield return null;
         }
 
-        AudioManager.instance.Play("Radio");
+        subtitleCanvas.SetActive(true);
+        audioSource.PlayOneShot(radio_voice[0]);
 
-        while (AudioManager.instance.sources[9].isPlaying)
+        while (audioSource.isPlaying)
         {
-            yield return null; 
+            subtitles.text = "Un avion de la compagnie BrianAir, en provenance de Paris et à destination de La Havane";
+            yield return null;
         }
 
+        audioSource.PlayOneShot(radio_voice[1]);
+
+        while (audioSource.isPlaying)
+        {
+            subtitles.text = "a disparu hier dans des conditions mystérieuses.";
+            yield return null;
+        }
+
+        audioSource.PlayOneShot(radio_voice[2]);
+
+        while (audioSource.isPlaying)
+        {
+            subtitles.text = "Le dernier contact avec l'appareil a été établi alors qu'il survolait le célèbre Triangle des Bermudes";
+            yield return null;
+        }
+
+        audioSource.PlayOneShot(radio_voice[3]);
+
+        while (audioSource.isPlaying)
+        {
+            subtitles.text = "L'appareil et ses passagers sont en ce moment recherchés par les gardes-côtes cubains.";
+            yield return null;
+        }
+
+        title.SetActive(false);
+        subtitleCanvas.SetActive(false);
+        credits.SetActive(true);
         AudioManager.instance.Play("Theme_fin");
     }
+
 
     public void End()
     {

@@ -3662,12 +3662,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311173253}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &317311437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4395086837371430679, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4395086837604757210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &317394305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5283,18 +5277,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   computerAntoine: {fileID: 2022560359}
   tutoSkip: 0
+  menuSkip: 0
+  textAnim: {fileID: 0}
   endManagerUI: {fileID: 403133509}
-  credits: {fileID: 317311437}
-  title: {fileID: 789296768}
   bossDoor: {fileID: 543991741}
   library: {fileID: 708724710}
-  radio_voice:
-  - {fileID: 8300000, guid: 81c3abab7e9ce4acb9e0c4daa3b2f348, type: 3}
-  - {fileID: 8300000, guid: 9e77e5c3c7f5e41259b80d3b81b8534a, type: 3}
-  - {fileID: 8300000, guid: c8812f95c0ef84c2981d19a5e0c94205, type: 3}
-  - {fileID: 8300000, guid: 3032d7dad7d86413f8c7fcc671d33fcc, type: 3}
-  subtitleCanvas: {fileID: 1830601596}
-  subtitles: {fileID: 302833178}
 --- !u!4 &449033544
 Transform:
   m_ObjectHideFlags: 0
@@ -8411,12 +8398,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774073549}
   m_Mesh: {fileID: 4300000, guid: fd5e8d40c3ef0754586f1863c518e204, type: 3}
---- !u!1 &789296768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4395086838392854618, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4395086837604757210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &791403799
 GameObject:
   m_ObjectHideFlags: 0
@@ -22926,6 +22907,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4395086837470362271, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4395086837470362269, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22979,6 +22965,11 @@ PrefabInstance:
     - target: {fileID: 4395086837470362269, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395086838213109730, guid: 1d5d47f6295024dc9bc0a1bd9dfa70e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
