@@ -6,12 +6,24 @@ public class BossDoor : StateObject
 {
     [SerializeField]bool locked = true;
     [SerializeField] AudioClip slamDoorClip;
+    [SerializeField] AudioClip lockedClip;
+    [SerializeField] Animator handleAnimator;
+
 
     public override void Interact()
     {
         if (!locked)
         {
             base.Interact();
+            if (isState2)
+            {
+                handleAnimator.SetTrigger("handleAnimation");
+            }
+        }
+        else
+        {
+            this.GetComponent<AudioSource>().PlayOneShot(lockedClip);
+            handleAnimator.SetTrigger("handleAnimation");
         }
     }
 

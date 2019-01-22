@@ -5885,6 +5885,7 @@ GameObject:
   - component: {fileID: 520999441}
   - component: {fileID: 520999443}
   - component: {fileID: 520999442}
+  - component: {fileID: 520999444}
   m_Layer: 0
   m_Name: "Poign\xE9e"
   m_TagString: Untagged
@@ -5951,6 +5952,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520999440}
   m_Mesh: {fileID: 4300006, guid: b167ab914e6e4754f9ea38685a301d53, type: 3}
+--- !u!95 &520999444
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520999440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c44ce433616a3c47b0e2e65e89346ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &533757811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7628131378778302487, guid: decfe6355d5fe84408d958fc98f55dd4,
@@ -6538,10 +6558,12 @@ MonoBehaviour:
   state2: {x: 0, y: -140, z: 0}
   animationTime: 2
   movementType: 1
-  state1Clip: {fileID: 8300000, guid: 41cd0b47171e54df6b341d8a1e91faf5, type: 3}
+  state1Clip: {fileID: 8300000, guid: 71bf306928e384d5abae3d917ef82e56, type: 3}
   state2Clip: {fileID: 8300000, guid: a3485047e037c48f694210209e8bebac, type: 3}
   locked: 1
-  slamDoorClip: {fileID: 0}
+  slamDoorClip: {fileID: 8300000, guid: 41cd0b47171e54df6b341d8a1e91faf5, type: 3}
+  lockedClip: {fileID: 8300000, guid: 4ed435b06ce6949c7932c67092da2de6, type: 3}
+  handleAnimator: {fileID: 520999444}
 --- !u!169 &543991742
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -14016,6 +14038,7 @@ GameObject:
   - component: {fileID: 1363542402}
   - component: {fileID: 1363542404}
   - component: {fileID: 1363542403}
+  - component: {fileID: 1363542405}
   m_Layer: 0
   m_Name: "Poign\xE9e"
   m_TagString: Untagged
@@ -14082,6 +14105,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363542401}
   m_Mesh: {fileID: 4300006, guid: b167ab914e6e4754f9ea38685a301d53, type: 3}
+--- !u!95 &1363542405
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363542401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c44ce433616a3c47b0e2e65e89346ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1372174263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6703989093045560852, guid: b094d1539bfb62845a45a5815d5027ac,
@@ -18623,6 +18665,8 @@ GameObject:
   - component: {fileID: 1830335660}
   - component: {fileID: 1830335659}
   - component: {fileID: 1830335658}
+  - component: {fileID: 1830335661}
+  - component: {fileID: 1830335662}
   - component: {fileID: 1830335657}
   m_Layer: 0
   m_Name: Door
@@ -18646,26 +18690,31 @@ Transform:
   m_Father: {fileID: 45589318}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1830335657
-MonoBehaviour:
+--- !u!169 &1830335657
+AudioLowPassFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830335655}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43e23048384b914286236b03f10b731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactCaptionTextState1: Ouvrir la porte
-  interactCaptionTextState2: Fermer la porte
-  state1: {x: 0, y: 0, z: 0}
-  state2: {x: 0, y: -148, z: 0}
-  animationTime: 2.5
-  movementType: 1
-  state1Clip: {fileID: 0}
-  state2Clip: {fileID: 0}
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.13636364
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &1830335658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18724,6 +18773,126 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830335655}
   m_Mesh: {fileID: 4300004, guid: b167ab914e6e4754f9ea38685a301d53, type: 3}
+--- !u!114 &1830335661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830335655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b288af8c628a34ca2d0c849e8add14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCaptionTextState1: Ouvrir la porte
+  interactCaptionTextState2: Fermer la porte
+  state1: {x: 0, y: 0, z: 0}
+  state2: {x: 0, y: 146.619, z: 0}
+  animationTime: 2
+  movementType: 1
+  state1Clip: {fileID: 8300000, guid: 71bf306928e384d5abae3d917ef82e56, type: 3}
+  state2Clip: {fileID: 8300000, guid: a3485047e037c48f694210209e8bebac, type: 3}
+  locked: 1
+  slamDoorClip: {fileID: 8300000, guid: 41cd0b47171e54df6b341d8a1e91faf5, type: 3}
+  lockedClip: {fileID: 8300000, guid: 4ed435b06ce6949c7932c67092da2de6, type: 3}
+  handleAnimator: {fileID: 1363542405}
+--- !u!82 &1830335662
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830335655}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 3.32
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1832304952
 GameObject:
   m_ObjectHideFlags: 0
@@ -20033,6 +20202,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 32056305, guid: 8d138bd966c47834ca40b869b95768aa, type: 3}
+      propertyPath: doorUnlocked
+      value: 
+      objectReference: {fileID: 8300000, guid: 45d90dbe475924efdb7fde100c8f7cc8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d138bd966c47834ca40b869b95768aa, type: 3}
 --- !u!1 &1933325639

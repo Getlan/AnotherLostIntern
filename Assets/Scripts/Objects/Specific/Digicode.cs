@@ -168,18 +168,6 @@ public class Digicode : ComplexObservable
         StartCoroutine(BlinkLight(wrongLight));
     }
 
-    /*private void RightCode()
-    {
-        StepManager.instance.UnlockBossDoor();
-        audioSource.PlayOneShot(righCodeClip);
-        activated = true;
-        StopInteract();
-        rightLight.SetActive(true);
-        wrongLight.SetActive(false);
-        StartCoroutine(BlinkLight(rightLight));
-
-    }*/
-
     private IEnumerator RightCode()
     {
         StepManager.instance.UnlockBossDoor();
