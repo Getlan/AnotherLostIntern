@@ -16,9 +16,6 @@ public class StepManager : MonoBehaviour
     [SerializeField] private bool tutoSkip = false;
     [SerializeField] private bool menuSkip = false;
 
-    public Animator textAnim;
-    public GameObject endManagerUI; 
-
     [SerializeField] BossDoor bossDoor;
     private bool drawer1=false;
     private bool drawer2=false;
@@ -35,6 +32,7 @@ public class StepManager : MonoBehaviour
     [SerializeField] private Text subtitles; 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject credits; 
+    [SerializeField] private GameObject endManagerUI;
 
  
 
@@ -149,7 +147,7 @@ public class StepManager : MonoBehaviour
     public void EnterSecretRoom()
     {
         AudioManager.instance.Play("Drone_3");
-        AudioManager.instance.FadeIn("Drone_3", 0.2f, 30);
+        AudioManager.instance.FadeIn("Drone_3", 0.2f, 15);
     }
 
     public void Drawer1Open()
