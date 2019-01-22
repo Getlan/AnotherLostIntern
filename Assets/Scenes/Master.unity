@@ -5535,6 +5535,7 @@ MonoBehaviour:
   title: {fileID: 767762386}
   credits: {fileID: 1038320838}
   endManagerUI: {fileID: 299298115}
+  answerButton: {fileID: 1212823434}
 --- !u!4 &449033544
 Transform:
   m_ObjectHideFlags: 0
@@ -13279,12 +13280,12 @@ GameObject:
   - component: {fileID: 1212823435}
   - component: {fileID: 1212823434}
   m_Layer: 0
-  m_Name: Button
+  m_Name: AnswerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1212823433
 RectTransform:
   m_ObjectHideFlags: 0
