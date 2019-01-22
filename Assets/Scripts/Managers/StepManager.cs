@@ -277,10 +277,8 @@ public class StepManager : MonoBehaviour
             yield return null;
         }
         answerButton.gameObject.SetActive(true);
-        //GameManager.Gm.CursorIsLocked = false;
         yield return new WaitForSeconds(2f);
         answerButton.gameObject.SetActive(false);
-        //GameManager.Gm.CursorIsLocked = true;
         UIManager.instance.PrintSubtitles(mumDialogLines[4]);
         audioSource.PlayOneShot(mumDialogClips[4]);
         while (audioSource.isPlaying)
@@ -290,10 +288,8 @@ public class StepManager : MonoBehaviour
         answerButton.transform.GetChild(0).gameObject.SetActive(false);
         answerButton.transform.GetChild(1).gameObject.SetActive(true);
         answerButton.gameObject.SetActive(true);
-        //GameManager.Gm.CursorIsLocked = false;
         yield return new WaitForSeconds(2f);
         answerButton.gameObject.SetActive(false);
-        //GameManager.Gm.CursorIsLocked = true;
         for (int i =5; i < mumDialogLines.Length; i++)
         {
             UIManager.instance.PrintSubtitles(mumDialogLines[i]);
