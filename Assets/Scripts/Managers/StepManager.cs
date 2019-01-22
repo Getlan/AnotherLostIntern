@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class StepManager : MonoBehaviour
 {
@@ -17,8 +17,8 @@ public class StepManager : MonoBehaviour
     [SerializeField] private bool menuSkip = false;
 
     [SerializeField] BossDoor bossDoor;
-    private bool drawer1=false;
-    private bool drawer2=false;
+    private bool drawer1 = false;
+    private bool drawer2 = false;
     [SerializeField] private BossLibrary library;
     [SerializeField] private Material bloodStain;
     [SerializeField] private Material bible;
@@ -29,13 +29,13 @@ public class StepManager : MonoBehaviour
     [SerializeField] private GameObject subtitleCanvas;
     private AudioSource audioSource;
     [SerializeField] private AudioClip[] radio_voice;
-    [SerializeField] string[] radioLines; 
+    [SerializeField] string[] radioLines;
     //[SerializeField] private Text subtitles; 
     [SerializeField] private GameObject title;
-    [SerializeField] private GameObject credits; 
+    [SerializeField] private GameObject credits;
     [SerializeField] private GameObject endManagerUI;
 
-    private bool isPlayingRadio = false; 
+    private bool isPlayingRadio = false;
 
     public static StepManager instance = null;
 
@@ -74,16 +74,15 @@ public class StepManager : MonoBehaviour
         iTweenArgs.Add("time", 0f);
         iTweenArgs.Add("isLocal", true);
         iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
-
         AudioManager.instance.Play("Drone_1");
+        UIManager.instance.FillDictionnary();
         if (menuSkip)
         {
             currentStep++;
         }
         else
         {
-            AudioManager.instance.Play("Theme_début");
-            computerAntoine.Interact();
+            Menu();
         }
         if (tutoSkip)
         {
@@ -106,7 +105,7 @@ public class StepManager : MonoBehaviour
     public void DoTutoMailChecked()
     {
         tutoMailChecked = true;
-        CheckTuto(); 
+        CheckTuto();
     }
 
     public void DoTutoScoutCardSeen()
@@ -135,7 +134,6 @@ public class StepManager : MonoBehaviour
     public void UnlockBossDoor()
     {
         bossDoor.UnlockDoor();
-        //[AUDIO] unlock door
     }
 
     public void EnterBossDesk()
@@ -178,12 +176,12 @@ public class StepManager : MonoBehaviour
 
     private void CheckSecretLibrary()
     {
-        if(!library.Open && drawer1 && drawer2)
+        if (!library.Open && drawer1 && drawer2)
         {
             library.OpenSecretPassage();
             AudioManager.instance.Play("Rail");
         }
-        else if(library.Open && !drawer1 && !drawer2)
+        else if (library.Open && !drawer1 && !drawer2)
         {
             library.CloseSecretPassage();
         }
@@ -210,9 +208,9 @@ public class StepManager : MonoBehaviour
         }
 
         StartCoroutine(PlayRadioVoice());
-        while(isPlayingRadio == true)
+        while (isPlayingRadio == true)
         {
-            yield return null; 
+            yield return null;
         }
 
         title.SetActive(false);
@@ -230,10 +228,18 @@ public class StepManager : MonoBehaviour
         }
     }
 
+    public void Menu()
+    {
+        AudioManager.instance.Play("Theme_début");
+        computerAntoine.Interact();
+    }
+
     public void StartGame()
     {
-        currentStep ++;
+        currentStep++;
         AudioManager.instance.FadeOut("Theme_début", 10f);
+        GameManager.Gm.CursorIsLocked = false;
+        GameManager.Gm.IsInteractingWithComputer = true;
     }
 
     public void GlowObjects(float value)

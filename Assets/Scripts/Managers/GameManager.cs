@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
         canInteract = true;
         canRotate = true;
         canMove = true;
-        CursorIsLocked = true;
-        IsInteractingWithComputer = false;
+        CursorIsLocked = false;
+        IsInteractingWithComputer = true;
         IsInteractingWithManipulableObject = false;
         IsInteracting = false;
         cursorIcon.SetActive(true);

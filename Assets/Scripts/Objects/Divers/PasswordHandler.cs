@@ -12,8 +12,6 @@ public class PasswordHandler : MonoBehaviour
     {
         computer.CheckPassword(passwordField.text);
 
-        Debug.Log(StepManager.instance.CurrentStep);
-
         if(StepManager.instance.CurrentStep == 0 && computer.CheckPassword(passwordField.text))
         {
             StepManager.instance.StartGame();

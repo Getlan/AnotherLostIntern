@@ -5,7 +5,7 @@ using UnityEngine;
 public class Computer : ObjectWithPause
 {
     [SerializeField] private OwnerName ownerName;
-    private enum OwnerName { AntoineG, Nathalie,Gilles };
+    private enum OwnerName {Antoine, Nathalie,Gilles };
     [SerializeField] private string password;
     [SerializeField] private bool unlocked;
     private float clickTimer = 0;
@@ -28,17 +28,6 @@ public class Computer : ObjectWithPause
     protected void Start()
     {
         interactCaptionText = "Utiliser";
-    }
-
-    private void Update()
-    {
-        if(clickTimer > maxTime &&  this.IsInteracting && Input.GetButton("MainAction"))
-        {
-            AudioManager.instance.Play("Mouse_click");
-            clickTimer = 0;
-        }
-        clickTimer += Time.deltaTime;
-        
     }
 
     public override void Interact()
@@ -111,5 +100,6 @@ public class Computer : ObjectWithPause
 
     public override void ClickWhileInteracting()
     {
+        AudioManager.instance.Play("Mouse_click");
     }
 }

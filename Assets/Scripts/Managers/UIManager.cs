@@ -22,13 +22,6 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance = null;
 
-    private void Start()
-    {
-        computerDictionnary.Add("AntoineG", UIAntoineComputer);
-        computerDictionnary.Add("Nathalie", UINathalieComputer);
-        computerDictionnary.Add("Gilles", UIGillesComputer);
-    }
-
     void Awake()
     {
         if (instance == null)
@@ -78,6 +71,14 @@ public class UIManager : MonoBehaviour
     /*
     * Computer
     */
+
+    public void FillDictionnary()
+    {
+        computerDictionnary.Add("Antoine", UIAntoineComputer);
+        computerDictionnary.Add("Nathalie", UINathalieComputer);
+        computerDictionnary.Add("Gilles", UIGillesComputer);
+    }
+
     public void ShowUIComputer(string ownerName)
     {
         computerDictionnary[ownerName].SetActive(true);
