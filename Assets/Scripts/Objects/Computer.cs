@@ -30,6 +30,17 @@ public class Computer : ObjectWithPause
         interactCaptionText = "Utiliser";
     }
 
+    private void Update()
+    {
+        if (clickTimer > maxTime && this.IsInteracting && Input.GetButton("MainAction"))
+        {
+            AudioManager.instance.Play("Mouse_click");
+            clickTimer = 0;
+        }
+        clickTimer += Time.deltaTime;
+
+    }
+
     public override void Interact()
     {
         base.Interact();
@@ -100,6 +111,5 @@ public class Computer : ObjectWithPause
 
     public override void ClickWhileInteracting()
     {
-        AudioManager.instance.Play("Mouse_click");
     }
 }
