@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private ObjectTextUI textObjectUI;
 
+    [SerializeField] private Text subtitlesUI;
+
     public static UIManager instance = null;
 
     private void Start()
@@ -66,6 +68,11 @@ public class UIManager : MonoBehaviour
     public void HideObjectText()
     {
         textObjectUI.HideText();
+    }
+
+    public void PrintSubtitles(string line)
+    {
+        subtitlesUI.text = line;
     }
 
     /*
