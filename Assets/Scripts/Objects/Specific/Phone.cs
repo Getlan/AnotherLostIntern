@@ -42,10 +42,7 @@ public class Phone : Observable
 
     IEnumerator WaitForSoundToFinish()
     {
-        while (this.GetComponent<AudioSource>().isPlaying)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(26f);
         StopInteract();
         activated = true;
         redLight.SetActive(false);
