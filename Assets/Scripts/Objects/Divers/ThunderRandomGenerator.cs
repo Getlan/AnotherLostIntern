@@ -4,44 +4,46 @@ using UnityEngine;
 
 public class ThunderRandomGenerator : MonoBehaviour
 {
-    public Animator thunderAnim;
-    public Animator windowAnim; 
+    [SerializeField] private Animator thunderAnim;
+    [SerializeField] private Animator windowAnim;
     private int random;
-    private float waitTime=15f;
-    private float timer= 0f;
-    private bool canTrigger = true;
+    private bool fadeOut = false;
+    private float initialGlowValue = 0f;
+    private float glowValue = 5f;
 
-    private float sfxTimer = 0f; 
-    public AudioSource thunderSfx; 
+    private float sfxTimer = 0f;
+    [SerializeField] private AudioSource thunderSfx;
 
-    void Start()
+    private void Start()
     {
-        
+        StartCoroutine(Thunder());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canTrigger)
+        if (fadeOut && glowValue > initialGlowValue)
         {
-            random = Random.Range(0, 100);
-            if(random <= 5)
-            {
-                thunderAnim.SetTrigger("Thunder");
-                windowAnim.SetTrigger("Thunder");
-                canTrigger = false;
-                thunderSfx.Play();
+            glowValue -= 3f * Time.deltaTime;
+            StepManager.instance.GlowObjects(glowValue);
+        }
+        else if (glowValue <= initialGlowValue)
+        {
+            fadeOut = false;
+        }
+    }
 
-            }
-        }
-        else
-        {
-            timer += Time.deltaTime;
-            if (timer > waitTime)
-            {
-                timer = 0;
-                canTrigger = true;
-            }
-        }
+    private IEnumerator Thunder()
+    {
+        random = Random.Range(15, 30);
+        yield return new WaitForSeconds(random);
+        glowValue = 5f;
+        thunderAnim.SetTrigger("Thunder");
+        windowAnim.SetTrigger("Thunder");
+        thunderSfx.Play();
+        StepManager.instance.GlowObjects(glowValue);
+        yield return new WaitForSeconds(1.5f);
+        fadeOut = true;
+        StartCoroutine(Thunder());
     }
 }

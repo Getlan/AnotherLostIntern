@@ -21,7 +21,12 @@ public class StepManager : MonoBehaviour
     [SerializeField] BossDoor bossDoor;
     private bool drawer1=false;
     private bool drawer2=false;
-    [SerializeField] BossLibrary library;
+    [SerializeField] private BossLibrary library;
+    [SerializeField] private Material bloodStain;
+    [SerializeField] private Material bible;
+    [SerializeField] private Material vertus1;
+    [SerializeField] private Material vertus2;
+    [SerializeField] private Material planetaire;
 
     public static StepManager instance = null;
 
@@ -216,5 +221,14 @@ public class StepManager : MonoBehaviour
     {
         currentStep ++;
         AudioManager.instance.FadeOut("Theme_début", 10f);
+    }
+
+    public void GlowObjects(float value)
+    {
+        bloodStain.SetVector("_EmissionColor", Color.white * value);
+        bible.SetVector("_EmissionColor", Color.white * value);
+        vertus1.SetVector("_EmissionColor", Color.white * value);
+        vertus2.SetVector("_EmissionColor", Color.white * value);
+        planetaire.SetVector("_EmissionColor", Color.white * value);
     }
 }
