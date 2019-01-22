@@ -46,6 +46,7 @@ public class BibleProphetie : ComplexObservable
 
     protected override void ActivateComplexZone()
     {
+        UIManager.instance.ShowReadCaption();
         transform.LookAt(GameManager.Gm.PlayerCamera.transform);
         animator.SetTrigger("open");
         open = true;
@@ -62,6 +63,7 @@ public class BibleProphetie : ComplexObservable
 
     private void CloseBook()
     {
+        UIManager.instance.HideReadCaption();
         animator.SetTrigger("close");
         objectCollider.enabled = true;
         zoneToClick.SetActive(false);

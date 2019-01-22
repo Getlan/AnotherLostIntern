@@ -114,9 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa23dba7d70aaf4cad5f639de1a2c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0.6
+  scaleMultiplier: 0.8
   meshRendererObject: {fileID: 3524289718742717070}
+  isTextObject: 0
   zoneToClick: {fileID: 125762869}
+  cardOpen: {fileID: 0}
 --- !u!1001 &5857058818001959349
 PrefabInstance:
   m_ObjectHideFlags: 0

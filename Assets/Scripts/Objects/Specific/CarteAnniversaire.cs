@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarteAnniversaire : ComplexObservable
 {
@@ -10,7 +11,7 @@ public class CarteAnniversaire : ComplexObservable
     private TextObject textObject;
 
     private AudioSource audioSource;
-    [SerializeField] AudioClip cardOpen; 
+    [SerializeField] AudioClip cardOpen;
 
     protected override void Start()
     {
@@ -54,6 +55,7 @@ public class CarteAnniversaire : ComplexObservable
     {
         if (!open)
         {
+            UIManager.instance.ShowReadCaption();
             transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
@@ -71,6 +73,7 @@ public class CarteAnniversaire : ComplexObservable
 
     private void CloseBook()
     {
+        UIManager.instance.HideReadCaption();
         animator.SetTrigger("close");
         objectCollider.enabled = true;
         zoneToClick.SetActive(false);

@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985e0db62093c904c93104a6bb71c7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0.8
+  scaleMultiplier: 0.7
   meshRendererObject: {fileID: 3870818701125074557}
+  isTextObject: 1
 --- !u!114 &1334054149
 MonoBehaviour:
   m_ObjectHideFlags: 0

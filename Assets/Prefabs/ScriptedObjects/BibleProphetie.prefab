@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1882544739}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &81345887
 Rigidbody:
@@ -175,7 +175,7 @@ Transform:
   - {fileID: 1110821926}
   - {fileID: 2115622728}
   m_Father: {fileID: 1943134879}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 7.01671e-15, y: -9.343343, z: -4.739395e-23}
 --- !u!1 &1110821925
 GameObject:
@@ -319,7 +319,6 @@ Transform:
   - {fileID: 1890365409}
   - {fileID: 148758352}
   - {fileID: 1882544733}
-  - {fileID: 8117566719503490589}
   - {fileID: 797680354580636222}
   - {fileID: 81345885}
   m_Father: {fileID: 0}
@@ -536,6 +535,7 @@ Transform:
   m_LocalPosition: {x: 3.1086245e-17, y: 0, z: -0.14966214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8117566719503490589}
   - {fileID: 434453667}
   m_Father: {fileID: 1890365409}
   m_RootOrder: 0
@@ -641,12 +641,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975378537830132041}
-  m_LocalRotation: {x: 0.5796684, y: -0.4102382, z: -0.40671644, w: 0.5746921}
-  m_LocalPosition: {x: -0.001, y: -0, z: 0.0927}
+  m_LocalRotation: {x: -0.4067165, y: 0.5746921, z: -0.5796684, w: 0.41023824}
+  m_LocalPosition: {x: 0.075662114, y: 0, z: -0.11570004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1882544739}
-  m_RootOrder: 3
+  m_Father: {fileID: 1943134879}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &8081815965060051552
 Light:
@@ -702,7 +702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &797680354580636222
 Transform:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1882544739}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6765088835791391245
 Light:

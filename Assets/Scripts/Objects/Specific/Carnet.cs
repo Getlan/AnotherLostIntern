@@ -92,6 +92,7 @@ public class Carnet : ComplexObservable
     {
         if (!open)
         {
+            UIManager.instance.ShowReadCaption();
             transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
             open = true;
@@ -111,6 +112,7 @@ public class Carnet : ComplexObservable
 
     private void CloseBook()
     {
+        UIManager.instance.HideReadCaption();
         textObject.ChangeTextToRead("");
         animator.SetTrigger("close");
         objectCollider.enabled = true;

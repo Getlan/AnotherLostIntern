@@ -12,6 +12,7 @@ public class Observable : ObjectWithPause
     [SerializeField] private GameObject meshRendererObject;
     bool meshRenderer = true;
     protected bool canRotate;
+    [SerializeField] private bool isTextObject;
 
     protected virtual void Start()
     {
@@ -33,6 +34,10 @@ public class Observable : ObjectWithPause
         base.Interact();
         if (GameManager.Gm.IsPlayerStandingStill())
         {
+            if (isTextObject)
+            {
+                UIManager.instance.ShowReadCaption();
+            }
             originalPosition = gameObject.transform.position;
             originalRotation = gameObject.transform.rotation;
             GameManager.Gm.IsInteractingWithManipulableObject = true;
@@ -61,6 +66,10 @@ public class Observable : ObjectWithPause
     public override void StopInteract()
     {
         base.StopInteract();
+        if (isTextObject)
+        {
+            UIManager.instance.HideReadCaption();
+        }
         GameManager.Gm.IsInteractingWithManipulableObject = false;
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalRotation;

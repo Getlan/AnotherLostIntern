@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private ObjectTextUI textObjectUI;
 
+    [SerializeField] private GameObject readCaption;
+
     [SerializeField] private Text subtitlesUI;
 
     public static UIManager instance = null;
@@ -66,6 +68,16 @@ public class UIManager : MonoBehaviour
     public void PrintSubtitles(string line)
     {
         subtitlesUI.text = line;
+    }
+
+    public void ShowReadCaption()
+    {
+        readCaption.SetActive(true);
+    }
+   
+    public void HideReadCaption()
+    {
+        readCaption.SetActive(false);
     }
 
     /*
