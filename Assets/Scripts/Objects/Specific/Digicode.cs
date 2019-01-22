@@ -21,6 +21,7 @@ public class Digicode : ComplexObservable
     [SerializeField] AudioClip wrongCodeClip;
     [SerializeField] AudioClip righCodeClip;
     [SerializeField] AudioClip buttonTouched;
+    [SerializeField] AudioClip doorUnlocked; 
 
     private GameObject rightLight;
     private GameObject wrongLight;
@@ -68,7 +69,8 @@ public class Digicode : ComplexObservable
         else if (step4)
         {
             step5 = true;
-            RightCode();
+            //RightCode();
+            StartCoroutine(RightCode());
         }
         else
         {
@@ -166,7 +168,7 @@ public class Digicode : ComplexObservable
         StartCoroutine(BlinkLight(wrongLight));
     }
 
-    private void RightCode()
+    /*private void RightCode()
     {
         StepManager.instance.UnlockBossDoor();
         audioSource.PlayOneShot(righCodeClip);
@@ -176,6 +178,24 @@ public class Digicode : ComplexObservable
         wrongLight.SetActive(false);
         StartCoroutine(BlinkLight(rightLight));
 
+    }*/
+
+    private IEnumerator RightCode()
+    {
+        StepManager.instance.UnlockBossDoor();
+        audioSource.PlayOneShot(righCodeClip);
+        activated = true;
+
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        audioSource.PlayOneShot(doorUnlocked);
+        StopInteract();
+        rightLight.SetActive(true);
+        wrongLight.SetActive(false);
+        StartCoroutine(BlinkLight(rightLight));
     }
 
     private void Reinitialize()

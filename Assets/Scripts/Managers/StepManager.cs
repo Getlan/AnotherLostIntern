@@ -214,6 +214,7 @@ public class StepManager : MonoBehaviour
         {
             yield return null; 
         }
+
         title.SetActive(false);
         credits.SetActive(true);
         AudioManager.instance.Play("Theme_fin");
