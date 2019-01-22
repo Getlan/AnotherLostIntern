@@ -85,7 +85,7 @@ public class CarteScout : ComplexObservable
         objectCollider.enabled = true;
         zoneToClick.SetActive(false);
         open = false;
-        textObject.ChangeTextToRead("");
+        textObject.ChangeTextToRead("CarteScout1");
     }
 
     public override void StopInteract()
@@ -104,6 +104,7 @@ public class CarteScout : ComplexObservable
     private void FinishStopInteract()
     {
         zoneToClick.SetActive(false);
+        textObject.ChangeTextToRead("");
         base.StopInteract();
     }
 
