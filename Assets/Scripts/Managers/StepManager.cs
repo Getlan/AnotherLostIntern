@@ -27,13 +27,15 @@ public class StepManager : MonoBehaviour
     [SerializeField] private Material planetaire;
 
     [SerializeField] private GameObject subtitleCanvas;
-    private AudioSource audioSource;
+    private AudioSource radioAudioSource;
     [SerializeField] private AudioClip[] radio_voice;
     [SerializeField] string[] radioLines;
     //[SerializeField] private Text subtitles; 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject endManagerUI;
+
+    [SerializeField] private Button answerButton;
 
     private bool isPlayingRadio = false;
 
@@ -91,7 +93,7 @@ public class StepManager : MonoBehaviour
             CheckTuto();
         }
 
-        audioSource = GetComponent<AudioSource>();
+        radioAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -251,6 +253,43 @@ public class StepManager : MonoBehaviour
         planetaire.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
     }
 
+    public void PlayMumDialog(AudioClip[] mumDialogClips,string[] mumDialogLines,AudioSource audioSource)
+    {
+        StartCoroutine(PlayMumDialogCoroutine(mumDialogClips, mumDialogLines, audioSource));
+    }
+
+    IEnumerator PlayMumDialogCoroutine(AudioClip[] mumDialogClips, string[] mumDialogLines, AudioSource audioSource)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            UIManager.instance.PrintSubtitles(mumDialogLines[i]);
+            audioSource.PlayOneShot(mumDialogClips[i]);
+            while (audioSource.isPlaying)
+            {
+                yield return null;
+            }
+        }
+
+        UIManager.instance.PrintSubtitles(mumDialogLines[3]);
+        audioSource.PlayOneShot(mumDialogClips[3]);
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        answerButton.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        answerButton.gameObject.SetActive(false);
+        UIManager.instance.PrintSubtitles(mumDialogLines[4]);
+        audioSource.PlayOneShot(mumDialogClips[4]);
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        answerButton.transform.GetChild(0).gameObject.SetActive(false);
+        answerButton.transform.GetChild(1).gameObject.SetActive(true);
+        UIManager.instance.PrintSubtitles("");
+    }
+
     IEnumerator PlayRadioVoice()
     {
 
@@ -258,8 +297,8 @@ public class StepManager : MonoBehaviour
         for (int i = 0; i < radio_voice.Length; i++)
         {
             UIManager.instance.PrintSubtitles(radioLines[i]);
-            audioSource.PlayOneShot(radio_voice[i]);
-            while (audioSource.isPlaying)
+            radioAudioSource.PlayOneShot(radio_voice[i]);
+            while (radioAudioSource.isPlaying)
             {
                 yield return null;
             }

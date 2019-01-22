@@ -27,7 +27,7 @@ public class Phone : Observable
         if (!activated)
         {
             AudioManager.instance.Stop("PhoneRingtone");
-            StartCoroutine(PlayVoice());
+            StepManager.instance.PlayMumDialog(mumDialogClips, mumDialogLines, audioSource);
             StartCoroutine(WaitForSoundToFinish());
         }
     }
@@ -49,19 +49,5 @@ public class Phone : Observable
         StopInteract();
         activated = true;
         redLight.SetActive(false);
-    }
-
-    IEnumerator PlayVoice()
-    {
-        for (int i = 0; i < mumDialogClips.Length; i++)
-        {
-            UIManager.instance.PrintSubtitles(mumDialogLines[i]);
-            audioSource.PlayOneShot(mumDialogClips[i]);
-            while (audioSource.isPlaying)
-            {
-                yield return null;
-            }
-        }
-        UIManager.instance.PrintSubtitles("");
     }
 }
