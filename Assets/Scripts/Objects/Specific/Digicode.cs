@@ -139,6 +139,7 @@ public class Digicode : ComplexObservable
             foreach (GameObject button in buttons)
             {
                 button.GetComponent<Collider>().enabled = true;
+                button.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             }
         }
     }
@@ -148,6 +149,11 @@ public class Digicode : ComplexObservable
         base.StopInteract();
         Reinitialize();
         nbButtonsPushed = 0;
+        foreach (GameObject button in buttons)
+        {
+            button.GetComponent<Collider>().enabled = false;
+            button.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        }
     }
 
     private void WrongCode()
