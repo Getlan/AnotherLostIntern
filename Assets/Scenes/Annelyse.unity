@@ -5285,6 +5285,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52650297, y: 0.64988804, z: 0.6309495}
   m_Center: {x: 0.16612387, y: 0.3075455, z: 0.18452573}
+--- !u!1 &450808214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3211182333568144180, guid: 3557144d9f8ae7f4b861df736a391f7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4752108221941615877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464287156
 GameObject:
   m_ObjectHideFlags: 0
@@ -23417,171 +23423,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5919984647158946246, guid: 3557144d9f8ae7f4b861df736a391f7e,
+    - target: {fileID: 6745248044795178753, guid: 3557144d9f8ae7f4b861df736a391f7e,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Name
+      value: Light
       objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476366, guid: 3557144d9f8ae7f4b861df736a391f7e,
+    - target: {fileID: 3211182333568144180, guid: 3557144d9f8ae7f4b861df736a391f7e,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.1
+      propertyPath: m_Name
+      value: RedLight
       objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d922e79931f74806ab7cd417def6c10, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: subtitles
-      value: 
-      objectReference: {fileID: 302833178}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e5b253713b7b4643badaea850a3ee7b, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 198f785443bf9440f8235bd07f44f94c, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 630be13041fa24c3ea74224b43eec346, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 433fa5d9132b442fe95648bf1a5147f9, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 05f486099231d44bf8adadc4749e6592, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 61bc0f4f89d8a4153bee41da5325ae07, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 154763ab1108d4fee8a84b6398cba901, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: MumDialogClips.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0a5ad2fd5aa1f403db43f9a9ef79715d, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: subtitles_canvas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: fd5061b013cf94ec9a684db8c15bd414, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2583cd8c41a05485b89a3883e6897d41, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 289747a95acb144b5b9af785e7eb5bc0, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 61ebe8cb4c56041c4b3b8828d6a88bd8, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 33464c7220e97479abe2cba82f753979, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6c8496927502d4bf5acce713961c7b1b, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0bd71fc1d4c6849e5962a0760c2499f5, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogClips.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3f8c9d6aec73c40a7a54cb96839a317b, type: 3}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[1]
-      value: "D\xE9sol\xE9e de vous d\xE9ranger, j'arrive pas \xE0 le joindre."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[2]
-      value: "Il devrait \xEAtre rentr\xE9 depuis longtemps heu..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[3]
-      value: "Je me demandais s'il \xE9tait encore au travail."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[4]
-      value: "All\xF4 ?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[5]
-      value: "All\xF4 ?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[6]
-      value: Vous m'entendez ?
-      objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
+    - target: {fileID: 774699764, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
       propertyPath: mumDialogLines.Array.data[7]
-      value: "Bon, s'il est l\xE0 dites-lui de me rappeler et que je m'inqui\xE8te,
+      value: "Bon, s'il est l\xE0, dites-lui de me rappeler, et que je m'inqui\xE8te,
         merci."
       objectReference: {fileID: 0}
-    - target: {fileID: 6394065911749476360, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: mumDialogLines.Array.data[0]
-      value: "Oui bonsoir, je suis la m\xE8re d'Antoine"
+    - target: {fileID: 774699764, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
+      propertyPath: mumDialogLines.Array.data[1]
+      value: "D\xE9sol\xE9e de vous d\xE9ranger, j'arrive pas \xE0 le joindre"
       objectReference: {fileID: 0}
-    - target: {fileID: 5433217993227536982, guid: 3557144d9f8ae7f4b861df736a391f7e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 774699764, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
+      propertyPath: redLight
+      value: 
+      objectReference: {fileID: 450808214}
+    - target: {fileID: 774699764, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
+      propertyPath: scaleMultiplier
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 774699764, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}
+      propertyPath: mumDialogLines.Array.data[2]
+      value: "Il devrait \xEAtre rentr\xE9 depuis longtemps..."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3557144d9f8ae7f4b861df736a391f7e, type: 3}

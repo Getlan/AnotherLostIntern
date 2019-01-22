@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5433217993227179638
 Transform:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5433217993227536982}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f3f574dfb3714dea9e6134706c45dea, type: 3}
@@ -369,8 +369,8 @@ GameObject:
   - component: {fileID: 6394065911749476366}
   - component: {fileID: 6394065911749476355}
   - component: {fileID: 6394065911749476352}
-  - component: {fileID: 6394065911749476360}
   - component: {fileID: 4979409717797902131}
+  - component: {fileID: 774699764}
   m_Layer: 12
   m_Name: "Combin\xE9"
   m_TagString: Untagged
@@ -465,7 +465,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -584,20 +584,6 @@ AudioHighPassFilter:
   m_Enabled: 1
   m_CutoffFrequency: 500
   m_HighpassResonanceQ: 10
---- !u!114 &6394065911749476360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6394065911749476363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d6b805090200443a46a68e13d4a932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleMultiplier: 0.8
-  MumDialogClip: {fileID: 8300000, guid: bb3cabf1519dc443298fada265867fca, type: 3}
 --- !u!65 &4979409717797902131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -611,6 +597,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06779525, y: 0.23658592, z: 0.06211504}
   m_Center: {x: 0.000000059604645, y: 0, z: 0.000000014901161}
+--- !u!114 &774699764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394065911749476363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8af769daf7cc94bb57f3c55901d2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1
+  redLight: {fileID: 6745248044795178753}
+  mumDialogClips:
+  - {fileID: 8300000, guid: fd5061b013cf94ec9a684db8c15bd414, type: 3}
+  - {fileID: 8300000, guid: 2583cd8c41a05485b89a3883e6897d41, type: 3}
+  - {fileID: 8300000, guid: 289747a95acb144b5b9af785e7eb5bc0, type: 3}
+  - {fileID: 8300000, guid: 61ebe8cb4c56041c4b3b8828d6a88bd8, type: 3}
+  - {fileID: 8300000, guid: 33464c7220e97479abe2cba82f753979, type: 3}
+  - {fileID: 8300000, guid: 6c8496927502d4bf5acce713961c7b1b, type: 3}
+  - {fileID: 8300000, guid: 0bd71fc1d4c6849e5962a0760c2499f5, type: 3}
+  - {fileID: 8300000, guid: 3f8c9d6aec73c40a7a54cb96839a317b, type: 3}
+  mumDialogLines:
+  - "Oui bonsoir, je suis la m\xE8re d'Antoine."
+  - "Je suis d\xE9sol\xE9e de vous d\xE9ranger, j'arrive pas \xE0 le joindre"
+  - "Il devrait \xEAtre rentr\xE9 depuis longtemp..."
+  - "Je me demandais s'il \xE9tait encore au travail."
+  - "All\xF4 ?"
+  - "All\xF4 ?"
+  - Vous m'entendez ?
+  - "Bon, s'il est l\xE0, dites-lui de m'appeler, et que je m'inqui\xE8te, merci."
 --- !u!1 &6745248044795178753
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +640,7 @@ GameObject:
   - component: {fileID: 5002938030045508736}
   - component: {fileID: 3478033080333682566}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: RedLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

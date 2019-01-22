@@ -8,6 +8,8 @@ public class Phone : Observable
     private bool activated = false;
     private AudioSource audioSource;
 
+    [SerializeField] private GameObject redLight;
+
     [SerializeField] AudioClip[] mumDialogClips;
     [SerializeField] string[] mumDialogLines;
 
@@ -15,7 +17,7 @@ public class Phone : Observable
     {
         base.Start();
         interactCaptionText = "Decrocher";
-        audioSource=this.GetComponent<AudioSource>();
+        audioSource = this.GetComponent<AudioSource>();
     }
 
 
@@ -46,11 +48,12 @@ public class Phone : Observable
         }
         StopInteract();
         activated = true;
+        redLight.SetActive(false);
     }
 
     IEnumerator PlayVoice()
     {
-        for(int i = 0; i < mumDialogClips.Length; i++)
+        for (int i = 0; i < mumDialogClips.Length; i++)
         {
             UIManager.instance.PrintSubtitles(mumDialogLines[i]);
             audioSource.PlayOneShot(mumDialogClips[i]);
