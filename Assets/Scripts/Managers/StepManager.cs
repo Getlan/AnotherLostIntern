@@ -29,12 +29,13 @@ public class StepManager : MonoBehaviour
     [SerializeField] private GameObject subtitleCanvas;
     private AudioSource audioSource;
     [SerializeField] private AudioClip[] radio_voice;
-    [SerializeField] private Text subtitles; 
+    [SerializeField] string[] radioLines; 
+    //[SerializeField] private Text subtitles; 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject credits; 
     [SerializeField] private GameObject endManagerUI;
 
- 
+    private bool isPlayingRadio = false; 
 
     public static StepManager instance = null;
 
@@ -139,6 +140,7 @@ public class StepManager : MonoBehaviour
 
     public void EnterBossDesk()
     {
+        AudioManager.instance.Play("Door_slam");
         AudioManager.instance.Play("Heartbeat");
         AudioManager.instance.FadeIn("Heartbeat", 0.6f, 5);
         bossDoor.SlamDoor();
@@ -179,6 +181,7 @@ public class StepManager : MonoBehaviour
         if(!library.Open && drawer1 && drawer2)
         {
             library.OpenSecretPassage();
+            AudioManager.instance.Play("Rail");
         }
         else if(library.Open && !drawer1 && !drawer2)
         {
@@ -209,7 +212,17 @@ public class StepManager : MonoBehaviour
             yield return null;
         }
 
-        subtitleCanvas.SetActive(true);
+        StartCoroutine(PlayRadioVoice());
+
+        //yield return new WaitForSeconds(10f); 
+
+        while(isPlayingRadio == true)
+        {
+            yield return null; 
+        }
+
+
+        /*subtitleCanvas.SetActive(true);
         audioSource.PlayOneShot(radio_voice[0]);
 
         while (audioSource.isPlaying)
@@ -240,10 +253,10 @@ public class StepManager : MonoBehaviour
         {
             subtitles.text = "L'appareil et ses passagers sont en ce moment recherchés par les gardes-côtes cubains.";
             yield return null;
-        }
+        }*/
 
         title.SetActive(false);
-        subtitleCanvas.SetActive(false);
+        //subtitleCanvas.SetActive(false);
         credits.SetActive(true);
         AudioManager.instance.Play("Theme_fin");
     }
@@ -271,5 +284,25 @@ public class StepManager : MonoBehaviour
         vertus1.SetVector("_EmissionColor", Color.white * value);
         vertus2.SetVector("_EmissionColor", Color.white * value);
         planetaire.SetVector("_EmissionColor", Color.white * value);
+    }
+
+    IEnumerator PlayRadioVoice()
+    {
+
+        isPlayingRadio = true;
+        Debug.Log("radio true");
+
+        for (int i = 0; i < radio_voice.Length; i++)
+        {
+            UIManager.instance.PrintSubtitles(radioLines[i]);
+            audioSource.PlayOneShot(radio_voice[i]);
+            while (audioSource.isPlaying)
+            {
+                yield return null;
+            }
+        }
+        UIManager.instance.PrintSubtitles("");
+        isPlayingRadio = false;
+        Debug.Log("radio false");
     }
 }
