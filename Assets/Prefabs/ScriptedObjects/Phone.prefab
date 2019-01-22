@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7527341717261175696}
   - component: {fileID: 8712008716127340106}
   m_Layer: 12
-  m_Name: Point Light
+  m_Name: RedLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,8 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8af769daf7cc94bb57f3c55901d2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 1
-  redLight: {fileID: 6745248044795178753}
+  scaleMultiplier: 0.8
+  redLight: {fileID: 3211182333568144180}
   mumDialogClips:
   - {fileID: 8300000, guid: fd5061b013cf94ec9a684db8c15bd414, type: 3}
   - {fileID: 8300000, guid: 2583cd8c41a05485b89a3883e6897d41, type: 3}
@@ -622,13 +622,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3f8c9d6aec73c40a7a54cb96839a317b, type: 3}
   mumDialogLines:
   - "Oui bonsoir, je suis la m\xE8re d'Antoine."
-  - "Je suis d\xE9sol\xE9e de vous d\xE9ranger, j'arrive pas \xE0 le joindre"
-  - "Il devrait \xEAtre rentr\xE9 depuis longtemp..."
+  - "D\xE9sol\xE9e de vous d\xE9ranger, j'arrive pas \xE0 le joindre"
+  - "Il devrait \xEAtre rentr\xE9 depuis longtemps..."
   - "Je me demandais s'il \xE9tait encore au travail."
   - "All\xF4 ?"
   - "All\xF4 ?"
   - Vous m'entendez ?
-  - "Bon, s'il est l\xE0, dites-lui de m'appeler, et que je m'inqui\xE8te, merci."
+  - "Bon, s'il est l\xE0, dites-lui de me rappeler, et que je m'inqui\xE8te, merci."
 --- !u!1 &6745248044795178753
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 5002938030045508736}
   - component: {fileID: 3478033080333682566}
   m_Layer: 0
-  m_Name: RedLight
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
