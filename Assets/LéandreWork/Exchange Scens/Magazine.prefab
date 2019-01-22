@@ -193,6 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.6
+  meshRendererObject: {fileID: 8675481120250868500}
+  isTextObject: 0
 --- !u!1 &8719053410170224959
 GameObject:
   m_ObjectHideFlags: 0
