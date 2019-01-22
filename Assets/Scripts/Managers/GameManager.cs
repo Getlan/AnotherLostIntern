@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PostProcessProfile normalProfile;
     [SerializeField] private PostProcessProfile readingProfile;
 
+    [SerializeField] private Texture2D cursorTexture;
+    private CursorMode cursorMode = CursorMode.Auto;
+    private Vector2 hotSpot = Vector2.zero;
+
     public static GameManager Gm = null;
 
     void Awake()
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
         IsInteractingWithManipulableObject = false;
         IsInteracting = false;
         cursorIcon.SetActive(true);
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 
     public void PutReadingProfile()
