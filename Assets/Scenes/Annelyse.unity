@@ -22544,6 +22544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Organigramme
       objectReference: {fileID: 0}
+    - target: {fileID: 3870818701125074557, guid: c7db6a3708f6e6043b3fa6e8f8d8e0d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3870818701124575837, guid: c7db6a3708f6e6043b3fa6e8f8d8e0d0,
         type: 3}
       propertyPath: m_LocalPosition.x

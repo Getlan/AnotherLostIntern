@@ -6,6 +6,7 @@ public class Observable : ObjectWithPause
 {
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    private Transform originalParent;
     private float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
     protected bool canRotate;
@@ -14,6 +15,7 @@ public class Observable : ObjectWithPause
     {
         this.canRotate = false;
         interactCaptionText = "Inspecter";
+        originalParent = this.transform.parent;
     }
 
     public override void Interact()
@@ -28,6 +30,7 @@ public class Observable : ObjectWithPause
             this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.gameObject.transform.position = GameManager.Gm.GetCameraPosition() + GameManager.Gm.GetCameraForward() * distance;
             this.gameObject.transform.localScale = this.gameObject.transform.localScale * scaleMultiplier;
+            this.transform.SetParent(GameManager.Gm.PlayerCamera.transform);
             if (GameManager.Gm.FixRotation)
             {
                 transform.LookAt(GameManager.Gm.PlayerCamera.transform);
@@ -47,6 +50,7 @@ public class Observable : ObjectWithPause
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
+        this.transform.SetParent(originalParent);
         GameManager.Gm.PutNormalProfile();
     }
 
