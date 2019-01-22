@@ -200,10 +200,7 @@ public class StepManager : MonoBehaviour
         {
             yield return null;
         }
-
-        Debug.Log("check end game true ");
         AudioManager.instance.Play("Boom");
-        //textAnim.SetTrigger("End");
         endManagerUI.SetActive(true);
 
 
@@ -213,50 +210,11 @@ public class StepManager : MonoBehaviour
         }
 
         StartCoroutine(PlayRadioVoice());
-
-        //yield return new WaitForSeconds(10f); 
-
         while(isPlayingRadio == true)
         {
             yield return null; 
         }
-
-
-        /*subtitleCanvas.SetActive(true);
-        audioSource.PlayOneShot(radio_voice[0]);
-
-        while (audioSource.isPlaying)
-        {
-            subtitles.text = "Un avion de la compagnie BrianAir, en provenance de Paris et à destination de La Havane";
-            yield return null;
-        }
-
-        audioSource.PlayOneShot(radio_voice[1]);
-
-        while (audioSource.isPlaying)
-        {
-            subtitles.text = "a disparu hier dans des conditions mystérieuses.";
-            yield return null;
-        }
-
-        audioSource.PlayOneShot(radio_voice[2]);
-
-        while (audioSource.isPlaying)
-        {
-            subtitles.text = "Le dernier contact avec l'appareil a été établi alors qu'il survolait le célèbre Triangle des Bermudes";
-            yield return null;
-        }
-
-        audioSource.PlayOneShot(radio_voice[3]);
-
-        while (audioSource.isPlaying)
-        {
-            subtitles.text = "L'appareil et ses passagers sont en ce moment recherchés par les gardes-côtes cubains.";
-            yield return null;
-        }*/
-
         title.SetActive(false);
-        //subtitleCanvas.SetActive(false);
         credits.SetActive(true);
         AudioManager.instance.Play("Theme_fin");
     }
@@ -279,19 +237,17 @@ public class StepManager : MonoBehaviour
 
     public void GlowObjects(float value)
     {
-        bloodStain.SetVector("_EmissionColor", Color.white * value);
-        bible.SetVector("_EmissionColor", Color.white * value);
-        vertus1.SetVector("_EmissionColor", Color.white * value);
-        vertus2.SetVector("_EmissionColor", Color.white * value);
-        planetaire.SetVector("_EmissionColor", Color.white * value);
+        bloodStain.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
+        bible.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
+        vertus1.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
+        vertus2.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
+        planetaire.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
     }
 
     IEnumerator PlayRadioVoice()
     {
 
         isPlayingRadio = true;
-        Debug.Log("radio true");
-
         for (int i = 0; i < radio_voice.Length; i++)
         {
             UIManager.instance.PrintSubtitles(radioLines[i]);
@@ -303,6 +259,5 @@ public class StepManager : MonoBehaviour
         }
         UIManager.instance.PrintSubtitles("");
         isPlayingRadio = false;
-        Debug.Log("radio false");
     }
 }

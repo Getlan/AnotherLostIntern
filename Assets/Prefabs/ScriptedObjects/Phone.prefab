@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.8
+  meshRendererObject: {fileID: 6394065911749476363}
   redLight: {fileID: 3211182333568144180}
   mumDialogClips:
   - {fileID: 8300000, guid: fd5061b013cf94ec9a684db8c15bd414, type: 3}

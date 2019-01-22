@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 1
+  meshRendererObject: {fileID: 3848712177261377768}
 --- !u!65 &3848712177261377770
 BoxCollider:
   m_ObjectHideFlags: 0

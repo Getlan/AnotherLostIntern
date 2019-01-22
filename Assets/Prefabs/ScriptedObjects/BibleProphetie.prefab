@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.7
+  meshRendererObject: {fileID: 148758351}
   zoneToClick: {fileID: 81345884}
 --- !u!114 &2107339856
 MonoBehaviour:

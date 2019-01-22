@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.6
+  meshRendererObject: {fileID: 3524289718742717070}
   zoneToClick: {fileID: 125762869}
 --- !u!1001 &5857058818001959349
 PrefabInstance:
@@ -223,6 +224,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f35e49c746e68ba46811dfc3d8df1adb, type: 2}
+    - target: {fileID: 7034826187062601277, guid: eca1468cfb617b34db172f2531e44910,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7034826187065781055, guid: eca1468cfb617b34db172f2531e44910,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -238,6 +244,12 @@ PrefabInstance:
 --- !u!1 &3524289718742717056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7034826187065781045, guid: eca1468cfb617b34db172f2531e44910,
+    type: 3}
+  m_PrefabInstance: {fileID: 5857058818001959349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3524289718742717070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7034826187065781051, guid: eca1468cfb617b34db172f2531e44910,
     type: 3}
   m_PrefabInstance: {fileID: 5857058818001959349}
   m_PrefabAsset: {fileID: 0}

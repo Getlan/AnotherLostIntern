@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.9
+  meshRendererObject: {fileID: 3185107547110391484}
   zoneToClick: {fileID: 0}
   wrongCodeClip: {fileID: 8300000, guid: 5911b09435a4c4d189cde702a07725e7, type: 3}
   righCodeClip: {fileID: 8300000, guid: 4d4263b85346d453f87e1f20f5ad03cb, type: 3}

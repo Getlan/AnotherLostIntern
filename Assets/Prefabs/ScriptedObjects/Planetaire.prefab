@@ -170,7 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.9
+  meshRendererObject: {fileID: 1681953619554515273}
   zoneToClick: {fileID: 1681953619554515279}
+  cogClip: {fileID: 0}
 --- !u!169 &1065144398
 AudioLowPassFilter:
   m_ObjectHideFlags: 0

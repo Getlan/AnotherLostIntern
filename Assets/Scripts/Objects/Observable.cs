@@ -9,6 +9,8 @@ public class Observable : ObjectWithPause
     private Transform originalParent;
     private float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
+    [SerializeField] private GameObject meshRendererObject;
+    bool meshRenderer = true;
     protected bool canRotate;
 
     protected virtual void Start()
@@ -16,6 +18,14 @@ public class Observable : ObjectWithPause
         this.canRotate = false;
         interactCaptionText = "Inspecter";
         originalParent = this.transform.parent;
+        if (meshRendererObject.GetComponent<MeshRenderer>() != null)
+        {
+            meshRenderer = true;
+        }
+        else
+        {
+            meshRenderer = false;
+        }
     }
 
     public override void Interact()
@@ -36,8 +46,16 @@ public class Observable : ObjectWithPause
                 transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             }
             this.canRotate = true;
+            if (meshRenderer)
+            {
+                meshRendererObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            }
+            else
+            {
+                meshRendererObject.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            }
+            GameManager.Gm.PutReadingProfile();
         }
-        GameManager.Gm.PutReadingProfile();
     }
 
     public override void StopInteract()
@@ -51,6 +69,14 @@ public class Observable : ObjectWithPause
         this.gameObject.GetComponent<Collider>().isTrigger = false;
         this.canRotate = false;
         this.transform.SetParent(originalParent);
+        if (meshRenderer)
+        {
+            meshRendererObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        }
+        else
+        {
+            meshRendererObject.GetComponent<SkinnedMeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        }
         GameManager.Gm.PutNormalProfile();
     }
 

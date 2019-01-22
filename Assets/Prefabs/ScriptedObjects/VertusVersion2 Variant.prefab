@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.75
+  meshRendererObject: {fileID: 1189674218801611399}
 --- !u!114 &318942537
 MonoBehaviour:
   m_ObjectHideFlags: 0

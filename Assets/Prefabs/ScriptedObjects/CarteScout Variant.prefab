@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 1
+  meshRendererObject: {fileID: 3524289718742717070}
   zoneToClick: {fileID: 125762869}
 --- !u!114 &1438549782
 MonoBehaviour:
@@ -233,6 +234,12 @@ PrefabInstance:
 --- !u!1 &3524289718742717056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7034826187065781045, guid: eca1468cfb617b34db172f2531e44910,
+    type: 3}
+  m_PrefabInstance: {fileID: 5857058818001959349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3524289718742717070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7034826187065781051, guid: eca1468cfb617b34db172f2531e44910,
     type: 3}
   m_PrefabInstance: {fileID: 5857058818001959349}
   m_PrefabAsset: {fileID: 0}
