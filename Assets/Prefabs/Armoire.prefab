@@ -108,7 +108,7 @@ MonoBehaviour:
   interactCaptionTextState2: Fermer Armoire
   state1: {x: 0, y: 0, z: 0}
   state2: {x: 0, y: -134.384, z: 0}
-  animationTime: 0
+  animationTime: 1.5
   movementType: 1
   state1Clip: {fileID: 0}
   state2Clip: {fileID: 0}
