@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        canInteract = true;
-        canRotate = true;
+        canInteract = false;
+        canRotate = false;
         canMove = true;
         CursorIsLocked = false;
         IsInteractingWithComputer = false;
@@ -254,6 +254,32 @@ public class GameManager : MonoBehaviour
     }
 
     public bool CanInteract
+    {
+        get
+        {
+            return canInteract;
+        }
+
+        set
+        {
+            canInteract = value;
+        }
+    }
+
+    public bool CanRotate1
+    {
+        get
+        {
+            return canRotate;
+        }
+
+        set
+        {
+            canRotate = value;
+        }
+    }
+
+    public bool CanInteract1
     {
         get
         {

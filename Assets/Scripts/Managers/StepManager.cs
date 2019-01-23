@@ -103,6 +103,8 @@ public class StepManager : MonoBehaviour
         if (currentStep == 0 || currentStep == 1)
         {
             GameManager.Gm.CanMove = false;
+            //GameManager.Gm.CanInteract = false;
+            //GameManager.Gm.CanRotate = false;
         }
     }
 
@@ -244,6 +246,8 @@ public class StepManager : MonoBehaviour
         AudioManager.instance.FadeOut("Theme_début", 10f);
         GameManager.Gm.CursorIsLocked = false;
         GameManager.Gm.IsInteractingWithComputer = true;
+        GameManager.Gm.CanInteract = true;
+        GameManager.Gm.CanRotate = true;
     }
 
     public void GlowObjects(float value)
