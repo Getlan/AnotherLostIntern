@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3505632306295237285}
   - component: {fileID: 3505632306297533182}
   - component: {fileID: 3505632306297533176}
-  - component: {fileID: 3505632306297533177}
-  - component: {fileID: 3505632306297533179}
+  - component: {fileID: 1998233320}
+  - component: {fileID: 861225557722196358}
   m_Layer: 0
   m_Name: Crucifix
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &3505632306297533176
 BoxCollider:
@@ -110,20 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.033601243, y: 0.25377208, z: 0.018998373}
   m_Center: {x: 0, y: -0.0010081709, z: 0}
---- !u!65 &3505632306297533177
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3505632306297500773}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16885737, y: 0.039155673, z: 0.018998373}
-  m_Center: {x: -0, y: 0.054886676, z: 0}
---- !u!114 &3505632306297533179
+--- !u!114 &1998233320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,9 +119,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3505632306297500773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
+  m_Script: {fileID: 11500000, guid: 06920c915d29ab147bd42cb353dc85a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &861225557722196358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505632306297500773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0311792ad2928b41a44d5d4c75c8025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.5
   meshRendererObject: {fileID: 3505632306297500773}
-  isTextObject: 0
+  isTextObject: 1

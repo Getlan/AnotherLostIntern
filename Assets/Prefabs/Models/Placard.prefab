@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3793467902959444940}
   - component: {fileID: 3485836741864149245}
   - component: {fileID: 751322343191063085}
-  - component: {fileID: 4712367833178066871}
   - component: {fileID: 8160750216340478452}
   - component: {fileID: 6099404820223405566}
   m_Layer: 0
@@ -94,26 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3584302, y: 0.2922686, z: 0.5644614}
   m_Center: {x: 0, y: 0.1461343, z: 0.2822307}
---- !u!114 &4712367833178066871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2339859671547514491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43e23048384b914286236b03f10b731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactCaptionTextState1: Ouvrir Tiroir
-  interactCaptionTextState2: Fermer Tiroir
-  state1: {x: 0, y: 0.087, z: -0.259}
-  state2: {x: 0, y: 0.087, z: 0.193}
-  animationTime: 1.5
-  movementType: 0
-  state1Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
-  state2Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
 --- !u!82 &8160750216340478452
 AudioSource:
   m_ObjectHideFlags: 0
@@ -247,7 +226,6 @@ GameObject:
   - component: {fileID: 5287067314437308426}
   - component: {fileID: 6555265558642223711}
   - component: {fileID: 2463547106865470360}
-  - component: {fileID: 915977660300319828}
   - component: {fileID: 5454064603265823248}
   - component: {fileID: 5281864058299782896}
   m_Layer: 0
@@ -329,26 +307,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3584302, y: 0.2922686, z: 0.5644614}
   m_Center: {x: 0, y: 0.1461343, z: 0.2822307}
---- !u!114 &915977660300319828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511036436117211509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43e23048384b914286236b03f10b731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactCaptionTextState1: Ouvrir Tiroir
-  interactCaptionTextState2: Fermer Tiroir
-  state1: {x: 0, y: 0.676, z: -0.259}
-  state2: {x: 0, y: 0.676, z: 0.193}
-  animationTime: 1.5
-  movementType: 0
-  state1Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
-  state2Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
 --- !u!82 &5454064603265823248
 AudioSource:
   m_ObjectHideFlags: 0
@@ -482,7 +440,6 @@ GameObject:
   - component: {fileID: 8433686675541486320}
   - component: {fileID: 5678097978636376411}
   - component: {fileID: 732198837736998917}
-  - component: {fileID: 3813526184917336132}
   - component: {fileID: 7953098080315475559}
   - component: {fileID: 5066721164011667417}
   m_Layer: 0
@@ -564,26 +521,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3584302, y: 0.2922686, z: 0.5644614}
   m_Center: {x: 0, y: 0.1461343, z: 0.2822307}
---- !u!114 &3813526184917336132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6611170179427217656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43e23048384b914286236b03f10b731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactCaptionTextState1: Ouvrir Tiroir
-  interactCaptionTextState2: Fermer Tiroir
-  state1: {x: 0, y: 0.382, z: -0.259}
-  state2: {x: 0, y: 0.382, z: 0.193}
-  animationTime: 1.5
-  movementType: 0
-  state1Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
-  state2Clip: {fileID: 8300000, guid: aab97077e8c3c40668b1d924b62b9c37, type: 3}
 --- !u!82 &7953098080315475559
 AudioSource:
   m_ObjectHideFlags: 0

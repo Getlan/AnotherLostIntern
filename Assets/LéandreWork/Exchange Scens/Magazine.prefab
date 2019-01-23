@@ -82,7 +82,8 @@ GameObject:
   - component: {fileID: 8675481120248933844}
   - component: {fileID: 4194430889986066336}
   - component: {fileID: 1784546623462013021}
-  - component: {fileID: 1629935488629088551}
+  - component: {fileID: 2110268202}
+  - component: {fileID: 7632347063796115334}
   m_Layer: 12
   m_Name: Magazine
   m_TagString: Untagged
@@ -165,7 +166,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1784546623462013021
 BoxCollider:
@@ -180,7 +181,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22000012, y: 0.3400001, z: 0.020603627}
   m_Center: {x: 3.138367e-10, y: -0.0000000010375791, z: 0.004750072}
---- !u!114 &1629935488629088551
+--- !u!114 &2110268202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,12 +190,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8675481120250868500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
+  m_Script: {fileID: 11500000, guid: 06920c915d29ab147bd42cb353dc85a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7632347063796115334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675481120250868500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a5f71b962344b4a8855438c5543878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.6
   meshRendererObject: {fileID: 8675481120250868500}
-  isTextObject: 0
+  isTextObject: 1
 --- !u!1 &8719053410170224959
 GameObject:
   m_ObjectHideFlags: 0
