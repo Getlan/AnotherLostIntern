@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
-  meshRendererObject: {fileID: 0}
-  isTextObject: 0
+  scaleMultiplier: 1
+  meshRendererObject: {fileID: 100000, guid: af9576f6336051646b9be37aaf55dca3, type: 3}
+  isTextObject: 1
 --- !u!54 &5548893678295765939
 Rigidbody:
   m_ObjectHideFlags: 0
