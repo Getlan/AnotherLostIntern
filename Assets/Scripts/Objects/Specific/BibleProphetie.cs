@@ -10,12 +10,16 @@ public class BibleProphetie : ComplexObservable
     private Collider objectCollider;
     private TextObject textObject;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip openBook; 
+
     protected override void Start()
     {
         base.Start();
         animator = this.GetComponent<Animator>();
         textObject = this.GetComponent<TextObject>();
         objectCollider = this.GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void ClickWhileInteracting()
@@ -49,6 +53,7 @@ public class BibleProphetie : ComplexObservable
         UIManager.instance.ShowReadCaption();
         transform.LookAt(GameManager.Gm.PlayerCamera.transform);
         animator.SetTrigger("open");
+        audioSource.PlayOneShot(openBook);
         open = true;
         zoneToClick.SetActive(true);
         objectCollider.enabled = false;
