@@ -94,7 +94,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &8528177763329091482
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
+  scaleMultiplier: 1
   meshRendererObject: {fileID: 197022056973224186}
   isTextObject: 0
 --- !u!136 &5351200107341560166
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
+  scaleMultiplier: 1
   meshRendererObject: {fileID: 197022056973224188}
   isTextObject: 0
 --- !u!136 &8168442488623820272
@@ -248,7 +248,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &197022056973224190
 GameObject:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
+  scaleMultiplier: 1
   meshRendererObject: {fileID: 1242799274059667332}
   isTextObject: 0
 --- !u!136 &5973790372585821090
@@ -407,7 +407,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &7166864338096640026
 GameObject:
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f797b9d476434b9e744ed0700957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
+  scaleMultiplier: 1
   meshRendererObject: {fileID: 7166864338096640026}
   isTextObject: 0
 --- !u!136 &1185983747816051964
@@ -532,5 +532,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0

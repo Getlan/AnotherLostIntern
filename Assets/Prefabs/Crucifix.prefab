@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.5
-  meshRendererObject: {fileID: 0}
+  meshRendererObject: {fileID: 3505632306297500773}
   isTextObject: 0
