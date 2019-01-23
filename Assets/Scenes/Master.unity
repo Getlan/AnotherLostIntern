@@ -31526,26 +31526,6 @@ PrefabInstance:
       propertyPath: sources.Array.data[4]
       value: 
       objectReference: {fileID: 5919984647158946246}
-    - target: {fileID: 1073197574, guid: 930d6787216d3462787c95c73d332b80, type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1693593025, guid: 930d6787216d3462787c95c73d332b80, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1693593025, guid: 930d6787216d3462787c95c73d332b80, type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1909017887, guid: 930d6787216d3462787c95c73d332b80, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1909017887, guid: 930d6787216d3462787c95c73d332b80, type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d6787216d3462787c95c73d332b80, type: 3}
 --- !u!23 &8219369506375257736
@@ -32152,6 +32132,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 302833177, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.379883
+      objectReference: {fileID: 0}
+    - target: {fileID: 302833177, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.6000977
+      objectReference: {fileID: 0}
+    - target: {fileID: 503749332, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 159.2998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
