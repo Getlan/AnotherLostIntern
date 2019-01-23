@@ -25,6 +25,7 @@ public class StepManager : MonoBehaviour
     [SerializeField] private Material vertus1;
     [SerializeField] private Material vertus2;
     [SerializeField] private Material planetaire;
+    [SerializeField] private Material postIt;
 
     [SerializeField] private GameObject subtitleCanvas;
     private AudioSource radioAudioSource;
@@ -252,6 +253,7 @@ public class StepManager : MonoBehaviour
         vertus1.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
         vertus2.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
         planetaire.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
+        postIt.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
     }
 
     public void PlayMumDialog(AudioClip[] mumDialogClips,string[] mumDialogLines,AudioSource audioSource)
