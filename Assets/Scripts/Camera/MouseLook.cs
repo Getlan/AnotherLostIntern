@@ -56,13 +56,7 @@ public class MouseLook
             //If the player presses escape, unlock
             if (Input.GetKeyUp(KeyCode.Escape))
             {
-                GameManager.Gm.CursorIsLocked = false;
-            }
-
-            //If the player clicks on the game, lock
-            else if (Input.GetMouseButtonUp(0))
-            {
-                GameManager.Gm.CursorIsLocked = true;
+                GameManager.Gm.Quit();
             }
         }
 

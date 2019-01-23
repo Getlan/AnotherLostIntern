@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         canInteract = true;
         canRotate = true;
         canMove = true;
-        CursorIsLocked = true;
+        CursorIsLocked = false;
         IsInteractingWithComputer = false;
         IsInteractingWithManipulableObject = false;
         IsInteracting = false;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Restart();
+            Quit();
         }
     }
 

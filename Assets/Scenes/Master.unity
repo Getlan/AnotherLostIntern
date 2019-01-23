@@ -20884,9 +20884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0311792ad2928b41a44d5d4c75c8025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 0
-  meshRendererObject: {fileID: 0}
-  isTextObject: 0
+  scaleMultiplier: 0.7
+  meshRendererObject: {fileID: 1998233319}
+  isTextObject: 1
 --- !u!1001 &2002318527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31654,6 +31654,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8372097488516480896, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925822818432965293, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8372097487363481628, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31931,11 +31941,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8372097488516480896, guid: e697c3fa156d44f3ba1254908f83e911,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8372097487009436992, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -32108,17 +32113,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: dffb6df570e80b249a3d7d35a0f86587,
         type: 3}
-    - target: {fileID: 1925822818432965293, guid: e697c3fa156d44f3ba1254908f83e911,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7032337397933098056, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: fb87774ced903a6438b75823d93469c4,
         type: 3}
+    - target: {fileID: 8372097488027448031, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097486780808043, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097486780808043, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488376970676, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488376970676, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488376970676, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e697c3fa156d44f3ba1254908f83e911, type: 3}
 --- !u!23 &8372289924406992247
