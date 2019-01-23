@@ -2007,6 +2007,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6284002432815026680}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &161099487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2147716315596114414, guid: 964d699b9ca167e44bb329d076c736e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1096906325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &161099491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161099487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d455795713111ab46a858582cf8388e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 0.8
+  meshRendererObject: {fileID: 161099487}
+  isTextObject: 1
+--- !u!114 &161099494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161099487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06920c915d29ab147bd42cb353dc85a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164477278
 GameObject:
   m_ObjectHideFlags: 0
@@ -11814,7 +11847,8 @@ PrefabInstance:
       propertyPath: scaleMultiplier
       value: 0.8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6998775585799867971, guid: 964d699b9ca167e44bb329d076c736e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 964d699b9ca167e44bb329d076c736e5, type: 3}
 --- !u!1 &1099355112
 GameObject:
@@ -31980,6 +32014,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 202118108}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[12].objectName
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[12].title
+      value: CURRICULUM VITAE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[12].fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372097488027448024, guid: e697c3fa156d44f3ba1254908f83e911,
+        type: 3}
+      propertyPath: textArray.Array.data[12].text
+      value: "Antoine Moreau\r\n12/11/1986\r\n\r\n56, rue Marie de M\xE9dicis\r\n93300,
+        Aubervillier\r\n\r\nFormation\r\n\r\n2006-2007 Zup de Cr\xE9ation - MASTER
+        OF ARTS : ARTISTIC DIRECTION\r\n2003-2006 Zelka - COMMUNICATION DES ENTREPRISES
+        ET DES INSTITUTIONS\r\n\r\n2003 Bac ES mention tr\xE8s bien \r\n\r\nExp\xE9rience
+        professionnelle \r\n\r\n2006 (six mois) Stagiaire en communication - Courrier.net
+        (Paris) \r\n2005 (deux mois) Stagiaire assistant en communication - Th\xE9\xE2tre
+        d\u2019Aubervilliers \r\n2003 (deux mois) Stagiaire assistant en communication
+        - Galerie d\u2019art Sophie Mercier (Aubervilliers) \r\n\r\nAutres exp\xE9riences
+        \r\n\r\nScoutisme : 1\xE8re classe  (entour\xE9 par Nathalie -> justice, charit\xE9,
+        foi) \r\n\r\nLoisirs \r\n\r\nEscalade (entour\xE9 par Nathalie -> courage,
+        prudence) \r\nDessin \r\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 7032337397933098056, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_FontData.m_BestFit
@@ -32069,7 +32138,7 @@ PrefabInstance:
     - target: {fileID: 4102496518218341453, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 23.598816
+      value: 23.598877
       objectReference: {fileID: 0}
     - target: {fileID: 4102496518218341453, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
@@ -32129,12 +32198,12 @@ PrefabInstance:
     - target: {fileID: 1730808585531285523, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20.399
+      value: 20.399048
       objectReference: {fileID: 0}
     - target: {fileID: 1730808585531285523, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.899
+      value: -24.898987
       objectReference: {fileID: 0}
     - target: {fileID: 1730808585531285523, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
