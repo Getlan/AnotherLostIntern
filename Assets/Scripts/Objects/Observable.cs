@@ -7,7 +7,7 @@ public class Observable : ObjectWithPause
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Transform originalParent;
-    private float distance = 0.7f;
+    protected float distance = 0.7f;
     [SerializeField] float scaleMultiplier;
     [SerializeField] private GameObject meshRendererObject;
     bool meshRenderer = true;

@@ -13,9 +13,22 @@ public class PlayerRayCasting : MonoBehaviour {
 
     private RaycastHit rayHit;
     private Interactive objectHit =null;
-	
-	// Update is called once per frame
-	void Update () {
+
+    public float DistanceToSee
+    {
+        get
+        {
+            return distanceToSee;
+        }
+
+        set
+        {
+            distanceToSee = value;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (GameManager.Gm.IsInteracting)
         {
             if (Input.GetButtonDown("MainAction") && objectHit.GetComponent<NoStateObject>() != null)
@@ -32,11 +45,15 @@ public class PlayerRayCasting : MonoBehaviour {
         }
         else
         {
-            if (GameManager.Gm.PlayerCamera.transform.localRotation.x > 0.5)
+            if (GameManager.Gm.IsInteractingWithComputer)
+            {
+                distanceToSee = 0;
+            }
+            else if (GameManager.Gm.PlayerCamera.transform.localRotation.x > 0.5)
             {
                 distanceToSee = distanceLookingDown;
             }
-            else
+            else if (GameManager.Gm.PlayerCamera.transform.localRotation.x < 0.5)
             {
                 distanceToSee = distanceLookingUp;
             }

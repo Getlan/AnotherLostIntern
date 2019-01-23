@@ -24,6 +24,7 @@ public class BibleProphetie : ComplexObservable
         audioSource = GetComponent<AudioSource>();
     }
 
+
     public override void ClickWhileInteracting()
     {
         RaycastHit hit;
@@ -71,7 +72,6 @@ public class BibleProphetie : ComplexObservable
             StepManager.instance.CountClue();
             bibleChecked = true; 
         }
-   
     }
 
     private void CloseBook()

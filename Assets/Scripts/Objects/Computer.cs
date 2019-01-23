@@ -44,6 +44,7 @@ public class Computer : ObjectWithPause
     public override void Interact()
     {
         base.Interact();
+        GameManager.Gm.PlayerCamera.GetComponent<PlayerRayCasting>().DistanceToSee = 0;
         UIManager.instance.ShowUIComputer(ownerName.ToString());
         GameManager.Gm.IsInteractingWithComputer = true;
     }
@@ -53,6 +54,7 @@ public class Computer : ObjectWithPause
         base.StopInteract();
         UIManager.instance.HideUIComputer(ownerName.ToString());
         GameManager.Gm.IsInteractingWithComputer = false;
+        GameManager.Gm.PlayerCamera.GetComponent<PlayerRayCasting>().DistanceToSee = 6;
     }
 
     public bool CheckPassword(string passwordToTest)

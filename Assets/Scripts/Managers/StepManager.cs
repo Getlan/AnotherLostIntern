@@ -94,7 +94,6 @@ public class StepManager : MonoBehaviour
             tutoScoutCardSeen = true;
             CheckTuto();
         }
-
         radioAudioSource = GetComponent<AudioSource>();
     }
 
