@@ -10,7 +10,7 @@ public class Globe : Interactive
     bool rotate = true;
 
     private AudioSource audioSource;
-    [SerializeField]private AudioClip globeSound;
+    [SerializeField] private AudioClip globeSound;
 
     private void Start()
     {
@@ -50,5 +50,6 @@ public class Globe : Interactive
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         rotate = true;
         StopInteract();
+        animator.ResetTrigger("rotate");
     }
 }

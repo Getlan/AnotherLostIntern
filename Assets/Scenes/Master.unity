@@ -17688,6 +17688,10 @@ PrefabInstance:
       propertyPath: globeSound
       value: 
       objectReference: {fileID: 8300000, guid: 61cd74bbeea8b4597ad8a82f8d2239a6, type: 3}
+    - target: {fileID: 364741373, guid: 0454ef9136f492d4ba08762484b21b77, type: 3}
+      propertyPath: animationTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6682568728085205358, guid: 0454ef9136f492d4ba08762484b21b77,
         type: 3}
       propertyPath: m_Radius
@@ -26460,7 +26464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641025417125552038}
   m_LocalRotation: {x: -0, y: 0.08445063, z: -0, w: -0.99642766}
-  m_LocalPosition: {x: -10.9, y: 2.88, z: -7.93}
+  m_LocalPosition: {x: 5.2, y: 2.88, z: -17.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3642645674791823604}
