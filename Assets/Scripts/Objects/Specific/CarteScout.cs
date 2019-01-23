@@ -12,12 +12,16 @@ public class CarteScout : ComplexObservable
     private Collider objectCollider;
     private TextObject textObject;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip cardOpen;
+
     protected override void Start()
     {
         base.Start();
         animator = this.GetComponent<Animator>();
         objectCollider = this.GetComponent<Collider>();
         textObject = this.GetComponent<TextObject>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void ClickWhileInteracting()
@@ -52,6 +56,7 @@ public class CarteScout : ComplexObservable
         {
             transform.LookAt(GameManager.Gm.PlayerCamera.transform);
             animator.SetTrigger("open");
+            audioSource.PlayOneShot(cardOpen);
             open = true;
             zoneToClick.SetActive(true);
             objectCollider.enabled = false;
