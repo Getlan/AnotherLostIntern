@@ -11,6 +11,8 @@ public class Planetaire : ComplexObservable
     private AudioSource audioSource;
     [SerializeField] AudioClip cogClip;
 
+    private bool planetaireChecked = false; 
+
     private AudioSource cogSfx; 
 
     protected override void Start()
@@ -33,6 +35,12 @@ public class Planetaire : ComplexObservable
                 currentStep = 1;
             }
             StartCoroutine(WaitAnimationEnd());
+            if(planetaireChecked == false)
+            {
+                StepManager.instance.CountClue();
+                planetaireChecked = true; 
+            }
+           
         }
     }
 

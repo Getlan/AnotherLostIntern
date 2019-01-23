@@ -30,7 +30,6 @@ public class StepManager : MonoBehaviour
     private AudioSource radioAudioSource;
     [SerializeField] private AudioClip[] radio_voice;
     [SerializeField] string[] radioLines;
-    //[SerializeField] private Text subtitles; 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject endManagerUI;
@@ -40,6 +39,8 @@ public class StepManager : MonoBehaviour
     private bool isPlayingRadio = false;
 
     public static StepManager instance = null;
+
+    private int hints = 0; 
 
     public int CurrentStep
     {
@@ -317,5 +318,27 @@ public class StepManager : MonoBehaviour
         }
         UIManager.instance.PrintSubtitles("");
         isPlayingRadio = false;
+    }
+
+    public void CountClue()
+    {
+        hints += 1;
+        PlayClue();
+    }
+
+    private void PlayClue()
+    {
+        if(hints == 1)
+        {
+            AudioManager.instance.Play("Indices_1");
+        }
+        if (hints == 2)
+        {
+            AudioManager.instance.Play("Indices_2");
+        }
+        if (hints == 3)
+        {
+            AudioManager.instance.Play("Indices_3");
+        }
     }
 }

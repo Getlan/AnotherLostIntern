@@ -11,7 +11,9 @@ public class BibleProphetie : ComplexObservable
     private TextObject textObject;
 
     private AudioSource audioSource;
-    [SerializeField] AudioClip openBook; 
+    [SerializeField] AudioClip openBook;
+
+    private bool bibleChecked = false; 
 
     protected override void Start()
     {
@@ -64,6 +66,12 @@ public class BibleProphetie : ComplexObservable
             AudioManager.instance.FadeIn("Drone_2", 1, 10);
         }
         textObject.ChangeTextToRead("Bible");
+        if(bibleChecked == false)
+        {
+            StepManager.instance.CountClue();
+            bibleChecked = true; 
+        }
+   
     }
 
     private void CloseBook()
