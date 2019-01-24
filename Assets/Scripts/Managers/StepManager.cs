@@ -42,7 +42,12 @@ public class StepManager : MonoBehaviour
     [SerializeField] AudioClip mecanism;
     private AudioSource drawerAudiosource;
     private AudioSource doorAudiosource;
-    private AudioSource railAudiosource; 
+    private AudioSource railAudiosource;
+
+    public GameObject credits_1; 
+    public GameObject credits_2; 
+    public GameObject credits_3; 
+    public GameObject credits_4; 
 
 
     [SerializeField] private Button answerButton;
@@ -280,6 +285,22 @@ public class StepManager : MonoBehaviour
         }
         credits.SetActive(true);
         AudioManager.instance.Play("Theme_fin");
+
+        yield return new WaitForSeconds(5f);
+        credits_1.SetActive(false);
+        credits_2.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        credits_2.SetActive(false);
+        credits_3.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        credits_3.SetActive(false);
+        credits_4.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+
+        credits_4.SetActive(false);
     }
 
 
