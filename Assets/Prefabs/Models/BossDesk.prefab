@@ -629,7 +629,6 @@ MonoBehaviour:
   state1Clip: {fileID: 8300000, guid: 81180e3f7f0db4f0989ff4687a8a48ee, type: 3}
   state2Clip: {fileID: 8300000, guid: f83359d03fa22430dac938effbbd5858, type: 3}
   nbDrawer: 1
-  mecanism: {fileID: 8300000, guid: 67dfb90f48c3a42b9b857e3ba62a2024, type: 3}
 --- !u!82 &1224691126125762284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -650,7 +649,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.7968297
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -686,7 +685,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1117,7 +1116,6 @@ MonoBehaviour:
   state1Clip: {fileID: 8300000, guid: 6fa7233bc3a304e7a9bc812eb085aea0, type: 3}
   state2Clip: {fileID: 8300000, guid: 6fa7233bc3a304e7a9bc812eb085aea0, type: 3}
   nbDrawer: 2
-  mecanism: {fileID: 0}
 --- !u!82 &7206900167007720379
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1138,7 +1136,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.8640795
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1174,7 +1172,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

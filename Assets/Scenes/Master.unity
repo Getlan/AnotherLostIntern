@@ -10447,6 +10447,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.259
       objectReference: {fileID: 0}
+    - target: {fileID: 5454064603265823248, guid: bac6d25bd4d8d77428d7cbc348d9476f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac6d25bd4d8d77428d7cbc348d9476f, type: 3}
 --- !u!4 &975415133 stripped
@@ -15005,6 +15010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454064603265823248, guid: bac6d25bd4d8d77428d7cbc348d9476f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac6d25bd4d8d77428d7cbc348d9476f, type: 3}
@@ -22346,6 +22356,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.259
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454064603265823248, guid: bac6d25bd4d8d77428d7cbc348d9476f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac6d25bd4d8d77428d7cbc348d9476f, type: 3}
@@ -31806,17 +31821,17 @@ PrefabInstance:
     - target: {fileID: 1925822818432965293, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3636233746536681151, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7983712847622469236, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8372097487363481628, guid: e697c3fa156d44f3ba1254908f83e911,
         type: 3}

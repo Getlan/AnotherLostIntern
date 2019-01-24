@@ -39,7 +39,10 @@ public class StepManager : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject endManagerUI;
 
-    [SerializeField] AudioClip mecanism; 
+    [SerializeField] AudioClip mecanism;
+    private AudioSource drawerAudiosource;
+    private AudioSource doorAudiosource;
+    private AudioSource railAudiosource; 
 
 
     [SerializeField] private Button answerButton;
@@ -102,6 +105,9 @@ public class StepManager : MonoBehaviour
             CheckTuto();
         }
         radioAudioSource = GetComponent<AudioSource>();
+        drawerAudiosource = GameObject.Find("Tiroir_petit D").GetComponent<AudioSource>();
+        doorAudiosource = GameObject.Find("PorteD").GetComponent<AudioSource>();
+        railAudiosource = GameObject.Find("Rail").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -109,8 +115,6 @@ public class StepManager : MonoBehaviour
         if (currentStep == 0 || currentStep == 1)
         {
             GameManager.Gm.CanMove = false;
-            //GameManager.Gm.CanInteract = false;
-            //GameManager.Gm.CanRotate = false;
         }
     }
 
@@ -171,7 +175,16 @@ public class StepManager : MonoBehaviour
 
     public void Drawer1Open()
     {
+        StartCoroutine(rightDrawer());
+    }
+
+    private IEnumerator rightDrawer()
+    {
         this.drawer1 = true;
+        while(drawerAudiosource.isPlaying)
+        {
+            yield return null; 
+        }
         radioAudioSource.PlayOneShot(mecanism);
         CheckSecretLibrary();
     }
@@ -184,7 +197,22 @@ public class StepManager : MonoBehaviour
 
     public void Drawer2Open()
     {
+        StartCoroutine(rightDoor());
+    }
+
+    private IEnumerator rightDoor()
+    {
         this.drawer2 = true;
+        while(doorAudiosource.isPlaying)
+        {
+            yield return null;
+        }
+        radioAudioSource.PlayOneShot(mecanism);
+
+        while(radioAudioSource.isPlaying)
+        {
+            yield return null;
+        }
         CheckSecretLibrary();
     }
 
@@ -198,8 +226,6 @@ public class StepManager : MonoBehaviour
     {
         if (!library.Open && drawer1 && drawer2)
         {
-            //library.OpenSecretPassage();
-            //AudioManager.instance.Play("Rail");
             StartCoroutine(OpenPassage());
         }
         else if (library.Open && !drawer1 && !drawer2)
@@ -210,16 +236,21 @@ public class StepManager : MonoBehaviour
 
     private IEnumerator OpenPassage()
     {
-        radioAudioSource.PlayOneShot(mecanism);
-
         while(radioAudioSource.isPlaying)
         {
             yield return null; 
         }
 
-        AudioManager.instance.Play("Indices_1");
-        library.OpenSecretPassage();
         AudioManager.instance.Play("Rail");
+        library.OpenSecretPassage();
+
+        while(railAudiosource.isPlaying)
+        {
+            yield return null; 
+        }
+
+        AudioManager.instance.Play("Indices_1");
+   
     }
 
     private IEnumerator EndGame()
