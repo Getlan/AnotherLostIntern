@@ -13,6 +13,18 @@ public class Phone : Observable
     [SerializeField] AudioClip[] mumDialogClips;
     [SerializeField] string[] mumDialogLines;
 
+    private void Update()
+    {
+        if(!activated && !StepManager.instance.phoneRinging)
+        {
+            redLight.SetActive(false);
+        }
+        else if(!activated && StepManager.instance.phoneRinging)
+        {
+            redLight.SetActive(true);
+        }
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -24,7 +36,7 @@ public class Phone : Observable
     public override void Interact()
     {
         base.Interact();
-        if (!activated)
+        if (!activated && StepManager.instance.phoneRinging)
         {
             AudioManager.instance.Stop("PhoneRingtone");
             StepManager.instance.PlayMumDialog(mumDialogClips, mumDialogLines, audioSource);
@@ -34,7 +46,7 @@ public class Phone : Observable
 
     public override void ClickWhileInteracting()
     {
-        if (activated)
+        if (activated || !StepManager.instance.phoneRinging)
         {
             base.ClickWhileInteracting();
         }
@@ -46,5 +58,6 @@ public class Phone : Observable
         StopInteract();
         activated = true;
         redLight.SetActive(false);
+        StepManager.instance.phoneRinging = false;
     }
 }

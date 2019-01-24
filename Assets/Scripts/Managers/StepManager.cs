@@ -11,6 +11,8 @@ public class StepManager : MonoBehaviour
     private bool tutoScoutCardSeen = true;
     private bool endActivated = false;
 
+    public bool phoneRinging=false;
+
     [SerializeField] private Computer computerAntoine;
 
     [SerializeField] private bool tutoSkip = false;
@@ -140,6 +142,7 @@ public class StepManager : MonoBehaviour
     {
         yield return new WaitForSeconds(90);
         AudioManager.instance.Play("PhoneRingtone");
+        phoneRinging = true;
     }
 
     public void UnlockBossDoor()
