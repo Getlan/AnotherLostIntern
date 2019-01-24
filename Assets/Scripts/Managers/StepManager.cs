@@ -163,7 +163,7 @@ public class StepManager : MonoBehaviour
     {
         AudioManager.instance.Play("Door_slam");
         AudioManager.instance.Play("Heartbeat");
-        AudioManager.instance.FadeIn("Heartbeat", 0.6f, 5);
+        AudioManager.instance.FadeIn("Heartbeat", 1f, 5);
         bossDoor.SlamDoor();
     }
 
