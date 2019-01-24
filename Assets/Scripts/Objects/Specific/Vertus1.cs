@@ -5,7 +5,6 @@ using UnityEngine;
 public class Vertus1 : Observable
 {
     private TextObject textObject;
-    private bool vertusChecked = false;
 
     protected override void Start()
     {
@@ -18,10 +17,14 @@ public class Vertus1 : Observable
         base.Interact();
         textObject.ChangeTextToRead("Vertus1");
 
-        if(vertusChecked == false)
+        if (StepManager.instance.postItChecked == true)
         {
-            StepManager.instance.CountClue();
-            vertusChecked = true; 
+            if (StepManager.instance.vertusChecked == false)
+            {
+                StepManager.instance.CountClue();
+                StepManager.instance.vertusChecked = true;
+            }
+
         }
 
     }

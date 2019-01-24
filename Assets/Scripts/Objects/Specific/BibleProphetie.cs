@@ -6,7 +6,6 @@ public class BibleProphetie : ComplexObservable
 {
     private Animator animator;
     bool open = false;
-    bool activated = false;
     private Collider objectCollider;
     private TextObject textObject;
 
@@ -60,12 +59,6 @@ public class BibleProphetie : ComplexObservable
         open = true;
         zoneToClick.SetActive(true);
         objectCollider.enabled = false;
-        if (!activated)
-        {
-            activated = true;
-            AudioManager.instance.Play("Drone_2");
-            AudioManager.instance.FadeIn("Drone_2", 1, 10);
-        }
         textObject.ChangeTextToRead("Bible");
         if(bibleChecked == false)
         {

@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &17525285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17525286}
+  - component: {fileID: 17525288}
+  - component: {fileID: 17525287}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &17525286
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17525285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2208785442732743703}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.211875, y: 0.051212747}
+  m_AnchorMax: {x: 0.7944375, y: 0.94436985}
+  m_AnchoredPosition: {x: -6, y: 2.5}
+  m_SizeDelta: {x: 5, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &17525288
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17525285}
+  m_CullTransparentMesh: 0
+--- !u!114 &17525287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17525285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: e5db455885d393b4aac721cc4feda96a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!1 &199357912
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,10 +452,10 @@ RectTransform:
   m_Father: {fileID: 1730808585531285523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2025, y: -0.000045776}
-  m_SizeDelta: {x: 766.7, y: 428.4}
+  m_AnchorMin: {x: 0.43519428, y: 0.56773955}
+  m_AnchorMax: {x: 0.55222976, y: 0.60512555}
+  m_AnchoredPosition: {x: 1.0700073, y: -1.5399933}
+  m_SizeDelta: {x: 340, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1212141392
 CanvasRenderer:
@@ -989,10 +1063,10 @@ RectTransform:
   m_Father: {fileID: 8372097487363481628}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2314906916674526916
 GameObject:
@@ -1177,16 +1251,17 @@ RectTransform:
   m_GameObject: {fileID: 3636233746536681151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5163827, y: 2.5163827, z: 2.5163827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 126408220344184976}
+  - {fileID: 17525286}
   m_Father: {fileID: 715512529268107561}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00007247925, y: 0.000015258789}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.06585693}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4143899819759170823
 GameObject:
@@ -1321,7 +1396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &126408220344184976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1336,10 +1411,10 @@ RectTransform:
   m_Father: {fileID: 2208785442732743703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2000122, y: 0}
-  m_SizeDelta: {x: 766.7, y: 428.4}
+  m_AnchorMin: {x: 0.211875, y: 0.12900001}
+  m_AnchorMax: {x: 0.7814167, y: 0.5537102}
+  m_AnchoredPosition: {x: 9.400024, y: -7.5}
+  m_SizeDelta: {x: -7.200012, y: -26.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7721558295317794514
 CanvasRenderer:
@@ -1373,17 +1448,17 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: fb87774ced903a6438b75823d93469c4, type: 3}
     m_FontSize: 33
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 208
+    m_BestFit: 1
+    m_MinSize: 15
+    m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Annelyse Nugue - Programmation\nL\xE9andre Renouard - Direction artistique\nRomain
-    Dannin - Sound Design\n\nEntire Team - Game and narrative design"
+    m_LineSpacing: 1.3
+  m_Text: "Romain Dannin - Sound Design\nAnnelyse Nugue - Programmation\nL\xE9andre
+    Renouard - Direction artistique\nGame et Narrative Design - Toute l'\xE9quipe"
 --- !u!1 &7538237117596066983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,11 +1736,11 @@ RectTransform:
   m_Father: {fileID: 715512529268107561}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.4, y: -24.9}
-  m_SizeDelta: {x: 2687, y: 1527.1}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.4999999, y: 0.5}
 --- !u!222 &7475997227122893823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1687,14 +1762,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 15d61f9619fd103478eb7db42e127890, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1734,10 +1809,10 @@ RectTransform:
   m_Father: {fileID: 715512529268107561}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00007247925, y: 0.000015258789}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 20.399048, y: -24.898987}
+  m_SizeDelta: {x: 967.8, y: 506.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8372097486456534103
 GameObject:
@@ -7928,10 +8003,10 @@ RectTransform:
   m_Father: {fileID: 8372097488096232286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.51163, y: -50}
-  m_SizeDelta: {x: 349.02325, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8372097487009436995
 CanvasRenderer:
@@ -8470,10 +8545,10 @@ RectTransform:
   m_Father: {fileID: 8372097488096232286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.51163, y: -150}
-  m_SizeDelta: {x: 349.02325, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8372097487048238096
 CanvasRenderer:
@@ -8919,7 +8994,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: ShowSentMail
+        m_MethodName: ShowInBoxMail
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10332,6 +10407,17 @@ MonoBehaviour:
           m_StringArgument: AntoineG
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: DoTutoMailChecked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &8372097487259599295
@@ -10491,8 +10577,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gilles tu as encore oubli\xE9 d\u2019\xE9teindre ton ordi en partant ahah
-    !! attention je vais finir par fouiller dedans ;) "
+  m_Text: "Christine tu as encore oubli\xE9 d\u2019\xE9teindre ton ordi en partant
+    ahah !! attention je vais finir par fouiller dedans ;) "
 --- !u!1 &8372097487266825871
 GameObject:
   m_ObjectHideFlags: 0
@@ -14429,7 +14515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bienvenue : Antoine Gauthier'
+  m_Text: 'Bienvenue : Antoine Moreau'
 --- !u!1 &8372097487651935810
 GameObject:
   m_ObjectHideFlags: 0
@@ -16624,7 +16710,7 @@ MonoBehaviour:
     m_LineSpacing: 1.3
   m_Text: "Antoine,\n\nHerv\xE9 s\u2019est tromp\xE9, tu sais qu\u2019en tant que
     stagiaire nous n\u2019avons pas trop les moyens de te faire venir avec nous\u2026\n\nD\xE9sol\xE9e
-    pour ce malentendu. \n\nBien cordialement, \n\nColette Lamare\nAssistante de Direction\nChapuys
+    pour ce malentendu. \n\nBien cordialement, \n\nColette Lamare\nAssistante de Direction\nChapuis
     Crayons "
 --- !u!1 &8372097487847654242
 GameObject:
@@ -17605,8 +17691,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: "Gilles tu as encore oubli\xE9 d\u2019\xE9teindre ton ordi en partant ahah
-    !! attention je vais finir par fouiller dedans ;) "
+  m_Text: "Christine tu as encore oubli\xE9 d\u2019\xE9teindre ton ordi en partant
+    ahah !! attention je vais finir par fouiller dedans ;) "
 --- !u!1 &8372097487930310913
 GameObject:
   m_ObjectHideFlags: 0
@@ -18599,7 +18685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8372097487996512383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18958,7 +19044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8372097488027448025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19049,7 +19135,7 @@ MonoBehaviour:
       Classe : 1999\n1\xE8re classe : 2002\nRaider Scout :"
     fontSize: 40
   - objectName: 9
-    title: Chapuis Crayons - Depuis 1945
+    title: Chapuis Crayons
     text: "Herv\xE9 Chapuis\r - Directeur\r\nColette Lamare - Assistance direction\nNathalie
       Deschamps - Ressources humaines\nEmmanuelle Perreault - Responsable communication\nGilles
       Leroux - VRP\nChristine Lebrun - Comptable\nThomas Bouchard - Responsable relations
@@ -19102,6 +19188,20 @@ MonoBehaviour:
     title: NOVUS ORDO SECLORUM
     text: 
     fontSize: 50
+  - objectName: 12
+    title: CURRICULUM VITAE
+    text: "Antoine Moreau\r\n12/11/1986\r\n\r\n56, rue Marie de M\xE9dicis\r\n93300,
+      Aubervillier\r\n\r\nFormation\r\n\r\n2006-2007 Zup de Cr\xE9ation - MASTER OF
+      ARTS : ARTISTIC DIRECTION\r\n2003-2006 Zelka - COMMUNICATION DES ENTREPRISES
+      ET DES INSTITUTIONS\r\n\r\n2003 Bac ES mention tr\xE8s bien \r\n\r\nExp\xE9rience
+      professionnelle \r\n\r\n2006 (six mois) Stagiaire en communication - Courrier.net
+      (Paris) \r\n2005 (deux mois) Stagiaire assistant en communication - Th\xE9\xE2tre
+      d\u2019Aubervilliers \r\n2003 (deux mois) Stagiaire assistant en communication
+      - Galerie d\u2019art Sophie Mercier (Aubervilliers) \r\n\r\nAutres exp\xE9riences
+      \r\n\r\nScoutisme : 1\xE8re classe  (entour\xE9 par Nathalie -> justice, charit\xE9,
+      foi) \r\n\r\nLoisirs \r\n\r\nEscalade (entour\xE9 par Nathalie -> courage, prudence)
+      \r\nDessin \r\n"
+    fontSize: 30
 --- !u!1 &8372097488041840273
 GameObject:
   m_ObjectHideFlags: 0
@@ -19223,17 +19323,6 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_MethodName: ShowInBoxMail
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: DoTutoMailChecked
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19401,7 +19490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xE0 : Gilles Leroux"
+  m_Text: "\xE0 : Christine Lebrun"
 --- !u!1 &8372097488046140401
 GameObject:
   m_ObjectHideFlags: 0
@@ -24764,10 +24853,10 @@ RectTransform:
   m_Father: {fileID: 8372097488096232286}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.51163, y: -250}
-  m_SizeDelta: {x: 349.02325, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8372097488489676823
 CanvasRenderer:

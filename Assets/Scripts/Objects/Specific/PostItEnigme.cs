@@ -16,6 +16,11 @@ public class PostItEnigme : Observable
     {
         base.Interact();
         textObject.ChangeTextToRead("PostItEnigme");
+        if(StepManager.instance.postItChecked == false)
+        {
+            AudioManager.instance.Play("Indices_1");
+            StepManager.instance.postItChecked = true; 
+        }
     }
 
     public override void StopInteract()

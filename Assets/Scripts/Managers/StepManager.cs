@@ -12,6 +12,8 @@ public class StepManager : MonoBehaviour
     private bool endActivated = false;
 
     public bool phoneRinging=false;
+    public bool vertusChecked = false;
+    public bool postItChecked = false; 
 
     [SerializeField] private Computer computerAntoine;
 
@@ -37,13 +39,16 @@ public class StepManager : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject endManagerUI;
 
+    [SerializeField] AudioClip mecanism; 
+
+
     [SerializeField] private Button answerButton;
 
     private bool isPlayingRadio = false;
 
     public static StepManager instance = null;
 
-    private int hints = 0;
+    [SerializeField]private int hints = 0;
 
     public int CurrentStep
     {
@@ -140,7 +145,7 @@ public class StepManager : MonoBehaviour
 
     IEnumerator PhoneRingtone()
     {
-        yield return new WaitForSeconds(90);
+        yield return new WaitForSeconds(60);
         AudioManager.instance.Play("PhoneRingtone");
         phoneRinging = true;
     }
@@ -167,6 +172,7 @@ public class StepManager : MonoBehaviour
     public void Drawer1Open()
     {
         this.drawer1 = true;
+        radioAudioSource.PlayOneShot(mecanism);
         CheckSecretLibrary();
     }
 
@@ -192,13 +198,28 @@ public class StepManager : MonoBehaviour
     {
         if (!library.Open && drawer1 && drawer2)
         {
-            library.OpenSecretPassage();
-            AudioManager.instance.Play("Rail");
+            //library.OpenSecretPassage();
+            //AudioManager.instance.Play("Rail");
+            StartCoroutine(OpenPassage());
         }
         else if (library.Open && !drawer1 && !drawer2)
         {
             library.CloseSecretPassage();
         }
+    }
+
+    private IEnumerator OpenPassage()
+    {
+        radioAudioSource.PlayOneShot(mecanism);
+
+        while(radioAudioSource.isPlaying)
+        {
+            yield return null; 
+        }
+
+        AudioManager.instance.Play("Indices_1");
+        library.OpenSecretPassage();
+        AudioManager.instance.Play("Rail");
     }
 
     private IEnumerator EndGame()
@@ -334,23 +355,34 @@ public class StepManager : MonoBehaviour
 
     public void CountClue()
     {
-        hints += 1;
-        PlayClue();
+        if(postItChecked == true)
+        {
+            hints += 1;
+            PlayClue();
+        }
+
     }
 
     private void PlayClue()
     {
+        if(postItChecked == true)
+        {
+
         if (hints == 1)
-        {
-            AudioManager.instance.Play("Indices_1");
+            {
+                AudioManager.instance.Play("Indices_1");
+            }
+            if (hints == 2)
+            {
+                AudioManager.instance.Play("Indices_2");
+            }
+            if (hints == 3)
+            {
+                AudioManager.instance.Play("Indices_3");
+                AudioManager.instance.Play("Drone_2");
+                AudioManager.instance.FadeIn("Drone_2", 1, 10);
+            }
         }
-        if (hints == 2)
-        {
-            AudioManager.instance.Play("Indices_2");
-        }
-        if (hints == 3)
-        {
-            AudioManager.instance.Play("Indices_3");
-        }
+
     }
 }
