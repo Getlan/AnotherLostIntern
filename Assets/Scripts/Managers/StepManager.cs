@@ -8,7 +8,7 @@ public class StepManager : MonoBehaviour
     private int currentStep = 0;
 
     private bool tutoMailChecked = false;
-    private bool tutoScoutCardSeen = false;
+    private bool tutoScoutCardSeen = true;
     private bool endActivated = false;
 
     [SerializeField] private Computer computerAntoine;
@@ -41,7 +41,7 @@ public class StepManager : MonoBehaviour
 
     public static StepManager instance = null;
 
-    private int hints = 0; 
+    private int hints = 0;
 
     public int CurrentStep
     {
@@ -123,7 +123,7 @@ public class StepManager : MonoBehaviour
     {
         if (currentStep == 1 && tutoMailChecked && tutoScoutCardSeen)
         {
-            AudioManager.instance.Play("PhoneRingtone");
+            StartCoroutine(PhoneRingtone());
             currentStep++;
             Hashtable iTweenArgs;
             iTweenArgs = iTween.Hash();
@@ -134,6 +134,12 @@ public class StepManager : MonoBehaviour
             iTween.MoveTo(GameManager.Gm.PlayerCamera.transform.gameObject, iTweenArgs);
             GameManager.Gm.CanMove = true;
         }
+    }
+
+    IEnumerator PhoneRingtone()
+    {
+        yield return new WaitForSeconds(90);
+        AudioManager.instance.Play("PhoneRingtone");
     }
 
     public void UnlockBossDoor()
@@ -257,7 +263,7 @@ public class StepManager : MonoBehaviour
         postIt.SetVector("_EmissionColor", new Color(0.7490196f, 0.7490196f, 0.7490196f, 1f) * value);
     }
 
-    public void PlayMumDialog(AudioClip[] mumDialogClips,string[] mumDialogLines,AudioSource audioSource)
+    public void PlayMumDialog(AudioClip[] mumDialogClips, string[] mumDialogLines, AudioSource audioSource)
     {
         StartCoroutine(PlayMumDialogCoroutine(mumDialogClips, mumDialogLines, audioSource));
     }
@@ -294,7 +300,7 @@ public class StepManager : MonoBehaviour
         answerButton.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
         answerButton.gameObject.SetActive(false);
-        for (int i =5; i < mumDialogLines.Length; i++)
+        for (int i = 5; i < mumDialogLines.Length; i++)
         {
             UIManager.instance.PrintSubtitles(mumDialogLines[i]);
             audioSource.PlayOneShot(mumDialogClips[i]);
@@ -331,7 +337,7 @@ public class StepManager : MonoBehaviour
 
     private void PlayClue()
     {
-        if(hints == 1)
+        if (hints == 1)
         {
             AudioManager.instance.Play("Indices_1");
         }
