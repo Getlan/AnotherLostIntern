@@ -96,7 +96,7 @@ public class Observable : ObjectWithPause
 
         if (Physics.Raycast(ray, out hit, 2f))
         {
-            if (hit.transform == null || hit.transform.gameObject != this.gameObject)
+            if (hit.transform == null || hit.transform.gameObject != this.gameObject && hit.transform.gameObject.GetComponent<ClueToSee>()==null)
             {
                 StopInteract();
             }
